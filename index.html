@@ -19,7 +19,7 @@
       --surface:#111111;
       --border: #1e1e1e;
       --text:   #F0F0F0;
-      --muted:  #666666;
+      --muted:  #919191;
       --font-head: 'Syne', sans-serif;
       --font-body: 'Space Grotesk', sans-serif;
     }
@@ -96,7 +96,7 @@
       letter-spacing: -0.01em; flex-shrink: 0;
       border: 1px solid #2a2a2a;
       border-radius: 8px;
-      padding: 6px 10px;
+      padding: 8px 8px;
       transition: border-color 0.2s;
       line-height: 1;
     }
@@ -104,11 +104,11 @@
     .nav-logo .bk { color: var(--text); }
     .nav-logo .al { color: var(--purple); }
     .nav-logo .vl { color: var(--text); }
-    .nav-logo .dt { color: var(--green); font-size: 1.25rem; position: relative; top: 2px; }
+    .nav-logo .dt { display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--green);margin-left:3px;vertical-align:middle;font-size:0; }
 
     .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
     .nav-links a {
-      font-size: 0.875rem; font-weight: 500; color: var(--muted);
+      font-size: 1.0rem; font-weight: 600; color: var(--muted);
       transition: color 0.2s; position: relative;
     }
     .nav-links a::after {
@@ -121,12 +121,12 @@
 
     .nav-right { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
     .lang-switch {
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
-      color: var(--muted); cursor: pointer; border: 1px solid var(--border);
+      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.12em;
+      color: var(--purple); cursor: pointer; border: 1px solid var(--purple);
       border-radius: 4px; padding: 5px 10px; background: transparent;
       transition: color 0.2s, border-color 0.2s;
     }
-    .lang-switch:hover { color: var(--text); border-color: #444; }
+    .lang-switch:hover { color: #fff; border-color: var(--purple); background: rgba(160,32,240,0.15); }
     .btn-nav {
       font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em;
       color: var(--black); background: var(--green);
@@ -185,15 +185,15 @@
     .hero-wordmark .bk { color: var(--text); }
     .hero-wordmark .aw { color: var(--purple); }
     .hero-wordmark .vo { color: var(--text); }
-    .hero-wordmark .dw { color: var(--green); }
+    .hero-wordmark .dw { display:inline-block;width:0.48em;height:0.48em;border-radius:50%;background:var(--green);margin-left:0.06em;vertical-align:middle;position:relative;top:-0.06em;font-size:0; }
 
     .hero-location {
       font-size: 10px; font-weight: 600; letter-spacing: 0.26em;
       text-transform: uppercase; color: var(--muted); margin-bottom: 28px;
     }
     .hero-sub-label {
-      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.32em;
-      text-transform: uppercase; color: var(--muted); margin-bottom: 44px;
+      font-size: 0.82rem; font-weight: 700; letter-spacing: 0.32em;
+      text-transform: uppercase; color: rgba(240,240,240,0.88); margin-bottom: 44px;
     }
     .hero-headline {
       font-family: var(--font-head);
@@ -243,7 +243,7 @@
       font-size: 0.9rem; padding: 11px 14px;
       transition: border-color 0.2s; outline: none; -webkit-appearance: none;
     }
-    .form-group input::placeholder, .form-group textarea::placeholder { color: #333; }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: #5a5a5a; }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--purple); }
     .form-group select { cursor: pointer; }
     .form-group select option { background: var(--black); }
@@ -267,20 +267,20 @@
     /* ════════════════════════════════════════════════════════
        TECH / TRUST BAR
     ════════════════════════════════════════════════════════ */
-    #trust { padding: 28px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .trust-inner { display: flex; align-items: center; gap: 40px; justify-content: center; flex-wrap: wrap; }
+    #trust { padding: 44px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .trust-inner { display: flex; align-items: center; gap: 50px; justify-content: center; flex-wrap: wrap; }
     .trust-stat { text-align: center; }
-    .trust-number { font-family: var(--font-head); font-size: 1.8rem; font-weight: 800; color: var(--text); line-height: 1; }
+    .trust-number { font-family: var(--font-head); font-size: 2rem; font-weight: 800; color: var(--text); line-height: 1; }
     .trust-number span { color: var(--green); }
-    .trust-label { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.06em; margin-top: 4px; }
+    .trust-label { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.06em; margin-top: 6px; }
     .trust-div { width: 1px; height: 36px; background: var(--border); }
     .trust-stack { display: flex; flex-direction: column; align-items: center; gap: 4px; }
-    .trust-stack-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    .trust-stack-label { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
     .trust-stack-items { display: flex; gap: 8px; align-items: center; }
     .trust-chip {
-      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em;
+      font-size: 0.76rem; font-weight: 700; letter-spacing: 0.06em;
       border: 1px solid var(--border); border-radius: 4px;
-      padding: 3px 8px; color: var(--muted);
+      padding: 4px 10px; color: rgba(240,240,240,0.72);
     }
 
     /* ════════════════════════════════════════════════════════
@@ -324,7 +324,7 @@
       margin: 28px 0; line-height: 1.65;
     }
     .about-visual {
-      aspect-ratio: 1; max-width: 420px;
+      aspect-ratio: 3/4; max-width: 380px;
       background: var(--black); border: 1px solid var(--border);
       border-radius: 20px; display: flex; align-items: center;
       justify-content: center; position: relative; overflow: hidden;
@@ -334,9 +334,10 @@
       background: radial-gradient(circle at 50% 90%, rgba(160,32,240,0.22), transparent 65%);
     }
     .about-logo-large {
-      font-family: var(--font-head); font-size: 4.8rem; font-weight: 800;
+      font-family: var(--font-head); font-size: 7rem; font-weight: 800;
       letter-spacing: -0.05em; position: relative; z-index: 3;
       text-align: center; line-height: 1.15;
+      filter: drop-shadow(0 0 28px rgba(160,32,240,0.7)) drop-shadow(0 0 60px rgba(0,255,157,0.25));
     }
 
     /* ════════════════════════════════════════════════════════
@@ -412,7 +413,7 @@
     }
     .faq-item.open .faq-icon { transform: rotate(45deg); border-color: var(--purple); color: var(--purple); }
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-    .faq-answer p { font-size: 0.875rem; color: rgba(240,240,240,0.58); line-height: 1.85; padding-bottom: 22px; }
+    .faq-answer p { font-size: 0.9rem; color: rgba(240,240,240,0.78); line-height: 1.85; padding-bottom: 22px; }
     .faq-item.open .faq-answer { max-height: 800px; }
 
     /* ─── FAQ CATEGORIES ────────────────────────────────── */
@@ -468,7 +469,8 @@
     ════════════════════════════════════════════════════════ */
     #footer { border-top: 1px solid var(--border); padding: 44px 0; }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-    .footer-logo { font-family: var(--font-head); font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; }
+    .footer-logo { font-family: var(--font-head); font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; display:inline-flex; align-items:center; border:1px solid #2a2a2a; border-radius:8px; padding:8px 8px; }
+    .footer-logo .fdot { display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--green);margin-left:3px;vertical-align:middle; }
     .footer-links { display: flex; gap: 28px; list-style: none; }
     .footer-links a { font-size: 0.78rem; color: var(--muted); transition: color 0.2s; }
     .footer-links a:hover { color: var(--text); }
@@ -502,11 +504,11 @@
     .cases-header { max-width: 600px; margin-bottom: 56px; }
     .carousel-wrap { position: relative; padding: 10px 0 36px; overflow: hidden; }
     .carousel-track {
-      position: relative; height: 290px;
+      position: relative; height: 350px;
       display: flex; align-items: center; justify-content: center;
     }
     .carousel-card {
-      position: absolute; left: 50%; width: 300px; min-height: 270px;
+      position: absolute; left: 50%; width: 300px; min-height: 320px;
       background: var(--black); border: 1px solid var(--border);
       border-radius: 12px; padding: 24px 26px;
       cursor: pointer; will-change: transform, opacity; overflow: hidden;
@@ -519,18 +521,18 @@
                   linear-gradient(135deg, var(--purple), var(--green)) border-box;
     }
     .cc-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; gap: 12px; }
-    .cc-num { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; color: #999; font-family: var(--font-head); }
+    .cc-num { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.2em; color: #bbb; font-family: var(--font-head); }
     .cc-pillar {
-      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
       border: 1px solid #2e2e2e; border-radius: 4px; padding: 3px 10px;
-      color: #888; white-space: nowrap;
+      color: #bbb; white-space: nowrap;
     }
-    .cc-title { font-family: var(--font-head); font-size: 0.93rem; font-weight: 700; color: var(--text); margin-bottom: 3px; line-height: 1.25; }
-    .cc-subtitle { font-size: 0.67rem; color: var(--muted); margin-bottom: 14px; }
-    .cc-teaser { font-size: 0.7rem; color: rgba(240,240,240,0.42); line-height: 1.55; margin-top: 14px; border-top: 1px solid #1a1a1a; padding-top: 12px; font-style: italic; }
+    .cc-title { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 5px; line-height: 1.25; }
+    .cc-subtitle { font-size: 0.78rem; color: var(--muted); margin-bottom: 16px; }
+    .cc-teaser { font-size: 0.8rem; color: rgba(240,240,240,0.72); line-height: 1.6; margin-top: 14px; border-top: 1px solid #1a1a1a; padding-top: 12px; font-style: italic; }
     .cc-metrics { display: flex; gap: 16px; flex-wrap: wrap; }
-    .cc-metric-val { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--green); line-height: 1; display: block; letter-spacing: -0.02em; }
-    .cc-metric-lbl { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #888; display: block; margin-top: 4px; }
+    .cc-metric-val { font-family: var(--font-head); font-size: 1.25rem; font-weight: 700; color: var(--green); line-height: 1; display: block; letter-spacing: -0.02em; }
+    .cc-metric-lbl { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #bbb; display: block; margin-top: 4px; }
     .carousel-arrows { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 28px; }
     .carousel-arrow {
       width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 50%;
@@ -586,7 +588,7 @@
     }
     @media (max-width: 900px) {
       .carousel-card { width: min(280px, 74vw); }
-      .carousel-track { height: 290px; }
+      .carousel-track { height: 350px; }
       .cc-pillar { display: none; }
     }
     @media (max-width: 600px) {
@@ -596,14 +598,56 @@
       .hero-form-card, .contact-form { padding: 26px 20px; }
       .service-card { padding: 32px 24px; }
       .service-arrow { display: none; }
-      .about-logo-large { font-size: 3.2rem; }
+      .about-logo-large { font-size: 4.8rem; }
       .filter-line { padding: 16px 20px; }
       .carousel-card { width: 72vw; padding: 20px 18px; }
-      .carousel-track { height: 278px; }
+      .carousel-track { height: 310px; }
       .panel-case { padding: 28px 20px; }
       .panel-metrics { gap: 18px; }
       .panel-metric-val { font-size: 1.3rem; }
     }
+
+
+    /* Card tilt effect */
+    .services-grid { perspective: 1200px; }
+    .service-card { transform-style: preserve-3d; transition: background 0.3s, transform 0.15s ease-out; }
+
+    /* ══════════════ EFFECTS ══════════════ */
+
+    /* Aurora plasma — hero */
+    @keyframes auroraShift {
+      0%,100% { background-position: 0% 50%; }
+      33% { background-position: 60% 30%; }
+      66% { background-position: 100% 70%; }
+    }
+    .hero-aurora {
+      position: absolute; inset: 0; pointer-events: none; z-index: 0;
+      background: linear-gradient(135deg,
+        rgba(160,32,240,0.18) 0%,
+        rgba(0,255,157,0.06) 30%,
+        rgba(160,32,240,0.08) 60%,
+        rgba(0,255,157,0.12) 100%);
+      background-size: 400% 400%;
+      animation: auroraShift 10s ease infinite;
+    }
+
+    /* Wormhole tunnel animation */
+    @keyframes tunnelPulse {
+      0%,100% { opacity: 1; transform-box: fill-box; transform: scale(1); }
+      50%      { opacity: 0.4; transform: scale(1.06); }
+    }
+    @keyframes starTwinkle {
+      0%,100% { opacity: 0.7; }
+      50%      { opacity: 0.1; }
+    }
+    .tunnel-ellipse { transform-origin: 210px 420px; animation: tunnelPulse 3s ease-in-out infinite; }
+    .star-dot { animation: starTwinkle 2s ease-in-out infinite; }
+
+    /* Canvas overlay for hero particles */
+    #heroCanvas { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:1; }
+
+    /* Canvas overlay for about particles */
+    #aboutCanvas { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:4; border-radius:20px; }
   </style>
 </head>
 <body>
@@ -648,7 +692,9 @@
 
 <!-- ══════════════════════════════ HERO ══════════════════════════════ -->
 <section id="hero" class="grid-bg">
+  <div class="hero-aurora"></div>
   <div class="hero-glow"></div>
+  <canvas id="heroCanvas"></canvas>
   <div class="container">
     <div class="hero-grid-layout">
 
@@ -718,6 +764,7 @@
               <label><span class="lang-en">What do you need? *</span><span class="lang-pt">O que precisa? *</span></label>
               <select name="service" required>
                 <option value="" disabled selected>— Select —</option>
+                <option>Lead Generation (MVP)</option>
                 <option>AI Systems &amp; Automation</option>
                 <option>Performance Marketing</option>
                 <option>Digital Marketing Strategy</option>
@@ -759,11 +806,13 @@
           <span class="trust-chip">Google</span>
           <span class="trust-chip">Make.com</span>
           <span class="trust-chip">Claude AI</span>
+          <span class="trust-chip">Obsidian AI</span>
+          <span class="trust-chip">OpenClaw</span>
         </div>
       </div>
       <div class="trust-div"></div>
       <div class="trust-stat fade-in">
-        <div class="trust-number">4<span>×</span></div>
+        <div class="trust-number">5<span>×</span></div>
         <div class="trust-label lang-en">Service Verticals</div>
         <div class="trust-label lang-pt">Verticais de Serviço</div>
       </div>
@@ -826,13 +875,24 @@
       <p class="label lang-en">What We Build</p>
       <p class="label lang-pt">O Que Construímos</p>
       <h2 class="h2">
-        <span class="lang-en">Four pillars.<br>One system.</span>
-        <span class="lang-pt">Quatro pilares.<br>Um sistema.</span>
+        <span class="lang-en">Lead Gen first.<br><span class="green">Five pillars. One system.</span></span>
+        <span class="lang-pt">Lead Gen primeiro.<br><span class="green">Cinco pilares. Um sistema.</span></span>
       </h2>
     </div>
     <div class="services-grid">
-      <div class="service-card fade-in">
+      <!-- Lead Gen MVP -->
+      <div class="service-card fade-in" style="grid-column:1/-1;border:1px solid var(--green);position:relative;">
+        <div style="position:absolute;top:20px;right:20px;background:var(--green);color:var(--black);font-size:0.62rem;font-weight:800;letter-spacing:0.14em;padding:4px 10px;border-radius:4px;">MVP · START HERE</div>
         <div class="service-number">01</div>
+        <div class="service-icon" style="background:rgba(0,255,157,0.15);">🎯</div>
+        <h3><span class="lang-en">Lead Generation</span><span class="lang-pt">Geração de Leads</span></h3>
+        <p class="lang-en" style="color:rgba(240,240,240,0.82)">The entry point. We build a system that consistently attracts, qualifies, and delivers leads ready to convert — without relying on referrals or campaigns that stop when the budget does. This is where every client starts.</p>
+        <p class="lang-pt" style="color:rgba(240,240,240,0.82)">O ponto de entrada. Construímos um sistema que atrai, qualifica e entrega leads prontos a converter — sem depender de recomendações ou campanhas que param quando o orçamento acaba. É aqui que todos os clientes começam.</p>
+        <div class="service-tags"><span class="tag">Meta Ads</span><span class="tag">Google Ads</span><span class="tag">Landing Pages</span><span class="tag">Lead Funnels</span><span class="tag">CRM Integration</span></div>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-number">02</div>
         <div class="service-icon">⚡</div>
         <h3><span class="lang-en">AI Systems & Automation</span><span class="lang-pt">Sistemas IA & Automação</span></h3>
         <p class="lang-en">We build the infrastructure that eliminates manual work and scales your operation — from lead capture to CRM to delivery. Your business runs while you sleep.</p>
@@ -841,7 +901,7 @@
         <span class="service-arrow">→</span>
       </div>
       <div class="service-card fade-in" style="transition-delay:.1s">
-        <div class="service-number">02</div>
+        <div class="service-number">03</div>
         <div class="service-icon">📈</div>
         <h3>Performance Marketing</h3>
         <p class="lang-en">Meta Ads, Google Ads, and SEO/AEO — built as a single system. Every channel feeds the next. No wasted spend, no disconnected campaigns.</p>
@@ -850,7 +910,7 @@
         <span class="service-arrow">→</span>
       </div>
       <div class="service-card fade-in" style="transition-delay:.15s">
-        <div class="service-number">03</div>
+        <div class="service-number">04</div>
         <div class="service-icon">🧭</div>
         <h3>Digital Marketing Strategy</h3>
         <p class="lang-en">Tactics without strategy are just expensive experiments. We build the full picture — channel mix, content, SEO, AEO, and the roadmap that connects every move to real growth.</p>
@@ -859,7 +919,7 @@
         <span class="service-arrow">→</span>
       </div>
       <div class="service-card fade-in" style="transition-delay:.2s">
-        <div class="service-number">04</div>
+        <div class="service-number">05</div>
         <div class="service-icon">🧠</div>
         <h3><span class="lang-en">AI Strategy & Advisory</span><span class="lang-pt">Estratégia IA & Advisory</span></h3>
         <p class="lang-en">Before you build, you need a plan that works. We define your AI roadmap, identify leverage points, and translate strategy into executable systems.</p>
@@ -889,6 +949,18 @@
     <div class="carousel-track" id="carouselTrack">
 
       <div class="carousel-card" data-index="0">
+        <div class="cc-top"><span class="cc-num">00</span><span class="cc-pillar">Lead Generation — MVP</span></div>
+        <div class="cc-title">The Pipeline They Never Built</div>
+        <div class="cc-subtitle">Local Business — Full Lead Gen System</div>
+        <div class="cc-metrics">
+          <div><span class="cc-metric-val">5×</span><span class="cc-metric-lbl">Lead Volume</span></div>
+          <div><span class="cc-metric-val">€8</span><span class="cc-metric-lbl">Cost Per Lead</span></div>
+          <div><span class="cc-metric-val">3 wks</span><span class="cc-metric-lbl">To First Results</span></div>
+        </div>
+        <div class="cc-teaser">No pipeline. No system. Just waiting for referrals. We built the structure — they stopped waiting.</div>
+      </div>
+
+      <div class="carousel-card" data-index="1">
         <div class="cc-top"><span class="cc-num">01</span><span class="cc-pillar">AI Systems & Automation</span></div>
         <div class="cc-title">The List They Forgot About</div>
         <div class="cc-subtitle">Dental Clinic — Email Reactivation & Automation</div>
@@ -899,7 +971,7 @@
         </div>
       </div>
 
-      <div class="carousel-card" data-index="1">
+      <div class="carousel-card" data-index="2">
         <div class="cc-top"><span class="cc-num">02</span><span class="cc-pillar">Performance Marketing</span></div>
         <div class="cc-title">Boosted Posts Aren't Ads</div>
         <div class="cc-subtitle">Aesthetic Clinic — Meta & Google Campaign Build</div>
@@ -910,7 +982,7 @@
         </div>
       </div>
 
-      <div class="carousel-card" data-index="2">
+      <div class="carousel-card" data-index="3">
         <div class="cc-top"><span class="cc-num">03</span><span class="cc-pillar">Digital Marketing Strategy</span></div>
         <div class="cc-title">The One Thing They Were Getting Wrong</div>
         <div class="cc-subtitle">Local Business — Positioning & Messaging Shift</div>
@@ -921,7 +993,7 @@
         </div>
       </div>
 
-      <div class="carousel-card" data-index="3">
+      <div class="carousel-card" data-index="4">
         <div class="cc-top"><span class="cc-num">04</span><span class="cc-pillar">AI Strategy & Advisory</span></div>
         <div class="cc-title">They Wanted AI. They Didn't Know Why.</div>
         <div class="cc-subtitle">Service Business — AI Strategy & Implementation</div>
@@ -932,7 +1004,7 @@
         </div>
       </div>
 
-      <div class="carousel-card" data-index="4">
+      <div class="carousel-card" data-index="5">
         <div class="cc-top"><span class="cc-num">05</span><span class="cc-pillar">[A]Void Internal</span></div>
         <div class="cc-title">One Person. Multiple Clients. Zero Admin.</div>
         <div class="cc-subtitle">[A]Void Agency — Internal Operations Build</div>
@@ -953,6 +1025,7 @@
         <span class="carousel-dot" data-i="2"></span>
         <span class="carousel-dot" data-i="3"></span>
         <span class="carousel-dot" data-i="4"></span>
+        <span class="carousel-dot" data-i="5"></span>
       </div>
       <button class="carousel-arrow carousel-next" aria-label="Next">→</button>
     </div>
@@ -962,7 +1035,19 @@
   <div class="container">
     <div class="carousel-panel fade-in">
 
-      <div class="panel-case active" data-index="0">
+      <div class="panel-case" data-index="0">
+        <div class="panel-metrics">
+          <div><span class="panel-metric-val">5×</span><span class="panel-metric-lbl">Lead Volume Increase</span></div>
+          <div><span class="panel-metric-val">€8</span><span class="panel-metric-lbl">Cost Per Lead</span></div>
+          <div><span class="panel-metric-val">3 wks</span><span class="panel-metric-lbl">To First Results</span></div>
+        </div>
+        <div class="panel-block"><span class="panel-block-label">Situation</span><p>A local business with no lead generation system. Entirely dependent on referrals and word of mouth. Some months were good. Others were empty. No visibility, no control, no pipeline.</p></div>
+        <div class="panel-block"><span class="panel-block-label">Problem</span><p>Without a system, you're not running a business — you're waiting. Every month starts from zero. No leads in the pipeline means no revenue predictability. The business was at the mercy of luck.</p></div>
+        <div class="panel-block"><span class="panel-block-label">What We Built</span><p>A full Lead Gen system: targeted ads on Meta and Google, a dedicated landing page built to convert, automated lead capture flowing directly into a CRM, and a follow-up sequence that meant no lead ever fell through the cracks. Measurable from day one.</p></div>
+        <div class="panel-block"><span class="panel-block-label">Result</span><p>Lead volume grew 5× in the first month. Cost per lead stabilized at €8. Pipeline went from empty to predictable. The business stopped waiting and started scaling.</p></div>
+      </div>
+
+      <div class="panel-case active" data-index="1">
         <div class="panel-metrics">
           <div><span class="panel-metric-val">+17%</span><span class="panel-metric-lbl">Booking Rate in 4 Weeks</span></div>
           <div><span class="panel-metric-val">23%</span><span class="panel-metric-lbl">Open Rate on Dead List</span></div>
@@ -974,7 +1059,7 @@
         <div class="panel-block"><span class="panel-block-label">Result</span><p>23% open rate on a dormant list they'd written off. Booking rate grew 17% in 4 weeks. Zero additional ad spend. System still running.</p></div>
       </div>
 
-      <div class="panel-case" data-index="1">
+      <div class="panel-case" data-index="5">
         <div class="panel-metrics">
           <div><span class="panel-metric-val">€11</span><span class="panel-metric-lbl">Cost Per Lead</span></div>
           <div><span class="panel-metric-val">30+</span><span class="panel-metric-lbl">Qualified Leads Month 1</span></div>
@@ -1124,8 +1209,8 @@
               <line x1="210" y1="420" x2="420" y2="324" opacity="0.25"/>
             </g>
             <!-- Tunnel ellipses — centered at vanishing point (210, 420), converging toward center -->
-            <g fill="none" stroke="white">
-              <ellipse cx="210" cy="420" rx="14" ry="5" stroke-width="0.7" opacity="0.85"/>
+            <g fill="none" stroke="white" class="tunnel-group">
+              <ellipse cx="210" cy="420" rx="14" class="tunnel-ellipse" style="animation-delay:0s" ry="5" stroke-width="0.7" opacity="0.85"/>
               <ellipse cx="210" cy="420" rx="30" ry="12" stroke-width="0.7" opacity="0.78"/>
               <ellipse cx="210" cy="420" rx="55" ry="23" stroke-width="0.65" opacity="0.68"/>
               <ellipse cx="210" cy="420" rx="88" ry="38" stroke-width="0.65" opacity="0.58"/>
@@ -1138,10 +1223,11 @@
               <ellipse cx="210" cy="420" rx="630" ry="272" stroke-width="0.35" opacity="0.08"/>
             </g>
           </svg>
+          <canvas id="aboutCanvas"></canvas>
           <!-- Logo overlay -->
           <div class="about-logo-large">
             <span style="color:rgba(255,255,255,0.72)">[</span><span style="color:var(--purple)">A</span><span style="color:rgba(255,255,255,0.72)">]</span><br>
-            <span style="font-size:0.34em;letter-spacing:0.18em;color:rgba(255,255,255,0.38)">[A]Void Agency</span>
+
           </div>
         </div>
       </div>
@@ -1623,6 +1709,7 @@
               <label><span class="lang-en">Service of interest *</span><span class="lang-pt">Serviço de interesse *</span></label>
               <select name="service" required>
                 <option value="" disabled selected>— Select —</option>
+                <option>Lead Generation (MVP)</option>
                 <option>AI Systems &amp; Automation</option>
                 <option>Performance Marketing</option>
                 <option>Digital Marketing Strategy</option>
@@ -1654,7 +1741,7 @@
   <div class="container">
     <div class="footer-inner">
       <div class="footer-logo">
-        <span style="color:#252525">[</span><span style="color:var(--purple)">A</span><span style="color:#252525">]</span><span style="color:var(--text)">VOID</span><span style="color:var(--green)">.</span>
+        <span style="color:#333">[</span><span style="color:var(--purple)">A</span><span style="color:#333">]</span><span style="color:var(--text)">v</span><span class="fdot"></span>
       </div>
       <ul class="footer-links">
         <li><a href="#services"><span class="lang-en">Services</span><span class="lang-pt">Serviços</span></a></li>
@@ -1830,6 +1917,260 @@
   }
   handleForm('heroForm', 'hFS');
   handleForm('contactForm', 'cFS');
+
+
+  /* ══════ CURSOR GLOW ══════ */
+  (function() {
+    var glow = document.createElement('div');
+    glow.style.cssText = 'position:fixed;top:0;left:0;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle,rgba(0,255,157,0.35) 0%,rgba(160,32,240,0.18) 50%,transparent 70%);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:opacity 0.3s;mix-blend-mode:screen;';
+    document.body.appendChild(glow);
+    var tx=0,ty=0,cx=0,cy=0;
+    document.addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY;});
+    document.addEventListener('mouseleave',function(){glow.style.opacity='0';});
+    document.addEventListener('mouseenter',function(){glow.style.opacity='1';});
+    (function animate(){
+      cx+=(tx-cx)*0.12; cy+=(ty-cy)*0.12;
+      glow.style.left=cx+'px'; glow.style.top=cy+'px';
+      requestAnimationFrame(animate);
+    })();
+  })();
+
+  /* ══════ MAGNETIC BUTTONS ══════ */
+  (function() {
+    var btns = document.querySelectorAll('.btn-primary, .btn-nav, .btn-form');
+    btns.forEach(function(btn) {
+      btn.addEventListener('mousemove', function(e) {
+        var r = btn.getBoundingClientRect();
+        var x = e.clientX - r.left - r.width/2;
+        var y = e.clientY - r.top - r.height/2;
+        btn.style.transform = 'translate(' + x*0.18 + 'px,' + y*0.18 + 'px) translateY(-2px)';
+      });
+      btn.addEventListener('mouseleave', function() {
+        btn.style.transform = '';
+      });
+    });
+  })();
+
+  /* ══════ COUNTER ANIMATION — trust bar ══════ */
+  (function() {
+    function animateCount(el, target, suffix, duration) {
+      var start = 0, step = target / (duration / 16);
+      var timer = setInterval(function() {
+        start = Math.min(start + step, target);
+        el.innerHTML = (target >= 100 ? Math.round(start) : (Number.isInteger(target) ? Math.round(start) : start.toFixed(0))) + suffix;
+        if (start >= target) clearInterval(timer);
+      }, 16);
+    }
+    var trust = document.getElementById('trust');
+    if (!trust) return;
+    var done = false;
+    var obs = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting && !done) {
+        done = true;
+        // PT · BR · UK stays as text
+        var nums = trust.querySelectorAll('.trust-number');
+        nums.forEach(function(n) {
+          var txt = n.textContent.trim();
+          if (txt.includes('×')) {
+            var val = parseInt(txt);
+            n.innerHTML = '0<span>×</span>';
+            setTimeout(function() { animateCount(n.querySelector('span') ? n : n, val, '×', 800); }, 100);
+            n.innerHTML = '';
+            var span = document.createElement('span');
+            span.style.color = 'var(--green)';
+            var counter = document.createElement('span');
+            counter.style.color = 'var(--text)';
+            counter.style.fontFamily = 'var(--font-head)';
+            counter.style.fontSize = '2rem';
+            counter.style.fontWeight = '800';
+            n.appendChild(counter);
+            n.appendChild(span);
+            span.textContent = '×';
+            var v = 0, target2 = val;
+            var t = setInterval(function() {
+              v = Math.min(v + 0.3, target2);
+              counter.textContent = Math.round(v);
+              if (v >= target2) clearInterval(t);
+            }, 16);
+          } else if (txt.includes('h')) {
+            var h = parseInt(txt);
+            n.innerHTML = '';
+            var c2 = document.createElement('span');
+            c2.style.cssText = 'font-family:var(--font-head);font-size:2rem;font-weight:800;color:var(--text)';
+            var s2 = document.createElement('span');
+            s2.style.color = 'var(--green)';
+            s2.textContent = 'h';
+            n.appendChild(c2); n.appendChild(s2);
+            var v2=0;
+            var t2 = setInterval(function() {
+              v2 = Math.min(v2+1.5, h);
+              c2.textContent = Math.round(v2);
+              if (v2>=h) clearInterval(t2);
+            },16);
+          }
+        });
+      }
+    }, {threshold: 0.5});
+    obs.observe(trust);
+  })();
+
+  /* ══════ CARD TILT — service cards ══════ */
+  (function() {
+    document.querySelectorAll('.service-card').forEach(function(card) {
+      card.addEventListener('mousemove', function(e) {
+        var r = card.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - 0.5;
+        var y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = 'rotateY(' + (x * 8) + 'deg) rotateX(' + (-y * 8) + 'deg) scale(1.02)';
+      });
+      card.addEventListener('mouseleave', function() {
+        card.style.transform = '';
+      });
+    });
+  })();
+
+  /* ══════ EFFECT 1: Hero Electric Cursor Field ══════ */
+  (function() {
+    var hero = document.getElementById('hero');
+    var canvas = document.getElementById('heroCanvas');
+    var ctx = canvas.getContext('2d');
+    var mouse = { x: -9999, y: -9999 };
+    var W, H, particles = [];
+
+    function resize() {
+      W = canvas.width = hero.offsetWidth;
+      H = canvas.height = hero.offsetHeight;
+    }
+    function init() {
+      particles = [];
+      for (var i = 0; i < 70; i++) {
+        particles.push({
+          x: Math.random() * W, y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          r: Math.random() * 1.5 + 0.5
+        });
+      }
+    }
+    hero.addEventListener('mousemove', function(e) {
+      var r = hero.getBoundingClientRect();
+      mouse.x = e.clientX - r.left;
+      mouse.y = e.clientY - r.top;
+    });
+    hero.addEventListener('mouseleave', function() { mouse.x = -9999; mouse.y = -9999; });
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      particles.forEach(function(p) {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+        if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+
+        // particle dot
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0,255,157,0.55)';
+        ctx.fill();
+
+        // particle-to-particle lines
+        particles.forEach(function(p2) {
+          var dx = p.x - p2.x, dy = p.y - p2.y;
+          var d = Math.sqrt(dx*dx + dy*dy);
+          if (d < 110) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y); ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = 'rgba(0,255,157,' + ((1 - d/110) * 0.12) + ')';
+            ctx.lineWidth = 0.5; ctx.stroke();
+          }
+        });
+
+        // electric line to cursor
+        var cx = p.x - mouse.x, cy = p.y - mouse.y;
+        var cd = Math.sqrt(cx*cx + cy*cy);
+        if (cd < 160) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = 'rgba(160,32,240,' + ((1 - cd/160) * 0.55) + ')';
+          ctx.lineWidth = 0.7; ctx.stroke();
+          // attract particles to cursor
+          p.vx += (mouse.x - p.x) * 0.00025;
+          p.vy += (mouse.y - p.y) * 0.00025;
+        }
+        // speed cap
+        var sp = Math.sqrt(p.vx*p.vx + p.vy*p.vy);
+        if (sp > 1.5) { p.vx *= 1.5/sp; p.vy *= 1.5/sp; }
+      });
+      requestAnimationFrame(draw);
+    }
+    window.addEventListener('resize', function() { resize(); init(); });
+    resize(); init(); draw();
+  })();
+
+  /* ══════ EFFECT 2: About Wormhole + Particle Network ══════ */
+  (function() {
+    // Animate tunnel ellipses with stagger
+    var ellipses = document.querySelectorAll('#about .tunnel-group ellipse');
+    ellipses.forEach(function(el, i) {
+      el.style.animationDuration = (2.8 + i * 0.18) + 's';
+      el.style.animationDelay = (i * 0.12) + 's';
+      el.style.transformOrigin = '210px 420px';
+    });
+
+    // Animate star dots twinkle with random delays
+    var stars = document.querySelectorAll('#about .about-visual circle');
+    stars.forEach(function(s) {
+      s.style.animation = 'starTwinkle ' + (1.5 + Math.random() * 2) + 's ease-in-out infinite';
+      s.style.animationDelay = (Math.random() * 2) + 's';
+    });
+
+    // Particle network canvas over about visual
+    var visual = document.querySelector('.about-visual');
+    if (!visual) return;
+    var canvas = document.getElementById('aboutCanvas');
+    var ctx = canvas.getContext('2d');
+    var W, H, pts = [];
+
+    function resize() {
+      W = canvas.width = visual.offsetWidth;
+      H = canvas.height = visual.offsetHeight;
+    }
+    function init() {
+      pts = [];
+      for (var i = 0; i < 40; i++) {
+        pts.push({
+          x: Math.random() * W, y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3
+        });
+      }
+    }
+    function drawAbout() {
+      ctx.clearRect(0, 0, W, H);
+      pts.forEach(function(p) {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+        if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 1.2, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(160,32,240,0.6)';
+        ctx.fill();
+        pts.forEach(function(p2) {
+          var dx = p.x - p2.x, dy = p.y - p2.y;
+          var d = Math.sqrt(dx*dx + dy*dy);
+          if (d < 90) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y); ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = 'rgba(160,32,240,' + ((1-d/90)*0.18) + ')';
+            ctx.lineWidth = 0.5; ctx.stroke();
+          }
+        });
+      });
+      requestAnimationFrame(drawAbout);
+    }
+    window.addEventListener('resize', function() { resize(); init(); });
+    resize(); init(); drawAbout();
+  })();
+
 </script>
 </body>
 </html>
