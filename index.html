@@ -50,7 +50,7 @@
     .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
     .section { padding: 120px 0; }
     .section-cta { text-align: center; margin-top: 56px; }
-    .section-cta .cal-popup-btn { font-family: var(--font-head); font-size: 1rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; background: var(--green); color: var(--black); border: none; padding: 16px 36px; border-radius: 4px; cursor: pointer; transition: opacity .2s; width: auto !important; display: inline-block; }
+    .section-cta .cal-popup-btn { font-family: var(--font-head); font-size: 1rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; background: var(--green); color: var(--black); border: none; padding: 16px 36px; border-radius: 4px; cursor: pointer; transition: opacity .2s; width: auto !important; display: inline-block; text-decoration: none; line-height: 1; vertical-align: middle; }
     .section-cta .cal-popup-btn:hover { opacity: 0.85; }
     .label {
       font-size: 12.5px; font-weight: 600; letter-spacing: 0.2em;
@@ -181,9 +181,8 @@
     .hero-wordmark {
       font-family: var(--font-head);
       font-size: clamp(3.2rem, 6.5vw, 5.6rem);
-      font-weight: 800; line-height: 1; letter-spacing: -0.03em;
-      display: inline-block; /* natural width */
-      transform: scaleY(1.2); transform-origin: center bottom;
+      font-weight: 800; line-height: 1; letter-spacing: -0.02em;
+      display: inline-block;
       margin-bottom: 10px;
     }
     .hero-wordmark .bk { color: var(--text); }
@@ -346,12 +345,12 @@
     }
     .about-wordmark {
       font-family: var(--font-head);
-      font-size: clamp(2.6rem, 4.5vw, 4.2rem);
-      font-weight: 800; line-height: 1; letter-spacing: -0.03em;
-      display: inline-block;
-      transform: scaleY(1.2); transform-origin: center bottom;
-      position: relative; z-index: 5;
+      font-size: clamp(2rem, 7vw, 3.2rem);
+      font-weight: 800; line-height: 1; letter-spacing: -0.02em;
+      display: block;
+      width: 100%; padding: 0 24px; box-sizing: border-box;
       text-align: center;
+      position: relative; z-index: 5;
       opacity: 0;
       animation: logoReveal 1.2s cubic-bezier(0.16,1,0.3,1) 0.5s forwards;
       user-select: none; pointer-events: none;
@@ -706,7 +705,7 @@
     </ul>
     <div class="nav-right">
       <button class="lang-switch" id="langToggle">PT</button>
-      <a href="#contact" class="btn-nav">
+      <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="btn-nav">
         <span class="lang-en">Own It</span>
         <span class="lang-pt">Toma o Teu Espaço</span>
       </a>
@@ -724,7 +723,7 @@
   <a href="#about" class="ml"><span class="lang-en">About</span><span class="lang-pt">Sobre</span></a>
   <a href="#faq" class="ml">FAQ</a>
   <a href="#contact" class="ml"><span class="lang-en">Contact</span><span class="lang-pt">Contacto</span></a>
-  <a href="#contact" class="btn-primary" style="margin-top:8px">
+  <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="btn-primary" style="margin-top:8px">
     <span class="lang-en">Own It</span><span class="lang-pt">Toma o Teu Espaço</span>
   </a>
 </div>
@@ -756,7 +755,7 @@
           <span class="lang-pt">Sistemas de Crescimento, Posicionamento e Autoridade que colocam o teu negócio no caminho certo, à frente das pessoas certas.</span>
         </p>
         <div class="hero-cta-group">
-          <a href="#contact" class="btn-primary">
+          <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="btn-primary">
             <span class="lang-en">Own It</span>
             <span class="lang-pt">Toma o Teu Espaço</span>
           </a>
@@ -868,7 +867,7 @@
         <span class="lang-pt">Funciona se és fundador, consultor ou coach que já faz o trabalho real há tempo suficiente. E sabes que estar fora do mundo digital significa estar fora do jogo. Não te conformas com o que tens. Não procuras vitórias rápidas. Procuras construir algo sólido.</span>
       </p>
       <div class="filter-cta">
-        <a href="#contact" class="btn-primary">
+        <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="btn-primary">
           <span class="lang-en">Own It →</span>
           <span class="lang-pt">Toma o Teu Espaço →</span>
         </a>
@@ -1376,7 +1375,7 @@
         </h2>
         <p style="color:var(--muted);font-size:0.875rem;margin-top:18px;line-height:1.75" class="lang-en">30 questions. Everything you need before we talk. Still have one? Ask directly.</p>
         <p style="color:var(--muted);font-size:0.875rem;margin-top:18px;line-height:1.75" class="lang-pt">30 perguntas. Tudo o que precisa antes de falarmos. Ainda tem alguma? Pergunte-nos.</p>
-        <a href="#contact" class="btn-primary" style="margin-top:28px;display:inline-block">
+        <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="btn-primary" style="margin-top:28px;display:inline-block">
           <span class="lang-en">Ask directly →</span>
           <span class="lang-pt">Pergunte-nos →</span>
         </a>
@@ -2171,7 +2170,7 @@
             var c2 = document.createElement('span');
             c2.style.cssText = 'font-family:var(--font-head);font-size:2rem;font-weight:800;color:var(--text)';
             var s2 = document.createElement('span');
-            s2.style.color = 'var(--green)';
+            s2.style.cssText = 'font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--green);margin-left:2px;vertical-align:baseline';
             s2.textContent = 'h';
             n.appendChild(c2); n.appendChild(s2);
             var v2=0;
