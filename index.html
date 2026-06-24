@@ -1,0 +1,2445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[A]Void Agency — Growth. Positioning. Authority. | Lisbon</title>
+  <meta name="description" content="(A)Void is a full-service marketing agency in Lisbon. We build growth systems — paid ads, positioning, authority — that fill appointment books and compound over time." />
+  <meta name="keywords" content="newsletter management, personal brand content, founder newsletter, LinkedIn content, owned audience, content strategy, Lisbon, Portugal" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── RESET ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --purple: #A020F0;
+      --green:  #00FF9D;
+      --black:  #1a1a1a;
+      --surface:#252525;
+      --border: #2e2e2e;
+      --text:   #F0F0F0;
+      --muted:  #c8c8c8;
+      --font-head: 'Syne', sans-serif;
+      --font-body: 'Space Grotesk', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    ::selection { background: var(--purple); color: #fff; }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 2px; }
+
+    /* ─── GRID BACKGROUND ───────────────────────────────── */
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.09) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.09) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* ─── UTILITY ────────────────────────────────────────── */
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+    .section { padding: 120px 0; }
+    .section-cta { text-align: center; margin-top: 56px; }
+    .section-cta .cal-popup-btn { font-family: var(--font-head); font-size: 1rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; background: var(--green); color: var(--black); border: none; padding: 16px 36px; border-radius: 4px; cursor: pointer; transition: opacity .2s; width: auto !important; display: inline-block; text-decoration: none; line-height: 1; vertical-align: middle; }
+    .section-cta .cal-popup-btn:hover { opacity: 0.85; }
+    .label {
+      font-size: 12.5px; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--green);
+      display: inline-block; margin-bottom: 20px;
+    }
+    .h2 { font-family: var(--font-head); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; line-height: 1.1; letter-spacing: 0; }
+    .purple { color: var(--purple); }
+    .green  { color: var(--green); }
+    .muted  { color: var(--muted); }
+
+    /* ─── ANIMATIONS ─────────────────────────────────────── */
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── LANGUAGE TOGGLE ────────────────────────────────── */
+    .lang-pt { display: none; }
+    body.pt .lang-en { display: none; }
+    body.pt .lang-pt { display: block; }
+    body.pt span.lang-en { display: none; }
+    body.pt span.lang-pt { display: inline; }
+    span.lang-pt { display: none; }
+
+    /* ════════════════════════════════════════════════════════
+       NAV
+    ════════════════════════════════════════════════════════ */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(8,8,8,0.88);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+      padding: 0 32px;
+    }
+    #navbar.scrolled { border-bottom-color: var(--border); }
+    .nav-inner {
+      max-width: 1180px; margin: 0 auto;
+      height: 70px; display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
+    }
+
+    /* Logo badge — square feel */
+    .nav-logo {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--font-head); font-size: 1.1rem; font-weight: 700;
+      letter-spacing: 0; flex-shrink: 0;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 14px 16px;
+      transition: border-color 0.2s;
+      line-height: 1;
+    }
+    .nav-logo:hover { border-color: var(--purple); }
+    .nav-logo .bk { color: var(--text); }
+    .nav-logo .al { color: var(--purple); }
+    .nav-logo .vl { color: var(--text); }
+    .nav-logo .dt { display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--green);margin-left:3px;vertical-align:middle;font-size:0; }
+
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a {
+      font-size: 1.0rem; font-weight: 600; color: var(--muted);
+      transition: color 0.2s; position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
+      height: 1px; background: var(--purple);
+      transform: scaleX(0); transition: transform 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .nav-right { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+    .lang-switch {
+      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.12em;
+      color: var(--purple); cursor: pointer; border: 1px solid var(--purple);
+      border-radius: 4px; padding: 5px 10px; background: transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .lang-switch:hover { color: #fff; border-color: var(--purple); background: rgba(160,32,240,0.15); }
+    .btn-nav {
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em;
+      color: var(--black); background: var(--green);
+      border: none; border-radius: 6px; padding: 9px 18px;
+      cursor: pointer; transition: opacity 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .btn-nav:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 4px;
+    }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); transition: transform 0.3s, opacity 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none; position: fixed;
+      top: 70px; left: 0; right: 0; bottom: 0;
+      background: var(--black); z-index: 999;
+      flex-direction: column; align-items: center;
+      justify-content: center; gap: 40px; text-align: center;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--font-head); font-size: 2rem; font-weight: 700; color: var(--text); transition: color 0.2s; }
+    .mobile-menu a:hover { color: var(--purple); }
+
+    /* ════════════════════════════════════════════════════════
+       HERO
+    ════════════════════════════════════════════════════════ */
+    #hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding-top: 70px; position: relative; overflow: hidden;
+    }
+    .hero-glow {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 55% at 72% 50%, rgba(160,32,240,0.22) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 45% at 18% 80%, rgba(0,255,157,0.10) 0%, transparent 70%);
+    }
+    .hero-grid-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 72px; align-items: center; position: relative; z-index: 1;
+    }
+
+    /* Wordmark — natural width, not stretched */
+    .hero-wordmark {
+      font-family: var(--font-head);
+      font-size: clamp(3.2rem, 6.5vw, 5.6rem);
+      font-weight: 700; line-height: 1.1; letter-spacing: 0;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .hero-wordmark .bk { color: var(--text); }
+    .hero-wordmark .aw { color: var(--purple); }
+    .hero-wordmark .vo { color: var(--text); }
+    .hero-wordmark .dw { display:inline-block;width:0.48em;height:0.48em;border-radius:50%;background:var(--green);margin-left:0.06em;vertical-align:middle;position:relative;top:-0.06em;font-size:0; }
+
+    .hero-location {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 28px;
+    }
+    .hero-sub-label {
+      font-size: 0.82rem; font-weight: 700; letter-spacing: 0.32em;
+      text-transform: uppercase; color: rgba(240,240,240,0.88); margin-bottom: 44px;
+    }
+    .hero-headline {
+      font-family: var(--font-head);
+      font-size: clamp(1.5rem, 2.8vw, 2.3rem);
+      font-weight: 700; line-height: 1.2; margin-bottom: 14px;
+    }
+    .hero-tagline { font-size: 1rem; color: var(--muted); margin-bottom: 44px; max-width: 400px; }
+    .hero-cta-group { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+
+    .btn-primary {
+      font-family: var(--font-body); font-size: 0.9rem; font-weight: 700;
+      letter-spacing: 0.04em; color: var(--black); background: var(--green);
+      border: none; border-radius: 8px; padding: 15px 30px;
+      cursor: pointer; transition: opacity 0.2s, transform 0.2s; display: inline-block;
+    }
+    .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+    .btn-secondary {
+      font-size: 0.875rem; font-weight: 500; color: var(--muted);
+      border: none; background: none; cursor: pointer;
+      transition: color 0.2s; display: flex; align-items: center; gap: 8px;
+    }
+    .btn-secondary:hover { color: var(--text); }
+    .btn-secondary svg { transition: transform 0.2s; }
+    .btn-secondary:hover svg { transform: translateX(4px); }
+
+    /* Hero form card */
+    .hero-form-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 40px; position: relative; overflow: hidden;
+    }
+    .hero-form-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 2px; background: linear-gradient(90deg, var(--purple), var(--green));
+    }
+    .hero-form-card h3 { font-family: var(--font-head); font-size: 1.25rem; font-weight: 700; margin-bottom: 6px; }
+    .cal-perks { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-direction: column; gap: 10px; }
+    .cal-perks li { font-size: 0.875rem; color: var(--muted); display: flex; gap: 8px; align-items: flex-start; }
+    .cal-perks li span { color: var(--green); font-weight: 600; flex-shrink: 0; }
+    .cal-popup-btn { width: 100%; cursor: pointer; border: none; }
+    .contact-cal-wrap { padding: 28px; }
+    .contact-cal-wrap h3 { font-family: var(--font-head); font-size: 1.25rem; font-weight: 700; }
+    .hero-form-card > p { font-size: 0.875rem; color: var(--muted); margin-bottom: 26px; }
+
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block; font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 7px;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; background: var(--black); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text); font-family: var(--font-body);
+      font-size: 0.9rem; padding: 11px 14px;
+      transition: border-color 0.2s; outline: none; -webkit-appearance: none;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: #5a5a5a; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--purple); }
+    .form-group select { cursor: pointer; }
+    .form-group select option { background: var(--black); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .btn-form {
+      width: 100%; font-family: var(--font-body); font-size: 0.9rem;
+      font-weight: 700; letter-spacing: 0.04em; color: var(--black);
+      background: var(--green); border: none; border-radius: 8px;
+      padding: 14px; cursor: pointer; margin-top: 6px;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn-form:hover { opacity: 0.85; transform: translateY(-1px); }
+    .form-note { font-size: 0.68rem; color: var(--muted); text-align: center; margin-top: 10px; }
+
+    .form-success { display: none; text-align: center; padding: 32px 0; }
+    .form-success .si { font-size: 2.5rem; margin-bottom: 14px; }
+    .form-success h4 { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+    .form-success p { font-size: 0.875rem; color: var(--muted); }
+
+    /* ════════════════════════════════════════════════════════
+       TECH / TRUST BAR
+    ════════════════════════════════════════════════════════ */
+    #trust { padding: 44px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .trust-inner { display: flex; align-items: center; gap: 50px; justify-content: center; flex-wrap: wrap; }
+    .trust-stat { text-align: center; }
+    .trust-number { font-family: var(--font-head); font-size: 2rem; font-weight: 700; color: var(--text); line-height: 1; letter-spacing: 0.01em; }
+    .trust-number span { color: var(--green); }
+    .trust-label { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.06em; margin-top: 6px; }
+    .trust-div { width: 1px; height: 36px; background: var(--border); }
+    .trust-stack { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .trust-stack-label { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    .trust-stack-items { display: flex; gap: 8px; align-items: center; }
+    .trust-chip {
+      font-size: 0.76rem; font-weight: 700; letter-spacing: 0.06em;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; color: rgba(240,240,240,0.72);
+    }
+
+    /* ════════════════════════════════════════════════════════
+       SERVICES
+    ════════════════════════════════════════════════════════ */
+    #services { background: var(--black); }
+    .services-header { max-width: 680px; margin-bottom: 56px; }
+    .outcomes-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2px; background: var(--border);
+      border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+      margin-top: 56px;
+    }
+    .outcome-col { background: var(--black); padding: 40px 32px; }
+    .outcome-marker { display: block; width: 32px; height: 3px; border-radius: 2px; margin-bottom: 22px; }
+    .outcome-title { font-family: var(--font-head); font-size: 1.45rem; font-weight: 700; letter-spacing: 0em; margin-bottom: 6px; }
+    .outcome-tagline { font-size: 0.72rem; color: var(--muted); margin-bottom: 28px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .svc-row { border-top: 1px solid var(--border); }
+    .svc-trigger {
+      display: flex; align-items: center; gap: 10px;
+      width: 100%; padding: 13px 0; background: none; border: none;
+      cursor: pointer; text-align: left; color: var(--text);
+    }
+    .svc-trigger:hover .svc-name { color: var(--green); }
+    .svc-arrow { font-size: 1rem; color: var(--green); transition: transform 0.25s ease; flex-shrink: 0; }
+    .svc-row.open .svc-arrow { transform: rotate(90deg); }
+    .svc-name { font-size: 0.9rem; font-weight: 600; transition: color 0.2s; line-height: 1.3; }
+    .svc-drop { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, opacity 0.25s ease; opacity: 0; }
+    .svc-row.open .svc-drop { max-height: 200px; opacity: 1; }
+    .svc-drop p { font-size: 0.8rem; color: var(--muted); line-height: 1.75; padding: 4px 0 14px 22px; }
+
+    /* ════════════════════════════════════════════════════════
+       ABOUT
+    ════════════════════════════════════════════════════════ */
+    #about { background: var(--surface); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-text { font-size: 1rem; color: var(--muted); line-height: 1.85; margin-bottom: 22px; }
+    .about-text strong { color: var(--text); font-weight: 600; }
+    .about-highlight {
+      border-left: 2px solid var(--purple); padding-left: 20px;
+      font-size: 1.05rem; font-style: italic; color: var(--text);
+      margin: 28px 0; line-height: 1.65;
+    }
+    .about-visual {
+      aspect-ratio: 3/4; max-width: 380px;
+      background: var(--black); border: 1px solid var(--border);
+      border-radius: 20px; display: flex; align-items: center;
+      justify-content: center; position: relative; overflow: hidden;
+    }
+    .about-visual::before {
+      content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+      background: radial-gradient(circle at 50% 90%, rgba(160,32,240,0.14), transparent 65%);
+    }
+    .about-wordmark {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 7vw, 3.2rem);
+      font-weight: 700; line-height: 1.1; letter-spacing: 0;
+      display: block;
+      width: 100%; padding: 0 24px; box-sizing: border-box;
+      text-align: center;
+      position: relative; z-index: 5;
+      opacity: 0;
+      animation: logoReveal 1.2s cubic-bezier(0.16,1,0.3,1) 0.5s forwards;
+      user-select: none; pointer-events: none;
+    }
+    .about-wordmark .bk { color: var(--text); }
+    .about-wordmark .aw { color: var(--purple); }
+    .about-wordmark .vo { color: var(--text); }
+    .about-wordmark .dw { display:inline-block;width:0.48em;height:0.48em;border-radius:50%;background:var(--green);margin-left:0.06em;vertical-align:middle;position:relative;top:-0.06em;font-size:0; }
+    .about-sub-label {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.28em;
+      text-transform: uppercase; color: rgba(240,240,240,0.75);
+      text-align: center; margin-top: 8px;
+      opacity: 0;
+      animation: logoReveal 1.2s cubic-bezier(0.16,1,0.3,1) 0.85s forwards;
+      user-select: none; pointer-events: none;
+    }
+    .about-logo-wrap {
+      position: relative; z-index: 5;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    @keyframes logoReveal {
+      0%   { opacity: 0; transform: scale(0.9) translateY(10px); }
+      60%  { opacity: 1; transform: scale(1.02) translateY(-2px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* ════════════════════════════════════════════════════════
+       WHO THIS IS FOR
+    ════════════════════════════════════════════════════════ */
+    #filter {
+      background: var(--black);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .filter-glow {
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(160,32,240,0.07) 0%, transparent 70%);
+    }
+    .filter-inner { position: relative; z-index: 1; max-width: 820px; margin: 0 auto; text-align: center; }
+    .filter-headline {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 700; line-height: 1.1; letter-spacing: 0;
+      margin-bottom: 32px;
+    }
+    .filter-headline .accent { color: var(--purple); }
+    .filter-body {
+      font-size: 1.1rem; color: var(--muted); line-height: 1.8;
+      margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;
+    }
+    .filter-line {
+      font-family: var(--font-head); font-size: 1.1rem; font-weight: 700;
+      color: var(--text); margin-bottom: 40px;
+      padding: 20px 32px; border: 1px solid var(--border); border-radius: 10px;
+      display: inline-block;
+    }
+    .filter-cta { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+
+    /* ════════════════════════════════════════════════════════
+       MISSION / PHILOSOPHY / VISION
+    ════════════════════════════════════════════════════════ */
+    #philosophy { background: var(--black); }
+    .phil-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2px; background: var(--border);
+      border: 1px solid var(--border); border-radius: 16px;
+      overflow: hidden; margin-top: 56px;
+    }
+    .phil-card { background: var(--black); padding: 44px 32px; }
+    .phil-marker { width: 28px; height: 3px; margin-bottom: 24px; }
+    .phil-card:nth-child(1) .phil-marker { background: var(--purple); }
+    .phil-card:nth-child(2) .phil-marker { background: var(--green); }
+    .phil-card:nth-child(3) .phil-marker { background: var(--purple); }
+    .phil-card h3 { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 14px; }
+    .phil-lead { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 14px; line-height: 1.3; }
+    .phil-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.8; }
+
+    /* ════════════════════════════════════════════════════════
+       FAQ
+    ════════════════════════════════════════════════════════ */
+    #faq { background: var(--surface); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
+    .faq-left { position: sticky; top: 90px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-question { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; cursor: pointer; gap: 16px; }
+    .faq-question h4 { font-family: var(--font-head); font-size: 1.01rem; font-weight: 600; color: var(--text); transition: color 0.2s; flex: 1; }
+    .faq-question:hover h4 { color: var(--purple); }
+    .faq-icon {
+      width: 22px; height: 22px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border); border-radius: 50%;
+      color: var(--muted); font-size: 0.95rem;
+      transition: transform 0.3s, border-color 0.2s, color 0.2s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); border-color: var(--purple); color: var(--purple); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-answer p { font-size: 0.9rem; color: rgba(240,240,240,0.78); line-height: 1.85; padding-bottom: 22px; }
+    .faq-item.open .faq-answer { max-height: 800px; }
+
+    /* ─── FAQ CATEGORIES ────────────────────────────────── */
+    .faq-category { margin-bottom: 8px; }
+    .faq-cat-header {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 22px; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; cursor: pointer; font-family: inherit;
+      transition: background 0.2s, border-color 0.2s; gap: 12px; text-align: left;
+    }
+    .faq-cat-header:hover { border-color: #333; }
+    .faq-category.open > .faq-cat-header { border-color: var(--purple); border-radius: 10px 10px 0 0; }
+    .faq-cat-title { font-family: var(--font-head); font-size: 0.95rem; font-weight: 700; color: var(--text); flex: 1; }
+    .faq-cat-meta { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .faq-cat-count { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .faq-cat-icon {
+      width: 22px; height: 22px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border); border-radius: 50%; color: var(--muted); font-size: 0.95rem;
+      transition: transform 0.3s, border-color 0.2s, color 0.2s;
+    }
+    .faq-category.open .faq-cat-icon { transform: rotate(45deg); border-color: var(--green); color: var(--green); }
+    .faq-cat-body {
+      max-height: 0; overflow: hidden; transition: max-height 0.5s ease;
+      border: 1px solid var(--purple); border-top: none;
+      border-radius: 0 0 10px 10px; padding: 0 22px;
+    }
+    .faq-category.open .faq-cat-body { max-height: 6000px; }
+    .faq-cat-body .faq-item:last-child { border-bottom: none; }
+
+    /* ════════════════════════════════════════════════════════
+       CONTACT
+    ════════════════════════════════════════════════════════ */
+    #contact { background: var(--black); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .contact-info { margin-top: 36px; }
+    .contact-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 24px; }
+    .contact-icon { width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
+    .contact-detail span { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+    .contact-detail a, .contact-detail p { font-size: 0.9rem; color: var(--text); transition: color 0.2s; }
+    .contact-detail a:hover { color: var(--green); }
+    .contact-form {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 40px; position: relative; overflow: hidden;
+    }
+    .contact-form::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 2px; background: linear-gradient(90deg, var(--purple), var(--green));
+    }
+    .contact-form h3 { font-family: var(--font-head); font-size: 1.25rem; font-weight: 700; margin-bottom: 22px; }
+
+    /* ════════════════════════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════════════════════════ */
+    #footer { border-top: 1px solid var(--border); padding: 44px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .footer-logo { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; letter-spacing: 0; display:inline-flex; align-items:center; border:1px solid #2a2a2a; border-radius:8px; padding:14px 16px; }
+    .footer-logo .fdot { display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--green);margin-left:3px;vertical-align:middle; }
+    .footer-links { display: flex; gap: 28px; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy { font-size: 0.72rem; color: var(--muted); }
+
+
+    /* ════════════════════════════════════════════════════════
+       QUICK NAV STRIP
+    ════════════════════════════════════════════════════════ */
+    #quicknav {
+      padding: 13px 0; border-bottom: 1px solid var(--border); background: var(--black);
+    }
+    .quicknav-inner {
+      display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+    }
+    .quicknav-inner a {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.13em;
+      text-transform: uppercase; color: var(--muted);
+      padding: 5px 18px; transition: color 0.2s; position: relative;
+    }
+    .quicknav-inner a:hover { color: var(--green); }
+    .quicknav-inner a + a::before {
+      content: '·'; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+      color: #333; font-size: 0.9rem; line-height: 1;
+    }
+
+    /* ════════════════════════════════════════════════════════
+       CAROUSEL CASE STUDIES
+    ════════════════════════════════════════════════════════ */
+    #cases { background: var(--surface); padding-bottom: 64px; }
+    .cases-header { max-width: 600px; margin-bottom: 56px; }
+    .carousel-wrap { position: relative; padding: 10px 0 36px; overflow: hidden; }
+    .carousel-track {
+      position: relative; height: 350px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .carousel-card {
+      position: absolute; left: 50%; width: 340px; min-height: 360px;
+      background: #111; border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px; padding: 32px;
+      cursor: pointer; will-change: transform, opacity; overflow: hidden;
+      transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.5s ease, border-color 0.3s;
+      user-select: none;
+    }
+    .carousel-card.active {
+      background: #141414;
+      border-top: 2px solid var(--green);
+      border-left: 1px solid rgba(255,255,255,0.07);
+      border-right: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .cc-top { display: flex; align-items: center; justify-content: flex-start; margin-bottom: 20px; }
+    .cc-num { display: none; }
+    .cc-pillar {
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45); white-space: nowrap;
+      border: none; background: none; padding: 0; border-radius: 0;
+    }
+    .cc-title { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.35; letter-spacing: 0; }
+    .cc-subtitle { font-size: 0.76rem; color: var(--muted); margin-bottom: 0; }
+    .cc-divider { height: 1px; background: rgba(255,255,255,0.07); margin: 20px 0; }
+    .cc-teaser { display: none; }
+    .cc-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .cc-metric-val { font-family: var(--font-body); font-size: 1.5rem; font-weight: 600; color: var(--green); line-height: 1; display: block; letter-spacing: 0; }
+    .cc-metric-lbl { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255,255,255,0.55); display: block; margin-top: 8px; line-height: 1.4; }
+    .carousel-arrows { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 28px; }
+    .carousel-arrow {
+      width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 50%;
+      background: transparent; color: var(--muted); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.95rem; transition: border-color 0.2s, color 0.2s;
+    }
+    .carousel-arrow:hover { border-color: var(--purple); color: var(--text); }
+    .carousel-dots { display: flex; gap: 8px; align-items: center; }
+    .carousel-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--border); transition: background 0.3s, transform 0.3s; cursor: pointer;
+    }
+    .carousel-dot.active { background: var(--green); transform: scale(1.4); }
+    .carousel-panel {
+      margin-top: 44px; border: 1px solid var(--purple); border-radius: 14px;
+      overflow: hidden; position: relative; max-width: 860px; margin-left: auto; margin-right: auto;
+      max-height: 0; transition: max-height 0.55s cubic-bezier(0.4,0,0.2,1);
+    }
+    .carousel-panel.open { max-height: 1800px; }
+    .carousel-panel::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--purple), var(--green));
+    }
+    .panel-case { display: none; padding: 36px 40px; background: var(--black); }
+    .panel-case.active { display: block; }
+    .panel-metrics {
+      display: flex; gap: 32px; flex-wrap: wrap;
+      padding-bottom: 28px; border-bottom: 1px solid var(--border); margin-bottom: 28px;
+    }
+    .panel-metric-val { font-family: var(--font-head); font-size: 1.45rem; font-weight: 700; color: var(--green); line-height: 1; display: block; letter-spacing: 0; }
+    .panel-metric-lbl { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: block; margin-top: 5px; }
+    .panel-block { margin-bottom: 22px; }
+    .panel-block:last-child { margin-bottom: 0; }
+    .panel-block-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--purple); margin-bottom: 8px; display: block; }
+    .panel-block p { font-size: 0.9rem; color: rgba(240,240,240,0.62); line-height: 1.85; }
+
+        /* ════════════════════════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .section { padding: 80px 0; }
+      .hero-grid-layout { grid-template-columns: 1fr; gap: 48px; }
+      .outcomes-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 44px; }
+      .about-visual { max-width: 100%; aspect-ratio: 16/9; }
+      .phil-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; gap: 44px; }
+      .faq-left { position: static; }
+      .contact-grid { grid-template-columns: 1fr; gap: 44px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .trust-div { display: none; }
+      .nav-links, .btn-nav { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 900px) {
+      .carousel-card { width: min(280px, 74vw); }
+      .carousel-track { height: 350px; }
+      .cc-pillar { display: none; }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 0 20px; }
+      #navbar { padding: 0 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-form-card, .contact-form { padding: 26px 20px; }
+      .outcome-col { padding: 28px 22px; }
+      .service-arrow { display: none; }
+      .about-wordmark { font-size: 3.8rem; }
+      .filter-line { padding: 16px 20px; }
+      .carousel-card { width: 72vw; padding: 20px 18px; }
+      .carousel-track { height: 310px; }
+      .panel-case { padding: 28px 20px; }
+      .panel-metrics { gap: 18px; }
+      .panel-metric-val { font-size: 1.3rem; }
+    }
+
+
+    /* Card tilt effect */
+
+
+    /* ══════════════ EFFECTS ══════════════ */
+
+    /* Aurora plasma — hero */
+    @keyframes auroraShift {
+      0%,100% { background-position: 0% 50%; }
+      33% { background-position: 60% 30%; }
+      66% { background-position: 100% 70%; }
+    }
+    .hero-aurora {
+      position: absolute; inset: 0; pointer-events: none; z-index: 0;
+      background: linear-gradient(135deg,
+        rgba(160,32,240,0.22) 0%,
+        rgba(0,255,157,0.08) 30%,
+        rgba(160,32,240,0.11) 60%,
+        rgba(0,255,157,0.14) 100%);
+      background-size: 400% 400%;
+      animation: auroraShift 10s ease infinite;
+    }
+
+    /* Wormhole tunnel animation */
+    @keyframes tunnelPulse {
+      0%,100% { opacity: 1; transform-box: fill-box; transform: scale(1); }
+      50%      { opacity: 0.4; transform: scale(1.06); }
+    }
+    @keyframes starTwinkle {
+      0%,100% { opacity: 0.7; }
+      50%      { opacity: 0.1; }
+    }
+    .tunnel-ellipse { transform-origin: 210px 420px; animation: tunnelPulse 3s ease-in-out infinite; }
+    .star-dot { animation: starTwinkle 2s ease-in-out infinite; }
+
+    /* Canvas overlay for hero particles */
+    #heroCanvas { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:1; }
+
+    /* Canvas overlay for about particles */
+    #aboutCanvas { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:4; border-radius:20px; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════ NAV ══════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="[A]Void Agency">
+      <span class="bk">[</span><span class="al">A</span><span class="bk">]</span><span class="vl">v</span><span class="dt">.</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services"><span class="lang-en">Services</span><span class="lang-pt">Serviços</span></a></li>
+      <li><a href="#cases"><span class="lang-en">Work</span><span class="lang-pt">Trabalho</span></a></li>
+      <li><a href="#about"><span class="lang-en">About</span><span class="lang-pt">Sobre</span></a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact"><span class="lang-en">Contact</span><span class="lang-pt">Contacto</span></a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="lang-switch" id="langToggle">PT</button>
+      <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="btn-nav">
+        <span class="lang-en">Own It</span>
+        <span class="lang-pt">Toma o Teu Espaço</span>
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" class="ml"><span class="lang-en">Services</span><span class="lang-pt">Serviços</span></a>
+  <a href="#cases" class="ml"><span class="lang-en">Work</span><span class="lang-pt">Trabalho</span></a>
+  <a href="#about" class="ml"><span class="lang-en">About</span><span class="lang-pt">Sobre</span></a>
+  <a href="#faq" class="ml">FAQ</a>
+  <a href="#contact" class="ml"><span class="lang-en">Contact</span><span class="lang-pt">Contacto</span></a>
+  <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="btn-primary" style="margin-top:8px">
+    <span class="lang-en">Own It</span><span class="lang-pt">Toma o Teu Espaço</span>
+  </a>
+</div>
+
+<!-- ══════════════════════════════ HERO ══════════════════════════════ -->
+<section id="hero" class="grid-bg">
+  <div class="hero-aurora"></div>
+  <div class="hero-glow"></div>
+  <canvas id="heroCanvas"></canvas>
+  <div class="container">
+    <div class="hero-grid-layout">
+
+      <!-- Left -->
+      <div class="fade-in">
+        <p class="hero-location lang-en">Lisbon, Portugal — Global Reach</p>
+        <p class="hero-location lang-pt">Lisboa, Portugal — Alcance Global</p>
+
+        <div class="hero-wordmark">
+          <span class="bk">[</span><span class="aw">A</span><span class="bk">]</span><span class="vo">VOID</span><span class="dw">.</span>
+        </div>
+        <p class="hero-sub-label">GROWTH · POSITIONING · AUTHORITY</p>
+
+        <h1 class="hero-headline">
+          <span class="lang-en">Own your Territory. Be on Offense.</span>
+          <span class="lang-pt">O teu território, o teu jogo. Estás na ofensiva.</span>
+        </h1>
+        <p class="hero-tagline">
+          <span class="lang-en">Growth, Positioning and Authority systems that put your business in the path, in front of the right people.</span>
+          <span class="lang-pt">Sistemas de Crescimento, Posicionamento e Autoridade que colocam o teu negócio no caminho certo, à frente das pessoas certas.</span>
+        </p>
+        <div class="hero-cta-group">
+          <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="btn-primary">
+            <span class="lang-en">Own It</span>
+            <span class="lang-pt">Toma o Teu Espaço</span>
+          </a>
+          <a href="#services" class="btn-secondary">
+            <span class="lang-en">See how it works</span>
+            <span class="lang-pt">Como funciona</span>
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right — Lead Form -->
+      <div class="fade-in" style="transition-delay:0.15s">
+        <div class="hero-form-card">
+          <h3>
+            <span class="lang-en">Let's talk about your growth.</span>
+            <span class="lang-pt">Vamos falar sobre o teu crescimento.</span>
+          </h3>
+          <p>
+            <span class="lang-en">No pitch. A real conversation about your business and where you want to take it.</span>
+            <span class="lang-pt">Sem pitch. Uma conversa real sobre o teu negócio e onde queres levá-lo.</span>
+          </p>
+          <ul class="cal-perks">
+            <li>✦ <span class="lang-en">30 minutes, no pitch</span><span class="lang-pt">30 minutos, sem pitch</span></li>
+            <li>✦ <span class="lang-en">We map your growth system live</span><span class="lang-pt">Mapeamos o teu sistema de crescimento ao vivo</span></li>
+            <li>✦ <span class="lang-en">Limited slots per week</span><span class="lang-pt">Vagas limitadas por semana</span></li>
+          </ul>
+          <button class="btn-form cal-popup-btn"
+            data-cal-link="avoidagency/30min"
+            data-cal-namespace="heroPopup"
+            data-cal-config='{"layout":"month_view"}'>
+            <span class="lang-en">Book a Strategy Call →</span>
+            <span class="lang-pt">Marcar uma Strategy Call →</span>
+          </button>
+          <p class="form-note">
+            <span class="lang-en">Google Meet · Confirmed instantly.</span>
+            <span class="lang-pt">Google Meet · Confirmação imediata.</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ TRUST BAR ══════════════════════════ -->
+<div id="trust">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-stat fade-in">
+        <div class="trust-number">PT <span>·</span> BR <span>·</span> UK</div>
+        <div class="trust-label lang-en">Active Markets</div>
+        <div class="trust-label lang-pt">Mercados Ativos</div>
+      </div>
+      <div class="trust-div"></div>
+      <div class="trust-stack fade-in">
+        <div class="trust-stack-label lang-en">Built on</div>
+        <div class="trust-stack-label lang-pt">Construído em</div>
+        <div class="trust-stack-items">
+          <span class="trust-chip">Beehiiv</span>
+          <span class="trust-chip">ConvertKit</span>
+          <span class="trust-chip">LinkedIn</span>
+          <span class="trust-chip">Notion</span>
+          <span class="trust-chip">Claude AI</span>
+        </div>
+      </div>
+      <div class="trust-div"></div>
+      <div class="trust-stat fade-in">
+        <div class="trust-number">5<span>×</span></div>
+        <div class="trust-label lang-en">Service Tiers</div>
+        <div class="trust-label lang-pt">Níveis de Serviço</div>
+      </div>
+      <div class="trust-div"></div>
+      <div class="trust-stat fade-in">
+        <div class="trust-number">24<span>h</span></div>
+        <div class="trust-label lang-en">Response Time</div>
+        <div class="trust-label lang-pt">Tempo de Resposta</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════ QUICK NAV STRIP ═══════════════════════ -->
+<div id="quicknav">
+  <div class="container">
+    <div class="quicknav-inner">
+      <a href="#services"><span class="lang-en">Services</span><span class="lang-pt">Serviços</span></a>
+      <a href="#cases"><span class="lang-en">Work</span><span class="lang-pt">Trabalho</span></a>
+      <a href="#about"><span class="lang-en">About</span><span class="lang-pt">Sobre</span></a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact"><span class="lang-en">Contact</span><span class="lang-pt">Contacto</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ WHO THIS IS FOR ══════════════════════════ -->
+<section id="filter">
+  <div class="filter-glow"></div>
+  <div class="container">
+    <div class="filter-inner fade-in">
+      <p class="label lang-en">Who This Is For</p>
+      <p class="label lang-pt">Para Quem É Isto</p>
+      <h2 class="filter-headline">
+        <span class="lang-en">Not for <span class="accent">everyone.</span></span>
+        <span class="lang-pt">Não é para <span class="accent">toda a gente.</span></span>
+      </h2>
+      <p class="filter-body">
+        <span class="lang-en">This works if you're a founder, consultant, or coach who has been doing the real work for long enough. And knows that being outside of the digital world means you are out of the game. You're not comfortable with where you are. What you have is not enough. You don't seek quick wins. You seek solid building.</span>
+        <span class="lang-pt">Funciona se és fundador, consultor ou coach que já faz o trabalho real há tempo suficiente. E sabes que estar fora do mundo digital significa estar fora do jogo. Não te conformas com o que tens. Não procuras vitórias rápidas. Procuras construir algo sólido.</span>
+      </p>
+      <div class="filter-cta">
+        <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="btn-primary">
+          <span class="lang-en">Own It →</span>
+          <span class="lang-pt">Toma o Teu Espaço →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ SERVICES ═══════════════════════════ -->
+<section id="services" class="section">
+  <div class="container">
+    <div class="services-header fade-in">
+      <p class="label lang-en">What We Do</p>
+      <p class="label lang-pt">O Que Fazemos</p>
+      <h2 class="h2">
+        <span class="lang-en">Growth. Positioning.<br><span class="green">Authority.</span></span>
+        <span class="lang-pt">Crescimento. Posicionamento.<br><span class="green">Autoridade.</span></span>
+      </h2>
+    </div>
+    <div class="outcomes-grid fade-in" style="transition-delay:.1s">
+
+      <!-- GROWTH ─────────────────────────────── -->
+      <div class="outcome-col">
+        <span class="outcome-marker" style="background:var(--green)"></span>
+        <h3 class="outcome-title"><span class="lang-en">Growth</span><span class="lang-pt">Crescimento</span></h3>
+        <p class="outcome-tagline"><span class="lang-en">More clients. More revenue.</span><span class="lang-pt">Mais clientes. Mais receita.</span></p>
+        <div class="svc-list">
+          <div class="svc-row">
+            <button class="svc-trigger">
+              <span class="svc-arrow">›</span>
+              <span class="svc-name"><span class="lang-en">Paid Ads</span><span class="lang-pt">Publicidade Paga</span></span>
+            </button>
+            <div class="svc-drop">
+              <p class="lang-en">Meta and Google campaigns that bring the right clients — not just traffic. We build, manage, and optimize from strategy to creative to reporting.</p>
+              <p class="lang-pt">Campanhas Meta e Google que trazem os clientes certos — não apenas tráfego. Construímos, gerimos e otimizamos da estratégia ao relatório.</p>
+            </div>
+          </div>
+          <div class="svc-row">
+            <button class="svc-trigger">
+              <span class="svc-arrow">›</span>
+              <span class="svc-name"><span class="lang-en">Email Marketing</span><span class="lang-pt">Email Marketing</span></span>
+            </button>
+            <div class="svc-drop">
+              <p class="lang-en">Sequences that convert. Welcome flows, nurture campaigns, promotional sends. Delivered to inboxes — not spam folders.</p>
+              <p class="lang-pt">Sequências que convertem. Fluxos de boas-vindas, nurture e promoções. Entregues nas inboxes — não no spam.</p>
+            </div>
+          </div>
+          <div class="svc-row">
+            <button class="svc-trigger">
+              <span class="svc-arrow">›</span>
+              <span class="svc-name"><span class="lang-en">Reactivation</span><span class="lang-pt">Reativação</span></span>
+            </button>
+            <div class="svc-drop">
+              <p class="lang-en">Your dormant list is a warm audience you forgot to talk to. We design the sequence that brings them back — without burning the list.</p>
+              <p class="lang-pt">A tua lista adormecida é uma audiência quente que esqueceste. Desenhamos a sequência que os traz de volta — sem queimar a lista.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- POSITIONING ─────────────────────────── -->
+      <div class="outcome-col">
+        <span class="outcome-marker" style="background:var(--purple)"></span>
+        <h3 class="outcome-title"><span class="lang-en">Positioning</span><span class="lang-pt">Posicionamento</span></h3>
+        <p class="outcome-tagline"><span class="lang-en">Look the part. Sound the part.</span><span class="lang-pt">Parece. Soa. Convence.</span></p>
+        <div class="svc-list">
+          <div class="svc-row">
+            <button class="svc-trigger">
+              <span class="svc-arrow">›</span>
+              <span class="svc-name"><span class="lang-en">Branding</span><span class="lang-pt">Branding</span></span>
+            </button>
+            <div class="svc-drop">
+              <p class="lang-en">Visual identity, messaging, and brand voice. The way you look and sound before you say a word. Done right, it does the positioning for you.</p>
+              <p class="lang-pt">Identidade visual, mensagem e voz de marca. A forma como pareces antes de dizeres uma palavra. Bem feito, faz o posicionamento por ti.</p>
+            </div>
+          </div>
+          <div class="svc-row">
+            <button class="svc-trigger">
+              <span class="svc-arrow">›</span>
+              <span class="svc-name"><span class="lang-en">Social Media Management</span><span class="lang-pt">Gestão de Redes Sociais</span></span>
+            </button>
+            <div class="svc-drop">
+              <p class="lang-en">Content calendars, captions, scheduling, and community management. Consistent presence on the platforms your clients actually use.</p>
+              <p class="lang-pt">Calendários de conteúdo, captions, agendamento e gestão de comunidade. Presença consistente nas plataformas que os teus clientes usam.</p>
+            </div>
+          </div>
+          <div class="svc-row">
+            <button class="svc-trigger">
+              <span class="svc-arrow">›</span>
+              <span class="svc-name"><span class="lang-en">Websites</span><span class="lang-pt">Websites</span></span>
+            </button>
+            <div class="svc-drop">
+              <p class="lang-en">Clean, fast, conversion-focused websites. No unnecessary complexity. Built to turn visitors into leads.</p>
+              <p class="lang-pt">Websites limpos, rápidos e focados em conversão. Sem complexidade desnecessária. Construídos para transformar visitantes em leads.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUTHORITY ───────────────────────────── -->
+      <div class="outcome-col">
+        <span class="outcome-marker" style="background:#f59e0b"></span>
+        <h3 class="outcome-title"><span class="lang-en">Authority</span><span class="lang-pt">Autoridade</span></h3>
+        <p class="outcome-tagline"><span class="lang-en">Be found. Be trusted. Be chosen.</span><span class="lang-pt">Ser encontrado. Confiado. Escolhido.</span></p>
+        <div class="svc-list">
+          <div class="svc-row">
+            <button class="svc-trigger">
+              <span class="svc-arrow">›</span>
+              <span class="svc-name"><span class="lang-en">Newsletters</span><span class="lang-pt">Newsletters</span></span>
+            </button>
+            <div class="svc-drop">
+              <p class="lang-en">Strategy, writing, formatting, sending — end-to-end. You share your thinking. We turn it into something people actually read.</p>
+              <p class="lang-pt">Estratégia, escrita, formatação, envio — de ponta a ponta. Partilhas o teu pensamento. Nós transformamo-lo em algo que as pessoas leem.</p>
+            </div>
+          </div>
+          <div class="svc-row">
+            <button class="svc-trigger">
+              <span class="svc-arrow">›</span>
+              <span class="svc-name"><span class="lang-en">SEO / AEO / GEO</span><span class="lang-pt">SEO / AEO / GEO</span></span>
+            </button>
+            <div class="svc-drop">
+              <p class="lang-en">Organic visibility across search engines and AI platforms. We make sure you're found when people search for what you do.</p>
+              <p class="lang-pt">Visibilidade orgânica em motores de busca e plataformas de IA. Garantimos que és encontrado quando pesquisam o que fazes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="section-cta fade-in">
+    <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="cal-popup-btn">
+      <span class="lang-en">Be a Doer →</span>
+      <span class="lang-pt">Sê um Fazedor →</span>
+    </a>
+  </div>
+</section>
+
+<!-- ══════════════════════ CASE STUDIES ════════════════════════════ -->
+<section id="cases" class="section">
+  <div class="container">
+    <div class="cases-header fade-in">
+      <p class="label lang-en">Owned Territory.</p>
+      <p class="label lang-pt">Território Conquistado.</p>
+      <h2 class="h2">
+        <span class="lang-en">The territory<br><span class="purple">they own now.</span></span>
+        <span class="lang-pt">O território<br><span class="purple">que dominam agora.</span></span>
+      </h2>
+    </div>
+  </div>
+
+  <!-- Carousel — full width -->
+  <div class="carousel-wrap">
+    <div class="carousel-track" id="carouselTrack">
+
+      <div class="carousel-card" data-index="0">
+        <div class="cc-top"><span class="cc-num">00</span><span class="cc-pillar">Newsletter Management</span></div>
+        <div class="cc-title">The Expert No One Had Heard Of</div>
+        <div class="cc-subtitle">B2B Consultant — Newsletter Launch</div>
+        <div class="cc-divider"></div>
+        <div class="cc-metrics">
+          <div><span class="cc-metric-val">277</span><span class="cc-metric-lbl">Subscribers in 60 Days</span></div>
+          <div><span class="cc-metric-val">2</span><span class="cc-metric-lbl">Inbound Leads Month 2</span></div>
+          <div><span class="cc-metric-val">€0</span><span class="cc-metric-lbl">Ad Spend</span></div>
+        </div>
+      </div>
+
+      <div class="carousel-card" data-index="1">
+        <div class="cc-top"><span class="cc-num">01</span><span class="cc-pillar">Newsletter Reactivation</span></div>
+        <div class="cc-title">Email Reactivation</div>
+        <div class="cc-subtitle">Tech Startup — Email List Reactivation</div>
+        <div class="cc-divider"></div>
+        <div class="cc-metrics">
+          <div><span class="cc-metric-val">39%</span><span class="cc-metric-lbl">Open Rate</span></div>
+          <div><span class="cc-metric-val">3×</span><span class="cc-metric-lbl">Click Rate</span></div>
+          <div><span class="cc-metric-val">€0</span><span class="cc-metric-lbl">Ad Spend</span></div>
+        </div>
+      </div>
+
+      <div class="carousel-card" data-index="2">
+        <div class="cc-top"><span class="cc-num">02</span><span class="cc-pillar">Personal Brand Content</span></div>
+        <div class="cc-title">Follow the Founder</div>
+        <div class="cc-subtitle">SaaS Founder — LinkedIn Content & Personal Brand</div>
+        <div class="cc-divider"></div>
+        <div class="cc-metrics">
+          <div><span class="cc-metric-val">3.6×</span><span class="cc-metric-lbl">LinkedIn Growth</span></div>
+          <div><span class="cc-metric-val">12</span><span class="cc-metric-lbl">Inbound DMs / Month</span></div>
+          <div><span class="cc-metric-val">2</span><span class="cc-metric-lbl">Contracts from Content</span></div>
+        </div>
+      </div>
+
+      <div class="carousel-card" data-index="3">
+        <div class="cc-top"><span class="cc-num">03</span><span class="cc-pillar">Owned Audience System</span></div>
+        <div class="cc-title">Becoming the Category</div>
+        <div class="cc-subtitle">Marketing Consultant — Newsletter + Personal Brand</div>
+        <div class="cc-divider"></div>
+        <div class="cc-metrics">
+          <div><span class="cc-metric-val">64%</span><span class="cc-metric-lbl">More Inbound in 7 Months</span></div>
+          <div><span class="cc-metric-val">3×</span><span class="cc-metric-lbl">Pipeline Value</span></div>
+          <div><span class="cc-metric-val">€0</span><span class="cc-metric-lbl">Paid Acquisition</span></div>
+        </div>
+      </div>
+
+      <div class="carousel-card" data-index="4">
+        <div class="cc-top"><span class="cc-num">04</span><span class="cc-pillar">Authority &amp; Positioning</span></div>
+        <div class="cc-title">The Name They Kept Hearing</div>
+        <div class="cc-subtitle">Consultant — Authority &amp; Positioning System</div>
+        <div class="cc-divider"></div>
+        <div class="cc-metrics">
+          <div><span class="cc-metric-val">32%</span><span class="cc-metric-lbl">Newsletter Open Rate</span></div>
+          <div><span class="cc-metric-val">5×</span><span class="cc-metric-lbl">Inbound vs Previous Year</span></div>
+          <div><span class="cc-metric-val">€0</span><span class="cc-metric-lbl">Paid Acquisition</span></div>
+        </div>
+      </div>
+
+      <div class="carousel-card" data-index="5">
+        <div class="cc-top"><span class="cc-num">05</span><span class="cc-pillar">Personal Brand Content</span></div>
+        <div class="cc-title">The Founder Who Hated Writing</div>
+        <div class="cc-subtitle">Executive Coach — Personal Brand Content System</div>
+        <div class="cc-divider"></div>
+        <div class="cc-metrics">
+          <div><span class="cc-metric-val">6×</span><span class="cc-metric-lbl">Post Engagement</span></div>
+          <div><span class="cc-metric-val">+500</span><span class="cc-metric-lbl">LinkedIn Followers in 6 Months</span></div>
+          <div><span class="cc-metric-val">1</span><span class="cc-metric-lbl">Client Closed from Content</span></div>
+        </div>
+      </div>
+
+    </div><!-- end track -->
+
+    <div class="carousel-arrows">
+      <button class="carousel-arrow carousel-prev" aria-label="Previous">←</button>
+      <div class="carousel-dots">
+        <span class="carousel-dot active" data-i="0"></span>
+        <span class="carousel-dot" data-i="1"></span>
+        <span class="carousel-dot" data-i="2"></span>
+        <span class="carousel-dot" data-i="3"></span>
+        <span class="carousel-dot" data-i="4"></span>
+        <span class="carousel-dot" data-i="5"></span>
+      </div>
+      <button class="carousel-arrow carousel-next" aria-label="Next">→</button>
+    </div>
+  </div><!-- end carousel-wrap -->
+
+  <!-- Content panel — auto-reveals with active card -->
+  <div class="container">
+    <div class="carousel-panel fade-in">
+
+      <div class="panel-case" data-index="0">
+        <div class="panel-metrics">
+          <div><span class="panel-metric-val">340</span><span class="panel-metric-lbl">Subscribers in 60 Days</span></div>
+          <div><span class="panel-metric-val">2</span><span class="panel-metric-lbl">Inbound Leads in Month 2</span></div>
+          <div><span class="panel-metric-val">€0</span><span class="panel-metric-lbl">Ad Spend</span></div>
+        </div>
+        <div class="panel-block"><span class="panel-block-label">Situation</span><p>A B2B consultant closing deals entirely through referrals. Strong track record, deep expertise, zero content presence. Every new client required starting a relationship from scratch — explaining the same things, rebuilding credibility every time.</p></div>
+        <div class="panel-block"><span class="panel-block-label">Problem</span><p>Knowledge stuck in his head was knowledge that never compounded. Every conversation he had with a prospect required him to be there. The moment he wasn't in the room, so was his reputation. No newsletter meant no audience and no way to be known before the call.</p></div>
+        <div class="panel-block"><span class="panel-block-label">What We Built</span><p>A bi-weekly newsletter targeted at his exact ICP — senior decision-makers in his niche. We defined the content pillars in a 90-minute strategy session, then handled writing, formatting, and sending. He spent 30 minutes per issue on a voice note. We handled everything else. By issue 4, readers were forwarding it.</p></div>
+        <div class="panel-block"><span class="panel-block-label">Result</span><p>277 subscribers in the first 60 days from his existing LinkedIn network alone. Two inbound leads by month two — one of which became a client. The newsletter now does work he used to do on calls. And it does it at scale.</p></div>
+      </div>
+
+      <div class="panel-case active" data-index="1">
+        <div class="panel-metrics">
+          <div><span class="panel-metric-val">39%</span><span class="panel-metric-lbl">Open Rate</span></div>
+          <div><span class="panel-metric-val">3×</span><span class="panel-metric-lbl">Click Rate vs Industry Average</span></div>
+          <div><span class="panel-metric-val">€0</span><span class="panel-metric-lbl">Ad Spend</span></div>
+        </div>
+        <div class="panel-block"><span class="panel-block-label">Situation</span><p>A tech startup with 2,000+ email signups collected through a product waitlist over 18 months. They'd never sent a single newsletter. The list was there — sitting. Paying for a Mailchimp plan they weren't using.</p></div>
+        <div class="panel-block"><span class="panel-block-label">Problem</span><p>A list you don't write to isn't an asset. It's a promise you haven't kept. Every month without contact meant colder subscribers, higher unsubscribe rates on first send, and a wasted acquisition investment. They were about to launch a paid product into a cold room.</p></div>
+        <div class="panel-block"><span class="panel-block-label">What We Built</span><p>A 3-part reactivation sequence — designed to warm, not to sell. First email acknowledged the silence with honesty. Second delivered something genuinely valuable from the founders. Third introduced what was coming. Then we migrated to Beehiiv and launched a weekly newsletter cadence. The founders wrote nothing — we captured their thinking in a monthly 30-minute call and turned it into issues people actually read.</p></div>
+        <div class="panel-block"><span class="panel-block-label">Result</span><p>39% open rate on a list that had never received an email before. 3× the click rate of their industry benchmark. By launch week, the audience felt like they already knew the product. Sales went live into a warm room, not a cold one.</p></div>
+      </div>
+
+      <div class="panel-case" data-index="5">
+        <div class="panel-metrics">
+          <div><span class="panel-metric-val">3.6×</span><span class="panel-metric-lbl">LinkedIn Follower Growth</span></div>
+          <div><span class="panel-metric-val">12</span><span class="panel-metric-lbl">Inbound DMs / Month</span></div>
+          <div><span class="panel-metric-val">2</span><span class="panel-metric-lbl">Contracts Closed from Content</span></div>
+        </div>
+        <div class="panel-block"><span class="panel-block-label">Situation</span><p>A SaaS founder with a genuinely strong product and zero LinkedIn presence. She posted once in 8 months — a company update that 6 people liked. Meanwhile, her competitors were writing daily and getting inbound. She knew the gap. She didn't have time to close it.</p></div>
+        <div class="panel-block"><span class="panel-block-label">Problem</span><p>In B2B, the founder is the brand before the product is. If your ICP can't find you, can't read you, can't decide whether to trust you — they'll find your competitor who shows up. She was invisible on the channel where her buyers spent their time. Great product. Ghost founder.</p></div>
+        <div class="panel-block"><span class="panel-block-label">What We Built</span><p>A monthly 30-minute interview to extract her thinking. We then turned that into 8–10 LinkedIn posts per month — each written in her voice, positioned around insights only someone in her position could have. No AI slop. No generic tips. Specific, opinionated, grounded in real experience. Content that reads like a real person — because it is one, just with a writer behind the pen.</p></div>
+        <div class="panel-block"><span class="panel-block-label">Result</span><p>3.6× LinkedIn growth in 90 days. 12 inbound DMs per month from people citing specific posts. Two contracts closed from content — clients who said they felt like they already knew her before the first call. She spent 30 minutes a month on it. We spent the rest.</p></div>
+      </div>
+
+      <div class="panel-case" data-index="2">
+        <div class="panel-metrics">
+          <div><span class="panel-metric-val">64%</span><span class="panel-metric-lbl">More Inbound in 7 Months</span></div>
+          <div><span class="panel-metric-val">3×</span><span class="panel-metric-lbl">Average Pipeline Value</span></div>
+          <div><span class="panel-metric-val">€0</span><span class="panel-metric-lbl">Paid Acquisition</span></div>
+        </div>
+        <div class="panel-block"><span class="panel-block-label">Situation</span><p>A marketing consultant in a saturated market. Smart, credible, with real case studies — but closing every deal on a call that started with "someone referred me." No inbound. No content. The reputation was there. The audience wasn't.</p></div>
+        <div class="panel-block"><span class="panel-block-label">Problem</span><p>When you're invisible outside your referral network, you're always one dry month away from panic. There's no compounding. No asset that keeps working when you stop. Every new contract starts from zero. The expertise existed. It just wasn't being shared at scale.</p></div>
+        <div class="panel-block"><span class="panel-block-label">What We Built</span><p>A bi-weekly newsletter plus a LinkedIn content calendar — both running off one monthly interview. We defined the content pillars (what he knew that others didn't), built the voice, and started publishing. Not polished corporate content. Specific, opinionated takes on marketing that only someone with his experience could write. Within 3 months, prospects were referencing his newsletter on first calls.</p></div>
+        <div class="panel-block"><span class="panel-block-label">Result</span><p>Inbound enquiries up 64% in 7 months. Average contract value 3× higher — prospects arrived pre-sold on his expertise. Newsletter became the most cited reason new clients gave for reaching out. Referrals didn't stop. They just stopped being the only thing.</p></div>
+      </div>
+
+      <div class="panel-case" data-index="3">
+        <div class="panel-metrics">
+          <div><span class="panel-metric-val">32%</span><span class="panel-metric-lbl">Newsletter Open Rate</span></div>
+          <div><span class="panel-metric-val">5×</span><span class="panel-metric-lbl">Inbound vs Previous Year</span></div>
+          <div><span class="panel-metric-val">€0</span><span class="panel-metric-lbl">Paid Acquisition</span></div>
+        </div>
+        <div class="panel-block"><span class="panel-block-label">Situation</span><p>A consultant operating in a niche where everyone knows the same handful of names. Smart, credible, well-connected. But outside his existing network, he was unknown. Prospects who didn't have a referral had no reason to find him — or to trust him before the first call.</p></div>
+        <div class="panel-block"><span class="panel-block-label">Problem</span><p>Visibility without authority is noise. He needed to be the name people mentioned before he was in the room. That doesn't come from a LinkedIn profile. It comes from a consistent body of work that demonstrates thinking before anyone has to pay to experience it.</p></div>
+        <div class="panel-block"><span class="panel-block-label">What We Built</span><p>A positioning-first newsletter — published bi-weekly, targeted at his exact ICP. We defined the content pillars around his actual edge: the specific things he saw that his peers didn't. Every issue was a demonstration of authority, not a feature list. Supported by a LinkedIn content calendar built from the same monthly call.</p></div>
+        <div class="panel-block"><span class="panel-block-label">Result</span><p>32% newsletter open rate sustained over 6 months. 5× inbound contact vs the previous year. New leads arrived pre-sold — citing specific issues they'd read. He went from invisible outside referrals to the name people mentioned when asked who to call.</p></div>
+      </div>
+
+      <div class="panel-case" data-index="4">
+        <div class="panel-metrics">
+          <div><span class="panel-metric-val">6×</span><span class="panel-metric-lbl">Average Post Engagement</span></div>
+          <div><span class="panel-metric-val">+500</span><span class="panel-metric-lbl">LinkedIn Followers in 6 Months</span></div>
+          <div><span class="panel-metric-val">1</span><span class="panel-metric-lbl">Client Closed from Content</span></div>
+        </div>
+        <div class="panel-block"><span class="panel-block-label">Situation</span><p>An executive coach with 20 years of experience and a LinkedIn profile that hadn't been touched in 14 months. She hated writing. She hated the performative nature of LinkedIn content. She also hated the fact that her ideal clients couldn't find her unless someone made an introduction.</p></div>
+        <div class="panel-block"><span class="panel-block-label">Problem</span><p>She wasn't invisible because she had nothing to say. She had too much to say and no system to say it with. Every time she sat down to write a post, it felt fake or generic. The content that existed in her head — real, sharp, earned through decades of client work — never made it to the screen.</p></div>
+        <div class="panel-block"><span class="panel-block-label">What We Built</span><p>A monthly 30-minute interview. We recorded it, extracted the best thinking, built the content calendar, wrote the posts, and scheduled them. She read and approved — 15 minutes max. Nothing went live without her sign-off. But she never had to stare at a blank page again. Eight to ten posts per month, written in her voice, about ideas only she could have. Her followers started saving posts. Then sharing them.</p></div>
+        <div class="panel-block"><span class="panel-block-label">Result</span><p>6× increase in average post engagement in the first 60 days. +500 new LinkedIn followers in 6 months — from zero targeted strategy. One client closed in month 3 who opened the conversation by citing a specific post. She still does one call a month. We do the rest.</p></div>
+      </div>
+
+    </div><!-- end carousel-panel -->
+  </div>
+  <div class="section-cta fade-in">
+    <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="cal-popup-btn">
+      <span class="lang-en">Own Yours →</span>
+      <span class="lang-pt">Toma o Que É Teu →</span>
+    </a>
+  </div>
+
+</section>
+
+<!-- ════════════════════════════ ABOUT ══════════════════════════════ -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="fade-in" style="margin-bottom:48px">
+      <p class="label"><span class="lang-en">About</span><span class="lang-pt">Sobre</span></p>
+      <h2 class="h2"><span class="lang-en">Behind the Scenes.</span><span class="lang-pt">Por Detrás das Cenas.</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="fade-in">
+        <p class="about-text">
+          <span class="lang-en"><strong>[A]Void</strong> is an agency dedicated to the clients — to their voice, to their problems. Clients come before numbers. Our purpose is to enhance the best thing you or your business already have: by setting your positioning, your authority, and consequently your revenue growth.</span>
+          <span class="lang-pt"><strong>[A]Void</strong> é uma agência dedicada aos clientes — à sua voz, aos seus problemas. Os clientes vêm antes dos números. O nosso propósito é potenciar o que de melhor tu ou o teu negócio já têm: definindo o teu posicionamento, a tua autoridade, e consequentemente o crescimento da tua receita.</span>
+        </p>
+        <p class="about-text">
+          <span class="lang-en">You already have your territory. We help you own it — and not fall behind in the digital &amp; AI era. <strong>Keep up the pace.</strong></span>
+          <span class="lang-pt">Já tens o teu território. Nós ajudamos-te a dominá-lo — e a não ficares para trás na era digital e da IA. <strong>Mantém o ritmo.</strong></span>
+        </p>
+      </div>
+      <div class="fade-in" style="transition-delay:.15s">
+        <div class="about-visual">
+          <!-- Void tunnel SVG -->
+          <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;" aria-hidden="true">
+            <!-- Stars -->
+            <circle cx="18" cy="22" r="0.9" fill="white" opacity="0.7"/>
+            <circle cx="55" cy="8" r="0.6" fill="white" opacity="0.5"/>
+            <circle cx="92" cy="35" r="1.1" fill="white" opacity="0.8"/>
+            <circle cx="130" cy="12" r="0.7" fill="white" opacity="0.6"/>
+            <circle cx="168" cy="28" r="0.9" fill="white" opacity="0.5"/>
+            <circle cx="200" cy="9" r="0.6" fill="white" opacity="0.7"/>
+            <circle cx="240" cy="19" r="1.0" fill="white" opacity="0.6"/>
+            <circle cx="278" cy="7" r="0.7" fill="white" opacity="0.8"/>
+            <circle cx="315" cy="30" r="0.8" fill="white" opacity="0.5"/>
+            <circle cx="355" cy="14" r="1.1" fill="white" opacity="0.7"/>
+            <circle cx="398" cy="26" r="0.6" fill="white" opacity="0.6"/>
+            <circle cx="8" cy="68" r="0.8" fill="white" opacity="0.5"/>
+            <circle cx="42" cy="82" r="1.0" fill="white" opacity="0.7"/>
+            <circle cx="78" cy="60" r="0.7" fill="white" opacity="0.6"/>
+            <circle cx="112" cy="90" r="0.9" fill="white" opacity="0.5"/>
+            <circle cx="155" cy="70" r="0.6" fill="white" opacity="0.8"/>
+            <circle cx="185" cy="88" r="1.1" fill="white" opacity="0.6"/>
+            <circle cx="228" cy="65" r="0.7" fill="white" opacity="0.7"/>
+            <circle cx="262" cy="85" r="0.9" fill="white" opacity="0.5"/>
+            <circle cx="298" cy="55" r="0.6" fill="white" opacity="0.8"/>
+            <circle cx="340" cy="78" r="1.0" fill="white" opacity="0.6"/>
+            <circle cx="380" cy="62" r="0.8" fill="white" opacity="0.7"/>
+            <circle cx="410" cy="88" r="0.7" fill="white" opacity="0.5"/>
+            <circle cx="22" cy="135" r="0.9" fill="white" opacity="0.6"/>
+            <circle cx="62" cy="150" r="0.6" fill="white" opacity="0.7"/>
+            <circle cx="100" cy="125" r="1.0" fill="white" opacity="0.5"/>
+            <circle cx="148" cy="140" r="0.8" fill="white" opacity="0.8"/>
+            <circle cx="175" cy="160" r="0.7" fill="white" opacity="0.6"/>
+            <circle cx="245" cy="135" r="0.9" fill="white" opacity="0.7"/>
+            <circle cx="280" cy="155" r="0.6" fill="white" opacity="0.5"/>
+            <circle cx="320" cy="130" r="1.1" fill="white" opacity="0.8"/>
+            <circle cx="360" cy="148" r="0.7" fill="white" opacity="0.6"/>
+            <circle cx="402" cy="138" r="0.9" fill="white" opacity="0.7"/>
+            <circle cx="15" cy="200" r="0.8" fill="white" opacity="0.5"/>
+            <circle cx="50" cy="220" r="1.0" fill="white" opacity="0.7"/>
+            <circle cx="88" cy="195" r="0.6" fill="white" opacity="0.6"/>
+            <circle cx="370" cy="205" r="0.9" fill="white" opacity="0.7"/>
+            <circle cx="405" cy="188" r="0.7" fill="white" opacity="0.5"/>
+            <circle cx="395" cy="230" r="1.0" fill="white" opacity="0.6"/>
+            <circle cx="30" cy="258" r="0.8" fill="white" opacity="0.7"/>
+            <circle cx="60" cy="275" r="0.6" fill="white" opacity="0.5"/>
+            <circle cx="385" cy="265" r="0.9" fill="white" opacity="0.6"/>
+            <circle cx="410" cy="285" r="0.7" fill="white" opacity="0.7"/>
+            <circle cx="20" cy="310" r="1.0" fill="white" opacity="0.5"/>
+            <circle cx="400" cy="320" r="0.8" fill="white" opacity="0.6"/>
+            <!-- Radial lines from vanishing point (210, 420) -->
+            <g stroke="white" stroke-width="0.5">
+              <line x1="210" y1="420" x2="0" y2="324" opacity="0.25"/>
+              <line x1="210" y1="420" x2="0" y2="245" opacity="0.22"/>
+              <line x1="210" y1="420" x2="0" y2="160" opacity="0.20"/>
+              <line x1="210" y1="420" x2="0" y2="68" opacity="0.18"/>
+              <line x1="210" y1="420" x2="18" y2="0" opacity="0.18"/>
+              <line x1="210" y1="420" x2="100" y2="0" opacity="0.20"/>
+              <line x1="210" y1="420" x2="165" y2="0" opacity="0.22"/>
+              <line x1="210" y1="420" x2="210" y2="0" opacity="0.28"/>
+              <line x1="210" y1="420" x2="255" y2="0" opacity="0.22"/>
+              <line x1="210" y1="420" x2="320" y2="0" opacity="0.20"/>
+              <line x1="210" y1="420" x2="402" y2="0" opacity="0.18"/>
+              <line x1="210" y1="420" x2="420" y2="68" opacity="0.18"/>
+              <line x1="210" y1="420" x2="420" y2="160" opacity="0.20"/>
+              <line x1="210" y1="420" x2="420" y2="245" opacity="0.22"/>
+              <line x1="210" y1="420" x2="420" y2="324" opacity="0.25"/>
+            </g>
+            <!-- Tunnel ellipses — centered at vanishing point (210, 420), converging toward center -->
+            <g fill="none" stroke="white" class="tunnel-group">
+              <ellipse cx="210" cy="420" rx="14" class="tunnel-ellipse" style="animation-delay:0s" ry="5" stroke-width="0.7" opacity="0.85"/>
+              <ellipse cx="210" cy="420" rx="30" ry="12" stroke-width="0.7" opacity="0.78"/>
+              <ellipse cx="210" cy="420" rx="55" ry="23" stroke-width="0.65" opacity="0.68"/>
+              <ellipse cx="210" cy="420" rx="88" ry="38" stroke-width="0.65" opacity="0.58"/>
+              <ellipse cx="210" cy="420" rx="132" ry="57" stroke-width="0.6" opacity="0.48"/>
+              <ellipse cx="210" cy="420" rx="185" ry="80" stroke-width="0.55" opacity="0.38"/>
+              <ellipse cx="210" cy="420" rx="248" ry="108" stroke-width="0.5" opacity="0.30"/>
+              <ellipse cx="210" cy="420" rx="322" ry="140" stroke-width="0.5" opacity="0.23"/>
+              <ellipse cx="210" cy="420" rx="408" ry="178" stroke-width="0.45" opacity="0.17"/>
+              <ellipse cx="210" cy="420" rx="510" ry="222" stroke-width="0.4" opacity="0.12"/>
+              <ellipse cx="210" cy="420" rx="630" ry="272" stroke-width="0.35" opacity="0.08"/>
+            </g>
+          </svg>
+          <canvas id="aboutCanvas"></canvas>
+          <!-- Logo overlay -->
+          <div class="about-logo-wrap" aria-hidden="true">
+            <div class="about-wordmark">
+              <span class="bk">[</span><span class="aw">A</span><span class="bk">]</span><span class="vo">VOID</span><span class="dw">.</span>
+            </div>
+            <p class="about-sub-label">GROWTH · POSITIONING · AUTHORITY</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-cta fade-in">
+      <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="cal-popup-btn">
+        <span class="lang-en">About You →</span>
+        <span class="lang-pt">Sobre Ti →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ MISSION / PHILOSOPHY / VISION ════════════ -->
+<section id="philosophy" class="section">
+  <div class="container">
+    <div class="fade-in" style="max-width:580px">
+      <p class="label lang-en">What We Believe</p>
+      <p class="label lang-pt">O Que Acreditamos</p>
+      <h2 class="h2">
+        <span class="lang-en">How we think<br>about the work.</span>
+        <span class="lang-pt">Como pensamos<br>sobre o trabalho.</span>
+      </h2>
+    </div>
+    <div class="phil-grid">
+
+      <!-- Mission -->
+      <div class="phil-card fade-in">
+        <div class="phil-marker"></div>
+        <h3><span class="lang-en">Owned beats rented.</span><span class="lang-pt">O próprio bate o arrendado.</span></h3>
+        <p class="lang-en">Social media is rented land. The algorithm decides who sees you. One rule change, one platform sunset, one account strike — and the audience you spent years building disappears. A newsletter you own is algorithm-proof. An email list is an asset. Renting reach is a tactic. Owning an audience is a strategy.</p>
+        <p class="lang-pt">As redes sociais são terreno arrendado. O algoritmo decide quem te vê. Uma mudança de regras, uma plataforma que encerra, uma conta bloqueada — e a audiência que construíste durante anos desaparece. Uma newsletter que tens é à prova de algoritmo. Uma lista de email é um ativo. Arrendar alcance é uma tática. Ter uma audiência é uma estratégia.</p>
+      </div>
+
+      <!-- Philosophy -->
+      <div class="phil-card fade-in" style="transition-delay:.1s">
+        <div class="phil-marker"></div>
+        <h3><span class="lang-en">Philosophy</span><span class="lang-pt">Filosofia</span></h3>
+        <div class="phil-lead">
+          <span class="lang-en">Expertise compounds.<br>Silence doesn't.</span>
+          <span class="lang-pt">A experiência cresce.<br>O silêncio não.</span>
+        </div>
+        <p class="lang-en">You have 10, 15, 20 years of knowledge in your head. Every call you close, it stays in that room. Every conference talk you give, it evaporates. A newsletter issue at week 12 is more powerful than issue one. A personal brand at year two reaches people issue one never could. Silence is not neutral — it's compounding in the wrong direction.</p>
+        <p class="lang-pt">Tens 10, 15, 20 anos de conhecimento na cabeça. Cada chamada que fechas, fica naquela sala. Cada palestra que dás, evapora. Uma newsletter na semana 12 é mais poderosa do que a primeira. Uma marca pessoal no segundo ano alcança pessoas que o primeiro nunca alcançou. O silêncio não é neutro — está a crescer na direção errada.</p>
+      </div>
+
+      <!-- Vision -->
+      <div class="phil-card fade-in" style="transition-delay:.2s">
+        <div class="phil-marker"></div>
+        <h3><span class="lang-en">The client shows up sold.</span><span class="lang-pt">O cliente chega vendido.</span></h3>
+        <p class="lang-en">The best sales call starts before you pick up the phone. When your newsletter lands in someone's inbox every two weeks for six months, when they've read your thinking, disagreed with one point and agreed with five others — by the time they reach out, the trust is already there. You don't pitch a reader. You confirm what they already suspect: that you're the right person for the job.</p>
+        <p class="lang-pt">A melhor chamada de vendas começa antes de atenderes o telefone. Quando a tua newsletter chega à caixa de entrada de alguém durante seis meses — quando leram o teu pensamento, discordaram de um ponto e concordaram com cinco — quando entrarem em contacto, a confiança já está lá. Não precisas fazer pitch a um leitor. Confirmas o que ele já suspeita.</p>
+      </div>
+    </div>
+    <div class="section-cta fade-in">
+      <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="cal-popup-btn">
+        <span class="lang-en">Act on It →</span>
+        <span class="lang-pt">Age →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ FAQ ════════════════════════════════ -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="faq-grid">
+      <div class="faq-left fade-in">
+        <p class="label">FAQ</p>
+        <h2 class="h2">
+          <span class="lang-en">Questions.<br>Real answers.</span>
+          <span class="lang-pt">Perguntas.<br>Respostas reais.</span>
+        </h2>
+        <p style="color:var(--muted);font-size:0.875rem;margin-top:18px;line-height:1.75" class="lang-en">30 questions. Everything you need before we talk. Still have one? Ask directly.</p>
+        <p style="color:var(--muted);font-size:0.875rem;margin-top:18px;line-height:1.75" class="lang-pt">30 perguntas. Tudo o que precisa antes de falarmos. Ainda tem alguma? Pergunte-nos.</p>
+        <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="btn-primary" style="margin-top:28px;display:inline-block">
+          <span class="lang-en">Ask directly →</span>
+          <span class="lang-pt">Pergunte-nos →</span>
+        </a>
+      </div>
+
+      <div class="fade-in" style="transition-delay:.1s">
+
+        <!-- ── CATEGORY 1: About [A]Void ───────────────────── -->
+        <div class="faq-category">
+          <button class="faq-cat-header">
+            <span class="faq-cat-title"><span class="lang-en">About [A]Void</span><span class="lang-pt">Sobre a [A]Void</span></span>
+            <div class="faq-cat-meta">
+              <span class="faq-cat-count"><span class="lang-en">5 questions</span><span class="lang-pt">5 perguntas</span></span>
+              <span class="faq-cat-icon">+</span>
+            </div>
+          </button>
+          <div class="faq-cat-body">
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">What makes [A]Void different from the agency mediocracy?</h4>
+                <h4 class="lang-pt">O que torna a [A]Void diferente da mediocracia das agências?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Most content agencies write generic posts that look like everyone else and call it a "strategy." [A]Void doesn't write in a house voice — we write in yours. Every issue, every post is grounded in your actual thinking, your actual experience, your actual opinions. A 30-minute call with you produces a month of content that sounds like you because it is you. The difference is the distance between content people scroll past and content people save and share.</p>
+                <p class="lang-pt">A maioria das agências de conteúdo escreve posts genéricos que parecem iguais a todos os outros. A [A]Void não escreve numa voz genérica — escreve na tua. Cada edição, cada post, assente no teu pensamento real, na tua experiência real. Uma call de 30 minutos contigo produz um mês de conteúdo que parece teu porque é teu.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">Do you work with businesses outside Portugal?</h4>
+                <h4 class="lang-pt">Trabalham com empresas fora de Portugal?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Yes. Lisbon is home base, but we work with founders, consultants, and coaches in Portugal, Brazil, the UK, and beyond. A newsletter has no borders. A personal brand travels. If you have expertise and an audience to build, geography isn't the constraint.</p>
+                <p class="lang-pt">Sim. Lisboa é a nossa base, mas trabalhamos com fundadores, consultores e coaches em Portugal, Brasil, Reino Unido e além. Uma newsletter não tem fronteiras. Uma marca pessoal viaja. Se tens experiência e uma audiência para construir, a geografia não é o obstáculo.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">Do you do training or onboarding?</h4>
+                <h4 class="lang-pt">Fazem formação ou onboarding?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Yes — though with newsletter and personal brand content, onboarding is less about learning a tool and more about us learning you. We do a deep voice session in month one to extract your thinking patterns, your language, your opinions. After that, our monthly calls stay efficient because we already know how you think.</p>
+                <p class="lang-pt">Sim — mas no contexto de newsletter e marca pessoal, o onboarding é menos sobre aprender uma ferramenta e mais sobre nós aprendermos sobre ti. Fazemos uma sessão de voz profunda no primeiro mês para extrair os teus padrões de pensamento, a tua linguagem, as tuas opiniões.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">Do I really need a newsletter in 2026 — isn't everyone already saturated?</h4>
+                <h4 class="lang-pt">Preciso mesmo de uma newsletter em 2026 — não está toda a gente saturada?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Email open rates in B2B are between 35–50% for newsletters people actually signed up for. Compare that to 2–5% organic reach on Instagram. The inbox is still the highest-attention channel online. The difference now is quality — generic mass-blasts are dead. Newsletters built around a real voice and specific expertise still cut through. That's exactly what we build.</p>
+                <p class="lang-pt">As taxas de abertura de email em B2B ficam entre 35–50% para newsletters em que as pessoas se inscreveram de propósito. Compara com 2–5% de alcance orgânico no Instagram. A caixa de entrada continua a ser o canal de maior atenção online. A diferença agora é qualidade — newsletters genéricas estão mortas. As construídas em torno de uma voz real e expertise específica ainda funcionam. É exatamente o que construímos.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">What kind of businesses get the most out of working with [A]Void?</h4>
+                <h4 class="lang-pt">Que tipo de negócios tiram mais partido de trabalhar com a [A]Void?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Founders, consultants, and coaches who have been doing the work long enough to have real opinions — and who are tired of those opinions being limited to the people in the room. If you're closing deals entirely through referrals and want to build something that generates inbound, this is for you. If you've tried to "do LinkedIn" and given up after three weeks, this is for you. If you have an email list you haven't touched in months, this is definitely for you.</p>
+                <p class="lang-pt">Fundadores, consultores e coaches com experiência suficiente para ter opiniões reais — e que estão fartos de essas opiniões ficarem limitadas às pessoas na sala. Se fechas deals exclusivamente por referências e queres construir algo que gere inbound, é para ti. Se tens uma lista de email que não tocas há meses, é definitivamente para ti.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- ── CATEGORY: Paid Ads & Performance ─────────────── -->
+        <div class="faq-category">
+          <button class="faq-cat-header">
+            <span class="faq-cat-title"><span class="lang-en">Paid Ads &amp; Performance</span><span class="lang-pt">Publicidade &amp; Performance</span></span>
+            <div class="faq-cat-meta">
+              <span class="faq-cat-count"><span class="lang-en">5 questions</span><span class="lang-pt">5 perguntas</span></span>
+              <span class="faq-cat-icon">+</span>
+            </div>
+          </button>
+          <div class="faq-cat-body">
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">What platforms do you run paid ads on?</h4>
+                <h4 class="lang-pt">Em que plataformas gerem publicidade paga?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Meta (Facebook + Instagram) and Google (Search, Performance Max, Display). These cover the vast majority of B2B and B2C acquisition. We decide which combination makes sense based on your audience and what they're actually searching for — not based on what's trending. For some clients that's both. For others it's one or the other. We don't run ads on platforms that won't move the needle for your specific business.</p>
+                <p class="lang-pt">Meta (Facebook + Instagram) e Google (Search, Performance Max, Display). Decidimos qual a combinação certa com base na tua audiência — não no que está na moda. Para alguns clientes são os dois. Para outros é um ou outro. Não corremos anúncios em plataformas que não vão fazer diferença para o teu negócio específico.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">What's the minimum ad budget to make it worth it?</h4>
+                <h4 class="lang-pt">Qual o orçamento mínimo para anúncios valer a pena?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">For Meta: €500–800/month gets you enough data to learn. For Google Search: €600–1,000/month for a focused campaign. Below those thresholds, the algorithm doesn't have enough signal to optimize and you're essentially paying for noise. The management fee is separate from the ad spend. We'd rather tell you not to run ads yet than take a percentage of a budget too small to work with.</p>
+                <p class="lang-pt">Para Meta: €500–800/mês é suficiente para aprender. Para Google Search: €600–1.000/mês para uma campanha focada. Abaixo desses valores, o algoritmo não tem dados suficientes para otimizar. Preferimos dizer-te que ainda não faz sentido do que cobrar uma percentagem de um orçamento demasiado pequeno para funcionar.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">How long until paid ads generate real results?</h4>
+                <h4 class="lang-pt">Quanto tempo até a publicidade paga gerar resultados reais?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">First 2 weeks: launching and gathering data. Weeks 3–6: first meaningful signals — what's working, what isn't. Month 2–3: optimization kicks in and results start to stabilize. By month 3 you should have a clear picture of your cost per lead and whether the channel is viable. Ads that promise results in week one are either misleading you or defining "results" very loosely.</p>
+                <p class="lang-pt">Primeiras 2 semanas: lançamento e recolha de dados. Semanas 3–6: primeiros sinais significativos. Mês 2–3: a otimização entra e os resultados começam a estabilizar. Ao fim de 3 meses deves ter uma visão clara do teu custo por lead e se o canal é viável.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">Do you handle ad creative, or do I need to provide it?</h4>
+                <h4 class="lang-pt">Tratam do criativo dos anúncios, ou tenho de fornecer eu?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">We handle creative strategy and copy — the angle, the hook, the message hierarchy. For visual assets: we either design them, brief your designer, or work with what you have. We don't need a professional photo shoot to launch. Some of the best-performing ads are simple. We'll be honest about what the creative needs to be to make the campaign work, and we won't launch something we don't believe in.</p>
+                <p class="lang-pt">Tratamos da estratégia criativa e da copy — o ângulo, o hook, a hierarquia da mensagem. Para ativos visuais: desenhamos, briefamos o teu designer, ou trabalhamos com o que tens. Não precisamos de uma sessão fotográfica profissional para lançar. Alguns dos melhores anúncios são simples. Seremos honestos sobre o que o criativo precisa de ser para a campanha funcionar.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">What's the difference between running ads and having a real paid media strategy?</h4>
+                <h4 class="lang-pt">Qual a diferença entre correr anúncios e ter uma estratégia de paid media?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Running ads is turning on spend. A strategy is knowing why, for whom, what you want them to do, what happens after they click, and how you measure success. Most businesses that "tried ads and they didn't work" ran ads without a strategy — wrong audience, wrong message, landing page that didn't convert, no follow-up system. The ad was fine. Everything around it wasn't. We build the full system, not just the campaign.</p>
+                <p class="lang-pt">Correr anúncios é ligar o gasto. Uma estratégia é saber porquê, para quem, o que queres que façam, o que acontece depois de clicarem, e como medes o sucesso. A maioria dos negócios que "tentou anúncios e não funcionou" correu anúncios sem estratégia. O anúncio estava bem. Tudo à volta não estava. Construímos o sistema completo, não apenas a campanha.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── CATEGORY 2: AI, AEO & GEO ─────────────────── -->
+        <div class="faq-category">
+          <button class="faq-cat-header">
+            <span class="faq-cat-title"><span class="lang-en">Newsletter & Audience</span><span class="lang-pt">Newsletter & Audiência</span></span>
+            <div class="faq-cat-meta">
+              <span class="faq-cat-count"><span class="lang-en">6 questions</span><span class="lang-pt">6 perguntas</span></span>
+              <span class="faq-cat-icon">+</span>
+            </div>
+          </button>
+          <div class="faq-cat-body">
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">How much time does this actually take from me?</h4>
+                <h4 class="lang-pt">Quanto tempo é que isto realmente me ocupa?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">30 minutes per month. That's it. One call where you talk through your thinking, your observations, what's on your mind. We record it, extract the ideas, build the content calendar, write the newsletter, format it, schedule it, and send it. You approve and it goes. If you want to be more involved, you can be. But the minimum viable version of this asks almost nothing from you except that one call.</p>
+                <p class="lang-pt">30 minutos por mês. É isso. Uma call onde falas sobre o teu pensamento, as tuas observações, o que tens em mente. Nós gravamos, extraímos as ideias, construímos o calendário de conteúdo, escrevemos a newsletter, formatamos, agendamos e enviamos. Tu aprovas e vai. 30 minutos por mês. É tudo o que pedimos.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">Will it actually sound like me — or like AI?</h4>
+                <h4 class="lang-pt">Vai soar a mim — ou a IA?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Like you. That's the whole point. We spend the first month doing a deep voice session — learning how you talk, how you structure arguments, what you find funny, what makes you angry, what language you actually use. From there, we write in your voice with your ideas. The people who read your newsletter regularly should not be able to tell you didn't write it yourself. That's the bar we hold.</p>
+                <p class="lang-pt">A ti. É esse o ponto. Passamos o primeiro mês a fazer uma sessão de voz profunda — aprendendo como falas, como estruturas argumentos, o que te faz rir, o que te irrita, que linguagem realmente usas. A partir daí, escrevemos na tua voz com as tuas ideias. As pessoas que lerem a tua newsletter regularmente não devem conseguir dizer que não a escreveste tu. Esse é o nosso padrão.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">How often should I send a newsletter?</h4>
+                <h4 class="lang-pt">Com que frequência devo enviar uma newsletter?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">For most founders and consultants, bi-weekly (every two weeks) is the sweet spot. Often enough to stay top of mind, infrequent enough that each issue feels worth reading. Weekly works if the content is strong enough and the topics are varied. Monthly is better than nothing but too slow to build real momentum. We'll recommend the cadence based on your audience size, topic depth, and how much you have to say. And we adjust as we learn what the audience responds to.</p>
+                <p class="lang-pt">Para a maioria dos fundadores e consultores, quinzenal (a cada duas semanas) é o ponto ideal. Suficientemente frequente para se manter na mente, suficientemente raro para que cada edição valha a pena. Semanal funciona se o conteúdo for suficientemente forte. Mensal é melhor do que nada, mas lento demais para construir momentum real.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">What platform should I use for my newsletter?</h4>
+                <h4 class="lang-pt">Que plataforma devo usar para a minha newsletter?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">For most professional newsletters, Beehiiv or ConvertKit. Beehiiv is built for growth — strong analytics, referral tools, monetization options baked in. ConvertKit is better if you're also selling digital products or courses. Substack works if you want built-in discoverability, but you're beholden to their platform and they take 10% of paid subscriptions. We work with all three and recommend based on your specific situation, not preference.</p>
+                <p class="lang-pt">Para a maioria das newsletters profissionais, Beehiiv ou ConvertKit. O Beehiiv é construído para crescimento — analytics sólidos, ferramentas de referral, opções de monetização incorporadas. O ConvertKit é melhor se também vendes produtos digitais ou cursos. Trabalhamos com os três e recomendamos com base na tua situação específica.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">What's the difference between a newsletter and an email list?</h4>
+                <h4 class="lang-pt">Qual é a diferença entre uma newsletter e uma lista de email?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">An email list is a database. A newsletter is a relationship. An email list sends promotions and updates. A newsletter delivers thinking, perspective, and value on a predictable schedule — and over time, the reader feels like they know you. That trust is what makes a newsletter the highest-converting touchpoint most B2B businesses have. Most businesses already have a list. Very few have a newsletter. That gap is where the money is.</p>
+                <p class="lang-pt">Uma lista de email é uma base de dados. Uma newsletter é uma relação. Uma lista de email envia promoções e atualizações. Uma newsletter entrega pensamento, perspectiva e valor num calendário previsível — e com o tempo, o leitor sente que te conhece. Essa confiança é o que torna a newsletter o touchpoint de maior conversão que a maioria dos negócios B2B tem.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">How long before a newsletter generates leads?</h4>
+                <h4 class="lang-pt">Quanto tempo até a newsletter gerar leads?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Most clients see the first inbound signal — a reply, a DM, a referral that mentions the newsletter — within the first 60 days. Meaningful pipeline contribution usually shows up between month 3 and month 6. The caveat: it depends entirely on list quality and how relevant the content is. A small, targeted list outperforms a large generic one every time. We'd rather you send to 300 people who are exactly your buyer than 3,000 who vaguely match.</p>
+                <p class="lang-pt">A maioria dos clientes vê o primeiro sinal de inbound — uma resposta, um DM, uma referência que menciona a newsletter — nos primeiros 60 dias. Uma contribuição significativa para o pipeline aparece geralmente entre o mês 3 e o mês 6. A ressalva: depende da qualidade da lista e da relevância do conteúdo. Uma lista pequena e direcionada supera sempre uma lista grande e genérica.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">How much does newsletter management cost?</h4>
+                <h4 class="lang-pt">Quanto custa a gestão de uma newsletter?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Newsletter Management starts at €800/month for a bi-weekly cadence. Personal Brand Content (LinkedIn + newsletter combined) runs €1,500–€3,500/month. The Owned Audience System bundle — newsletter and personal brand working together — starts at €2,000/month. Every engagement starts with a discovery call so we can scope it properly before quoting a specific number.</p>
+                <p class="lang-pt">A Gestão de Newsletter começa em €800/mês para uma cadência quinzenal. Conteúdo de Marca Pessoal (LinkedIn + newsletter) custa €1.500–€3.500/mês. O bundle Owned Audience System começa em €2.000/mês. Cada projeto começa com uma discovery call antes de avançarmos com um orçamento específico.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">Can you work with a dead or inactive email list?</h4>
+                <h4 class="lang-pt">Conseguem trabalhar com uma lista de email inativa ou morta?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Yes — and it's one of the highest-ROI things we do. Most "dead" lists aren't dead. They're just silent because nothing worth opening has landed in the inbox for months. We run a reactivation sequence that re-engages the people who still care, cleanly removes the ones who don't, and turns what was gathering dust into an active asset. We've done this for lists that hadn't been emailed in over a year. The key is not burning the list in the process — which is exactly what most people do when they try it themselves.</p>
+                <p class="lang-pt">Sim — e é uma das coisas com maior ROI que fazemos. A maioria das listas "mortas" não está morta. Está simplesmente silenciosa porque não chegou nada que valesse a pena abrir há meses. Executamos uma sequência de reativação que re-envolve as pessoas que ainda se importam e remove as que não se importam — sem queimar a lista no processo. Já fizemos isto com listas que não eram emailed há mais de um ano.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">Beehiiv or ConvertKit — which is better?</h4>
+                <h4 class="lang-pt">Beehiiv ou ConvertKit — qual é melhor?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Beehiiv if your primary goal is newsletter growth and audience building — the analytics are better, the referral program is built-in, and it's designed around newsletters as a media product. ConvertKit (now Kit) if you're also selling products, courses, or running automations — it's the stronger marketing stack. Substack if you want built-in discovery and plan to monetize via paid subscriptions — but they take 10% of revenue and you're playing by their rules. We use all three and recommend based on your specific situation after the discovery call.</p>
+                <p class="lang-pt">Beehiiv se o objetivo principal é crescimento de newsletter e construção de audiência. ConvertKit (agora Kit) se também vendes produtos, cursos ou precisas de automações. Substack se queres monetizar via subscrições pagas — mas ficam com 10% da receita. Usamos os três e recomendamos com base na tua situação depois da discovery call.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── CATEGORY 3: Marketing & Strategy ──────────── -->
+        <div class="faq-category">
+          <button class="faq-cat-header">
+            <span class="faq-cat-title"><span class="lang-en">Marketing &amp; Strategy</span><span class="lang-pt">Marketing &amp; Estratégia</span></span>
+            <div class="faq-cat-meta">
+              <span class="faq-cat-count"><span class="lang-en">6 questions</span><span class="lang-pt">6 perguntas</span></span>
+              <span class="faq-cat-icon">+</span>
+            </div>
+          </button>
+          <div class="faq-cat-body">
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">How do I build a successful digital strategy?</h4>
+                <h4 class="lang-pt">Como construo uma estratégia digital de sucesso?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Start with clarity, not channels. Most businesses start by asking "should we be on Instagram?" — wrong question. The right questions: who exactly are you trying to reach, what do they need to believe before they buy, and where do they actually spend their attention? Strategy is the answer to those three questions. Everything else — channels, content, budgets — flows from that clarity. A digital strategy without that foundation is expensive guessing.</p>
+                <p class="lang-pt">Comece com clareza, não com canais. A maioria das empresas começa por perguntar "devemos estar no Instagram?" — pergunta errada. As perguntas certas: a quem quer chegar exatamente, o que precisam de acreditar antes de comprar, e onde passam realmente a atenção? Estratégia é a resposta a essas três perguntas. Tudo o resto — canais, conteúdo, orçamentos — flui dessa clareza. Uma estratégia digital sem essa base é adivinhação cara.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">How much should I budget for digital marketing?</h4>
+                <h4 class="lang-pt">Quanto devo orçamentar para marketing digital?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Stop thinking about it as a cost. Think about it as the cost of acquiring a customer. If a customer is worth €5,000 to your business and you can acquire them for €500, the question isn't how much to budget. It's how many can you handle. Start from your unit economics, not an arbitrary percentage. As a reference, businesses in growth mode typically invest 7–15% of revenue in marketing. We help you find the number that makes sense for your situation.</p>
+                <p class="lang-pt">Pare de pensar nisso como um custo. Pense como o custo de adquirir um cliente. Se um cliente vale €5.000 ao seu negócio e consegue adquiri-lo por €500, a questão não é quanto orçamentar. É quantos consegue gerir. Comece pela sua economia unitária, não numa percentagem arbitrária. Como referência, negócios em modo de crescimento investem tipicamente 7–15% da receita em marketing.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">What are Paid, Owned, and Earned Media?</h4>
+                <h4 class="lang-pt">O que são Paid, Owned e Earned Media?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Three different ways attention comes to your business. Paid media is what you buy: Google Ads, Meta Ads. You control it, scale it fast, but it stops when you stop paying. Owned media is what you build: your website, email list, content. Takes longer but compounds, and you own it permanently. Earned media is what others give you: reviews, press, word of mouth. The best strategies use all three. Most businesses over-invest in paid and underinvest in owned. The most resilient ones have all three working together.</p>
+                <p class="lang-pt">Três formas diferentes de atenção chegarem ao seu negócio. Paid media é o que compra: Google Ads, Meta Ads. Controla-o, escala rápido, mas para quando para de pagar. Owned media é o que constrói: website, lista de email, conteúdo. Demora mais mas é seu permanentemente. Earned media é o que outros dão: reviews, imprensa, word of mouth. As melhores estratégias usam os três. A maioria sobre-investe em paid e sub-investe em owned.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">Which digital channels should I prioritize?</h4>
+                <h4 class="lang-pt">Quais canais digitais devo priorizar?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">The ones where your specific customer actually is — not the ones that are trending. B2B service businesses typically win on LinkedIn + Google Search + email. Consumer brands win on Meta + content + SEO. Local businesses win on Google Business Profile + local SEO + Meta. The channel is secondary. The message and the system behind it drive results. We audit where your audience actually lives before recommending where to invest.</p>
+                <p class="lang-pt">Os que o seu cliente específico realmente usa — não os que estão na moda. Negócios B2B tipicamente ganham em LinkedIn + Google Search + email. Marcas de consumo ganham em Meta + conteúdo + SEO. Negócios locais ganham em Google Business Profile + SEO local + Meta. O canal é secundário. A mensagem e o sistema por trás dela é o que gera resultados.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">How do I measure the success of my digital strategy?</h4>
+                <h4 class="lang-pt">Como meço o sucesso da minha estratégia digital?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Start with the metric that actually matters — revenue, leads, or appointments — and work backwards. Not impressions, not followers, not click-through rates in isolation. Those are inputs, not outcomes. A useful framework tracks: cost per lead, lead-to-client conversion rate, customer acquisition cost, and lifetime value. When those four numbers are clear, every marketing decision becomes easier. We build measurement into every system we create.</p>
+                <p class="lang-pt">Comece pela métrica que realmente importa — receita, leads, ou marcações — e trabalhe para trás. Não impressões, não seguidores, não taxas de clique de forma isolada. Esses são inputs, não resultados. Uma estrutura útil acompanha: custo por lead, taxa de conversão, custo de aquisição de cliente, e valor vitalício. Quando esses quatro números são claros, cada decisão de marketing fica mais fácil.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">How do I find and qualify better leads?</h4>
+                <h4 class="lang-pt">Como encontro e qualifico melhores leads?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Most businesses have a lead problem that's actually a qualification problem. Three sources matter: new leads from targeted acquisition (ads, SEO, outbound), existing clients who are ready to buy again if you stay in front of them, and warm contacts already in your database who were never properly followed up. The first gets all the attention. The second and third are where the real money is. Better targeting on the front end and smarter nurture on the back end turns all three into a system that works.</p>
+                <p class="lang-pt">A maioria dos negócios tem um problema de leads que é na verdade um problema de qualificação. Três fontes importam: novos leads de aquisição direcionada (anúncios, SEO, outbound), clientes existentes prontos para comprar de novo se mantiver presença, e contactos já na sua base de dados que nunca foram devidamente acompanhados. A primeira recebe toda a atenção. A segunda e terceira são onde está o dinheiro real. Melhor targeting na entrada e nurture mais inteligente na saída transforma as três numa máquina.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── CATEGORY 4: Working Together ──────────────── -->
+        <div class="faq-category">
+          <button class="faq-cat-header">
+            <span class="faq-cat-title"><span class="lang-en">Working Together</span><span class="lang-pt">Trabalhar Juntos</span></span>
+            <div class="faq-cat-meta">
+              <span class="faq-cat-count"><span class="lang-en">6 questions</span><span class="lang-pt">6 perguntas</span></span>
+              <span class="faq-cat-icon">+</span>
+            </div>
+          </button>
+          <div class="faq-cat-body">
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">Do I need a big budget to get started?</h4>
+                <h4 class="lang-pt">Preciso de um grande orçamento para começar?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">No. What matters is that you're serious and ready to build something that lasts. Infrastructure budget and ad spend are two separate conversations — we're transparent about both from the first call. The logic is simple: the system we build should be worth more to your business than it costs. That math is different for everyone. Let's find yours.</p>
+                <p class="lang-pt">Não. O que importa é ser sério e estar pronto para construir algo duradouro. Orçamento de infraestrutura e investimento em anúncios são duas conversas separadas — somos transparentes sobre ambos desde a primeira chamada. A lógica é simples: o sistema que construímos deve valer mais ao seu negócio do que custa construi-lo. Esse cálculo é diferente para cada um.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">How long before I see results?</h4>
+                <h4 class="lang-pt">Quanto tempo até ver resultados?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Paid ads: 2–4 weeks to meaningful data. Automation systems: live within the first month. SEO and AEO: visible movement in 60–90 days, compounding returns after that. Existing contacts: reactivation can produce results within weeks. The systems that take longest to build are the ones that compound longest. We don't overpromise timelines. We build it right and let the math do the work.</p>
+                <p class="lang-pt">Anúncios pagos: 2–4 semanas para dados significativos. Automações: a funcionar no primeiro mês. SEO e AEO: movimento visível em 60–90 dias, retornos compostos depois. Ecossistema de leads: se tem contactos existentes, a reativação pode produzir resultados em semanas. Os sistemas que demoram mais a construir são os que compõem por mais tempo. Não prometemos demais. Construímos bem e deixamos a matemática trabalhar.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">What does the process look like — how do we start?</h4>
+                <h4 class="lang-pt">Como é o processo — como começamos?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">It starts with a real conversation — not a sales pitch. We want to understand where your business is, what's working, what's stuck, and where the biggest leverage points are. From there we map a system, present a proposal, and if it makes sense for both sides, we build. No endless discovery. No retainer before we've delivered anything. We move fast because we know what we're doing.</p>
+                <p class="lang-pt">Começa com uma conversa real — não um pitch de vendas. Queremos perceber onde está o seu negócio, o que funciona, o que está travado, e onde estão os maiores pontos de alavancagem. A partir daí mapeamos um sistema, apresentamos uma proposta, e se fizer sentido para ambos, construímos. Sem descobertas intermináveis. Sem retainer antes de entregarmos algo.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">Can you work with the tools and platforms I already use?</h4>
+                <h4 class="lang-pt">Conseguem trabalhar com as ferramentas e plataformas que já uso?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Almost always, yes. We don't come in and tear out what's working. We build around what you have, connect what should be connected, and replace only what's genuinely holding you back. Make.com, HubSpot, ActiveCampaign, Google Ads, Meta, Notion, custom CRMs — we've worked across all of it. Think of it like WD-40: the engine is already there. We make it run at full speed.</p>
+                <p class="lang-pt">Quase sempre, sim. Não entramos e destruímos o que funciona. Construímos à volta do que tem, conectamos o que deve estar conectado, e substituímos apenas o que está genuinamente a travar. Make.com, HubSpot, ActiveCampaign, Google Ads, Meta, Notion — já trabalhámos com tudo isso. Pense como WD-40: o motor já está lá. Fazemo-lo funcionar a toda a velocidade.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">What happens after the system is built — do I need ongoing support?</h4>
+                <h4 class="lang-pt">O que acontece depois do sistema ser construído — preciso de suporte contínuo?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Depends on what was built. Some systems run autonomously once deployed. Others benefit from ongoing optimization — ad campaigns, content, nurture sequences that improve with more data. We're upfront about this in every proposal: what's a one-time build, what benefits from ongoing management, and what the difference looks like in practice. We don't create dependencies. If you want to manage it yourself after handover, we make sure you can.</p>
+                <p class="lang-pt">Depende do que foi construído. Alguns sistemas funcionam de forma autónoma após o lançamento. Outros beneficiam de otimização contínua — campanhas, conteúdo, sequências de nurture que melhoram com mais dados. Somos claros sobre isto em cada proposta. Não criamos dependências. Se quiser gerir sozinho após a entrega, garantimos que consegue.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4 class="lang-en">What if the system has a problem — is there a guarantee?</h4>
+                <h4 class="lang-pt">E se o sistema tiver um problema — existe garantia?</h4>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p class="lang-en">Every system we build is tested before handover. If something breaks within the scope of what we built, we fix it. That's not a legal guarantee. It's the standard we hold ourselves to because our reputation is tied to what we ship. What we can't guarantee is performance metrics (ad results, SEO rankings, lead volumes) because those depend on market conditions, your offer, and factors outside any agency's control. What we guarantee is the quality of the build and honesty when something isn't working.</p>
+                <p class="lang-pt">Cada sistema que construímos é testado antes da entrega. Se algo falha dentro do âmbito do que construímos, corrigimos. Não é uma garantia legal — é o padrão a que nos exigimos porque a nossa reputação está ligada ao que entregamos. O que não podemos garantir são métricas de desempenho — resultados de anúncios, rankings de SEO, volumes de leads — porque dependem das condições de mercado e de fatores fora do controlo de qualquer agência.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="section-cta fade-in">
+      <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="cal-popup-btn">
+        <span class="lang-en">Ask Yourself →</span>
+        <span class="lang-pt">Pergunta a Ti Mesmo →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ CONTACT ════════════════════════════ -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="fade-in">
+        <p class="label lang-en">Get In Touch</p>
+        <p class="label lang-pt">Entre em Contacto</p>
+        <h2 class="h2">
+          <span class="lang-en">Ready to<br><span class="purple">grow?</span></span>
+          <span class="lang-pt">Pronto para<br><span class="purple">crescer?</span></span>
+        </h2>
+        <p style="color:var(--muted);font-size:0.95rem;margin-top:18px;max-width:360px" class="lang-en">Tell us where your business is and what you're trying to grow. We'll map the system that gets you there.</p>
+        <p style="color:var(--muted);font-size:0.95rem;margin-top:18px;max-width:360px" class="lang-pt">Conta-nos onde está o teu negócio e o que queres fazer crescer. Mapeamos o sistema que te leva lá.</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">✉</div>
+            <div class="contact-detail">
+              <span>Email</span>
+              <a href="mailto:avoid.agency@gmail.com">avoid.agency@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-detail">
+              <span><span class="lang-en">Location</span><span class="lang-pt">Localização</span></span>
+              <p>Lisbon, Portugal</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">⏱</div>
+            <div class="contact-detail">
+              <span><span class="lang-en">Response Time</span><span class="lang-pt">Tempo de Resposta</span></span>
+              <p><span class="lang-en">Within 24 hours</span><span class="lang-pt">Dentro de 24 horas</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in" style="transition-delay:.15s">
+        <div class="contact-form">
+          <h3>
+            <span class="lang-en">Ready to build your territory?</span>
+            <span class="lang-pt">Pronto para construir o teu território?</span>
+          </h3>
+          <ul class="cal-perks">
+            <li>✦ <span class="lang-en">30 minutes, no pitch</span><span class="lang-pt">30 minutos, sem pitch</span></li>
+            <li>✦ <span class="lang-en">We map your growth system live</span><span class="lang-pt">Mapeamos o teu sistema de crescimento ao vivo</span></li>
+            <li>✦ <span class="lang-en">Limited slots per week</span><span class="lang-pt">Vagas limitadas por semana</span></li>
+          </ul>
+          <button class="btn-form cal-popup-btn"
+            data-cal-link="avoidagency/30min"
+            data-cal-namespace="heroPopup"
+            data-cal-config='{"layout":"month_view"}'>
+            <span class="lang-en">Book a Strategy Call →</span>
+            <span class="lang-pt">Marcar uma Strategy Call →</span>
+          </button>
+          <p class="form-note">
+            <span class="lang-en">Google Meet · Confirmed instantly.</span>
+            <span class="lang-pt">Google Meet · Confirmação imediata.</span>
+          </p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ FOOTER ════════════════════════════ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span style="color:#333">[</span><span style="color:var(--purple)">A</span><span style="color:#333">]</span><span style="color:var(--text)">v</span><span class="fdot"></span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#services"><span class="lang-en">Services</span><span class="lang-pt">Serviços</span></a></li>
+        <li><a href="#about"><span class="lang-en">About</span><span class="lang-pt">Sobre</span></a></li>
+        <li><a href="#filter"><span class="lang-en">Who It's For</span><span class="lang-pt">Para Quem</span></a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact"><span class="lang-en">Contact</span><span class="lang-pt">Contacto</span></a></li>
+      </ul>
+      <p class="footer-copy">© 2026 [A]Void Agency. <span class="lang-en">All rights reserved.</span><span class="lang-pt">Todos os direitos reservados.</span></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20));
+
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  document.querySelectorAll('.ml').forEach(l => l.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
+
+  // Language toggle
+  const langToggle = document.getElementById('langToggle');
+  let lang = 'en';
+  langToggle.addEventListener('click', () => {
+    lang = lang === 'en' ? 'pt' : 'en';
+    document.body.classList.toggle('pt', lang === 'pt');
+    langToggle.textContent = lang === 'en' ? 'PT' : 'EN';
+  });
+
+  // Case studies accordion
+  document.querySelectorAll('.case-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.parentElement;
+      const isOpen = card.classList.contains('open');
+      document.querySelectorAll('.case-card').forEach(c => {
+        c.classList.remove('open');
+        c.querySelector('.case-trigger').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        card.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+
+  // Carousel
+  (function() {
+    var cards = Array.from(document.querySelectorAll('.carousel-card'));
+    var panels = Array.from(document.querySelectorAll('.panel-case'));
+    var dots = Array.from(document.querySelectorAll('.carousel-dot'));
+    var total = cards.length;
+    var current = 0;
+
+    function update() {
+      var cardW = cards[0].offsetWidth;
+      var gap = cardW + 12;
+      cards.forEach(function(card, i) {
+        var pos = ((i - current) % total + total) % total;
+        if (pos > total / 2) pos -= total;
+        var x, scale, opacity, zIndex;
+        if (pos === 0)       { x = 0;           scale = 1;    opacity = 1;    zIndex = 5; }
+        else if (pos === 1)  { x = gap;          scale = 0.88; opacity = 0.5;  zIndex = 4; }
+        else if (pos === -1) { x = -gap;         scale = 0.88; opacity = 0.5;  zIndex = 4; }
+        else if (pos === 2)  { x = gap * 1.86;   scale = 0.76; opacity = 0.2;  zIndex = 3; }
+        else                 { x = -gap * 1.86;  scale = 0.76; opacity = 0.2;  zIndex = 3; }
+        card.style.transform = 'translateX(calc(-50% + ' + x + 'px)) scale(' + scale + ')';
+        card.style.opacity = opacity;
+        card.style.zIndex = zIndex;
+        card.classList.toggle('active', pos === 0);
+      });
+      panels.forEach(function(p, i) { p.classList.toggle('active', i === current); });
+      dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+    }
+
+    var cPanel = document.querySelector('.carousel-panel');
+    function go(n) { current = ((current + n) % total + total) % total; update(); }
+
+    document.querySelector('.carousel-prev').addEventListener('click', function() { go(-1); });
+    document.querySelector('.carousel-next').addEventListener('click', function() { go(1); });
+    dots.forEach(function(dot, i) { dot.addEventListener('click', function() { current = i; update(); }); });
+    cards.forEach(function(card, i) {
+      card.addEventListener('click', function() {
+        if (i !== current) {
+          var diff = i - current;
+          if (diff > total / 2) diff -= total;
+          if (diff < -total / 2) diff += total;
+          go(diff);
+          cPanel.classList.add('open');
+        } else {
+          cPanel.classList.toggle('open');
+        }
+      });
+    });
+
+    // Touch swipe
+    var tx = 0;
+    var track = document.getElementById('carouselTrack');
+    track.addEventListener('touchstart', function(e) { tx = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', function(e) {
+      var dx = tx - e.changedTouches[0].clientX;
+      if (Math.abs(dx) > 40) go(dx > 0 ? 1 : -1);
+    });
+
+    window.addEventListener('resize', update);
+    update();
+  })();
+
+  // FAQ category accordion
+  document.querySelectorAll('.faq-cat-header').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.parentElement;
+      const isOpen = cat.classList.contains('open');
+      document.querySelectorAll('.faq-category').forEach(c => c.classList.remove('open'));
+      if (!isOpen) cat.classList.add('open');
+    });
+  });
+
+  // FAQ questions within categories (scoped to their category body)
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      const body = item.closest('.faq-cat-body');
+      body.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Fade in
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+  // Forms — Formspree
+  function handleForm(fId, sId) {
+    const form = document.getElementById(fId);
+    const succ = document.getElementById(sId);
+    if (!form) return;
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '...'; btn.disabled = true;
+      fetch('https://formspree.io/f/mzdwwbwr', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(r => {
+        if (r.ok) {
+          form.style.display = 'none';
+          succ.style.display = 'block';
+        } else {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+          alert('Something went wrong. Please try again or email us directly.');
+        }
+      }).catch(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        alert('Something went wrong. Please try again or email us directly.');
+      });
+    });
+  }
+  handleForm('heroForm', 'hFS');
+  handleForm('contactForm', 'cFS');
+
+
+  /* ══════ CURSOR GLOW ══════ */
+  (function() {
+    var glow = document.createElement('div');
+    glow.style.cssText = 'position:fixed;top:0;left:0;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle,rgba(0,255,157,0.35) 0%,rgba(160,32,240,0.18) 50%,transparent 70%);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:opacity 0.3s;mix-blend-mode:screen;';
+    document.body.appendChild(glow);
+    var tx=0,ty=0,cx=0,cy=0;
+    document.addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY;});
+    document.addEventListener('mouseleave',function(){glow.style.opacity='0';});
+    document.addEventListener('mouseenter',function(){glow.style.opacity='1';});
+    (function animate(){
+      cx+=(tx-cx)*0.12; cy+=(ty-cy)*0.12;
+      glow.style.left=cx+'px'; glow.style.top=cy+'px';
+      requestAnimationFrame(animate);
+    })();
+  })();
+
+  /* ══════ MAGNETIC BUTTONS ══════ */
+  (function() {
+    var btns = document.querySelectorAll('.btn-primary, .btn-nav, .btn-form');
+    btns.forEach(function(btn) {
+      btn.addEventListener('mousemove', function(e) {
+        var r = btn.getBoundingClientRect();
+        var x = e.clientX - r.left - r.width/2;
+        var y = e.clientY - r.top - r.height/2;
+        btn.style.transform = 'translate(' + x*0.18 + 'px,' + y*0.18 + 'px) translateY(-2px)';
+      });
+      btn.addEventListener('mouseleave', function() {
+        btn.style.transform = '';
+      });
+    });
+  })();
+
+  /* ══════ COUNTER ANIMATION — trust bar ══════ */
+  (function() {
+    function animateCount(el, target, suffix, duration) {
+      var start = 0, step = target / (duration / 16);
+      var timer = setInterval(function() {
+        start = Math.min(start + step, target);
+        el.innerHTML = (target >= 100 ? Math.round(start) : (Number.isInteger(target) ? Math.round(start) : start.toFixed(0))) + suffix;
+        if (start >= target) clearInterval(timer);
+      }, 16);
+    }
+    var trust = document.getElementById('trust');
+    if (!trust) return;
+    var done = false;
+    var obs = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting && !done) {
+        done = true;
+        // PT · BR · UK stays as text
+        var nums = trust.querySelectorAll('.trust-number');
+        nums.forEach(function(n) {
+          var txt = n.textContent.trim();
+          if (txt.includes('×')) {
+            var val = parseInt(txt);
+            n.innerHTML = '0<span>×</span>';
+            setTimeout(function() { animateCount(n.querySelector('span') ? n : n, val, '×', 800); }, 100);
+            n.innerHTML = '';
+            var span = document.createElement('span');
+            span.style.color = 'var(--green)';
+            var counter = document.createElement('span');
+            counter.style.color = 'var(--text)';
+            counter.style.fontFamily = 'var(--font-head)';
+            counter.style.fontSize = '2rem';
+            counter.style.fontWeight = '800';
+            n.appendChild(counter);
+            n.appendChild(span);
+            span.textContent = '×';
+            var v = 0, target2 = val;
+            var t = setInterval(function() {
+              v = Math.min(v + 0.3, target2);
+              counter.textContent = Math.round(v);
+              if (v >= target2) clearInterval(t);
+            }, 16);
+          } else if (txt.includes('h')) {
+            var h = parseInt(txt);
+            n.innerHTML = '';
+            var c2 = document.createElement('span');
+            c2.style.cssText = 'font-family:var(--font-head);font-size:2rem;font-weight:700;color:var(--text)';
+            var s2 = document.createElement('span');
+            s2.style.cssText = 'font-family:var(--font-head);font-size:1.3rem;font-weight:700;color:var(--green);margin-left:1px;vertical-align:baseline;line-height:1.2';
+            s2.textContent = 'h';
+            n.appendChild(c2); n.appendChild(s2);
+            var v2=0;
+            var t2 = setInterval(function() {
+              v2 = Math.min(v2+1.5, h);
+              c2.textContent = Math.round(v2);
+              if (v2>=h) clearInterval(t2);
+            },16);
+          }
+        });
+      }
+    }, {threshold: 0.5});
+    obs.observe(trust);
+  })();
+
+  /* ══════ CARD TILT — service cards ══════ */
+  (function() {
+    document.querySelectorAll('.service-card').forEach(function(card) {
+      card.addEventListener('mousemove', function(e) {
+        var r = card.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - 0.5;
+        var y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = 'rotateY(' + (x * 8) + 'deg) rotateX(' + (-y * 8) + 'deg) scale(1.02)';
+      });
+      card.addEventListener('mouseleave', function() {
+        card.style.transform = '';
+      });
+    });
+  })();
+
+  /* ══════ EFFECT 1: Hero Electric Cursor Field ══════ */
+  (function() {
+    var hero = document.getElementById('hero');
+    var canvas = document.getElementById('heroCanvas');
+    var ctx = canvas.getContext('2d');
+    var mouse = { x: -9999, y: -9999 };
+    var W, H, particles = [];
+
+    function resize() {
+      W = canvas.width = hero.offsetWidth;
+      H = canvas.height = hero.offsetHeight;
+    }
+    function init() {
+      particles = [];
+      for (var i = 0; i < 120; i++) {
+        particles.push({
+          x: Math.random() * W, y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.9,
+          vy: (Math.random() - 0.5) * 0.9,
+          r: Math.random() * 1.5 + 0.5
+        });
+      }
+    }
+    hero.addEventListener('mousemove', function(e) {
+      var r = hero.getBoundingClientRect();
+      mouse.x = e.clientX - r.left;
+      mouse.y = e.clientY - r.top;
+    });
+    hero.addEventListener('mouseleave', function() { mouse.x = -9999; mouse.y = -9999; });
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      particles.forEach(function(p) {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+        if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+
+        // particle dot
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0,255,157,0.72)';
+        ctx.fill();
+
+        // particle-to-particle lines
+        particles.forEach(function(p2) {
+          var dx = p.x - p2.x, dy = p.y - p2.y;
+          var d = Math.sqrt(dx*dx + dy*dy);
+          if (d < 130) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y); ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = 'rgba(0,255,157,' + ((1 - d/130) * 0.21) + ')';
+            ctx.lineWidth = 0.5; ctx.stroke();
+          }
+        });
+
+        // electric line to cursor
+        var cx = p.x - mouse.x, cy = p.y - mouse.y;
+        var cd = Math.sqrt(cx*cx + cy*cy);
+        if (cd < 220) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = 'rgba(160,32,240,' + ((1 - cd/220) * 0.68) + ')';
+          ctx.lineWidth = 0.7; ctx.stroke();
+          // attract particles to cursor
+          p.vx += (mouse.x - p.x) * 0.00025;
+          p.vy += (mouse.y - p.y) * 0.00025;
+        }
+        // speed cap
+        var sp = Math.sqrt(p.vx*p.vx + p.vy*p.vy);
+        if (sp > 2.2) { p.vx *= 2.2/sp; p.vy *= 2.2/sp; }
+      });
+      requestAnimationFrame(draw);
+    }
+    window.addEventListener('resize', function() { resize(); init(); });
+    resize(); init(); draw();
+  })();
+
+  /* ══════ EFFECT 2: About Wormhole + Particle Network ══════ */
+  (function() {
+    // Animate tunnel ellipses with stagger
+    var ellipses = document.querySelectorAll('#about .tunnel-group ellipse');
+    ellipses.forEach(function(el, i) {
+      el.style.animationDuration = (2.8 + i * 0.18) + 's';
+      el.style.animationDelay = (i * 0.12) + 's';
+      el.style.transformOrigin = '210px 420px';
+    });
+
+    // Animate star dots twinkle with random delays
+    var stars = document.querySelectorAll('#about .about-visual circle');
+    stars.forEach(function(s) {
+      s.style.animation = 'starTwinkle ' + (1.5 + Math.random() * 2) + 's ease-in-out infinite';
+      s.style.animationDelay = (Math.random() * 2) + 's';
+    });
+
+    // ── Ambient particle network (background decoration) ──
+    (function() {
+      var visual = document.querySelector('.about-visual');
+      if (!visual) return;
+      var canvas = document.getElementById('aboutCanvas');
+      var ctx = canvas.getContext('2d');
+      var W = 0, H = 0, pts = [], RAF;
+
+      function resize() {
+        var r = visual.getBoundingClientRect();
+        W = canvas.width  = Math.round(r.width)  || visual.offsetWidth;
+        H = canvas.height = Math.round(r.height) || visual.offsetHeight;
+      }
+
+      function init() {
+        pts = [];
+        for (var i = 0; i < 55; i++) {
+          pts.push({
+            x: Math.random() * W, y: Math.random() * H,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5,
+            r: 1.0 + Math.random() * 1.2,
+            a: 0.15 + Math.random() * 0.25,
+            pulse: Math.random() * Math.PI * 2
+          });
+        }
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        for (var i = 0; i < pts.length; i++) {
+          var p = pts[i];
+          p.pulse += 0.018;
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+          if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+          var alpha = p.a * (0.7 + Math.sin(p.pulse) * 0.3);
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(160,32,240,' + alpha.toFixed(2) + ')';
+          ctx.fill();
+        }
+        // Connection lines
+        for (var i = 0; i < pts.length - 1; i++) {
+          for (var j = i + 1; j < pts.length; j++) {
+            var dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+            var d2 = dx * dx + dy * dy;
+            if (d2 < 1024) { // 32px
+              var d = Math.sqrt(d2);
+              ctx.beginPath();
+              ctx.moveTo(pts[i].x, pts[i].y);
+              ctx.lineTo(pts[j].x, pts[j].y);
+              ctx.strokeStyle = 'rgba(160,32,240,' + ((1 - d / 32) * 0.38).toFixed(2) + ')';
+              ctx.lineWidth = 0.6;
+              ctx.stroke();
+            }
+          }
+        }
+
+        rafId = requestAnimationFrame(drawAbout);
+      }
+
+      function setup() {
+        resize();
+        var go = function() {
+          targets = sampleTargets();
+          initParticles();
+          if (rafId) cancelAnimationFrame(rafId);
+          drawAbout();
+        };
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(go);
+        } else {
+          setTimeout(go, 400);
+        }
+      }
+
+      window.addEventListener('resize', function() { resize(); targets = sampleTargets(); initParticles(); });
+      setup();
+    })();
+  })();
+
+  /* ══ SERVICE ROW EXPAND/COLLAPSE ══ */
+  document.querySelectorAll('.svc-trigger').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var row = btn.parentElement;
+      var isOpen = row.classList.contains('open');
+      row.parentElement.querySelectorAll('.svc-row').forEach(function(r) { r.classList.remove('open'); });
+      if (!isOpen) row.classList.add('open');
+    });
+  });
+
+</script>
+
+<!-- ══ Cal.com Embed ══ -->
+<script type="text/javascript">
+(function (C, A, L) {
+  let p = function (a, ar) { a.q.push(ar); };
+  let d = C.document;
+  C.Cal = C.Cal || function () {
+    let cal = C.Cal; let ar = arguments;
+    if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; }
+    if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || [];
+      if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, [L, namespace, ar[2]]); } else p(cal, ar); return; }
+    p(cal, ar);
+  };
+})(window, "https://app.cal.com/embed/embed.js", "init");
+
+Cal("init", "heroPopup", { origin: "https://cal.com" });
+Cal.ns.heroPopup("ui", {
+  styles: { branding: { brandColor: "#A020F0" } },
+  hideEventTypeDetails: false,
+  layout: "month_view"
+});
+</script>
+
+<script>
+// Universal booking handler — Cal popup on desktop, direct link on mobile
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".btn-form.cal-popup-btn").forEach(function(btn) {
+    btn.removeAttribute("data-cal-link");
+    btn.removeAttribute("data-cal-namespace");
+    btn.removeAttribute("data-cal-config");
+    btn.addEventListener("click", function() {
+      var isMobile = window.innerWidth < 768 || /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.open("https://cal.com/avoidagency/30min", "_blank");
+      } else {
+        Cal.ns.heroPopup("modal", {
+          calLink: "avoidagency/30min",
+          config: { layout: "month_view" }
+        });
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
