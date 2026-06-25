@@ -203,7 +203,9 @@
       font-size: clamp(1.5rem, 2.8vw, 2.3rem);
       font-weight: 700; line-height: 1.2; margin-bottom: 14px;
     }
-    .hero-tagline { font-size: 1rem; color: var(--muted); margin-bottom: 44px; max-width: 400px; }
+    .hero-tagline { font-size: 1rem; color: var(--muted); margin-bottom: 20px; max-width: 400px; }
+    .hero-value-prop { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 36px; max-width: 440px; line-height: 1.35; letter-spacing: 0; }
+    .hero-value-prop .lang-en, .hero-value-prop .lang-pt { display: block; }
     .hero-cta-group { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
 
     .btn-primary {
@@ -284,12 +286,18 @@
     .trust-label { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.06em; margin-top: 6px; }
     .trust-div { width: 1px; height: 36px; background: var(--border); }
     .trust-stack { display: flex; flex-direction: column; align-items: center; gap: 4px; }
-    .trust-stack-label { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
-    .trust-stack-items { display: flex; gap: 8px; align-items: center; }
+    .trust-stack-label { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+
+    /* Marquee */
+    .marquee-wrap { overflow: hidden; width: 100%; mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%); }
+    .marquee-track { display: flex; width: max-content; animation: marquee-scroll 20s linear infinite; }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     .trust-chip {
       font-size: 0.76rem; font-weight: 700; letter-spacing: 0.06em;
       border: 1px solid var(--border); border-radius: 4px;
-      padding: 4px 10px; color: rgba(240,240,240,0.72);
+      padding: 4px 14px; color: rgba(240,240,240,0.72);
+      white-space: nowrap; flex-shrink: 0; margin: 0 6px;
     }
 
     /* ════════════════════════════════════════════════════════
@@ -393,6 +401,16 @@
       background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(160,32,240,0.07) 0%, transparent 70%);
     }
     .filter-inner { position: relative; z-index: 1; max-width: 820px; margin: 0 auto; text-align: center; }
+    .for-who-inner { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 0; align-items: start; padding: 20px 0; }
+    .for-who-divider { background: rgba(255,255,255,0.08); align-self: stretch; margin: 0 48px; }
+    .for-who-col { padding: 8px 0; }
+    .for-who-tag { font-family: var(--font-head); font-size: 1.35rem; font-weight: 700; color: var(--green); margin-bottom: 20px; letter-spacing: 0; line-height: 1.2; }
+    .for-who-tag.not { color: rgba(255,255,255,0.35); }
+    .for-who-body { font-size: 1rem; color: rgba(240,240,240,0.75); line-height: 1.8; }
+    @media(max-width:720px){
+      .for-who-inner { grid-template-columns: 1fr; }
+      .for-who-divider { height: 1px; width: 100%; margin: 32px 0; align-self: auto; }
+    }
     .filter-headline {
       font-family: var(--font-head);
       font-size: clamp(2rem, 5vw, 4rem);
@@ -434,51 +452,59 @@
     /* ════════════════════════════════════════════════════════
        FAQ
     ════════════════════════════════════════════════════════ */
-    #faq { background: var(--surface); }
-    .faq-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
-    .faq-left { position: sticky; top: 90px; }
-    .faq-item { border-bottom: 1px solid var(--border); }
-    .faq-question { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; cursor: pointer; gap: 16px; }
-    .faq-question h4 { font-family: var(--font-head); font-size: 1.01rem; font-weight: 600; color: var(--text); transition: color 0.2s; flex: 1; }
-    .faq-question:hover h4 { color: var(--purple); }
+    /* ── FAQ ────────────────────────────────────────────────── */
+    #faq { background: var(--black); }
+    .faq-header { max-width: 600px; margin: 0 auto 64px; text-align: center; }
+    .faq-header .h2 { margin-bottom: 14px; }
+    .faq-header p { color: var(--muted); font-size: 0.92rem; line-height: 1.75; }
+
+    /* Category blocks */
+    .faq-category { border-top: 1px solid rgba(255,255,255,0.07); }
+    .faq-cat-header {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 28px 0; background: none; border: none; cursor: pointer;
+      font-family: inherit; gap: 16px; text-align: left;
+    }
+    .faq-cat-title {
+      font-family: var(--font-head); font-size: 1.15rem; font-weight: 700;
+      color: rgba(240,240,240,0.55); flex: 1;
+      transition: color 0.2s;
+    }
+    .faq-cat-header:hover .faq-cat-title { color: var(--text); }
+    .faq-category.open > .faq-cat-header .faq-cat-title { color: var(--text); }
+    .faq-cat-meta { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+    .faq-cat-count { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .faq-cat-icon {
+      width: 28px; height: 28px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+      border: 1px solid rgba(255,255,255,0.12); border-radius: 50%; color: var(--muted); font-size: 1.1rem;
+      transition: transform 0.3s ease, border-color 0.2s, color 0.2s;
+    }
+    .faq-category.open .faq-cat-icon { transform: rotate(45deg); border-color: var(--green); color: var(--green); }
+    .faq-cat-body { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+    .faq-category.open .faq-cat-body { max-height: 8000px; }
+
+    /* Individual items */
+    .faq-item { border-top: 1px solid rgba(255,255,255,0.05); }
+    .faq-question {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 0; cursor: pointer; gap: 20px;
+    }
+    .faq-question h4 {
+      font-family: var(--font-head); font-size: 1rem; font-weight: 600;
+      color: rgba(240,240,240,0.80); transition: color 0.2s; flex: 1; line-height: 1.4;
+    }
+    .faq-question:hover h4 { color: var(--text); }
+    .faq-item.open .faq-question h4 { color: var(--text); }
     .faq-icon {
-      width: 22px; height: 22px; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      border: 1px solid var(--border); border-radius: 50%;
-      color: var(--muted); font-size: 0.95rem;
-      transition: transform 0.3s, border-color 0.2s, color 0.2s;
+      width: 26px; height: 26px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+      border: 1px solid rgba(255,255,255,0.12); border-radius: 50%;
+      color: var(--muted); font-size: 1rem;
+      transition: transform 0.3s ease, border-color 0.2s, color 0.2s;
     }
     .faq-item.open .faq-icon { transform: rotate(45deg); border-color: var(--purple); color: var(--purple); }
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-    .faq-answer p { font-size: 0.9rem; color: rgba(240,240,240,0.78); line-height: 1.85; padding-bottom: 22px; }
+    .faq-answer p { font-size: 0.93rem; color: rgba(240,240,240,0.62); line-height: 1.9; padding: 0 0 24px 0; }
     .faq-item.open .faq-answer { max-height: 800px; }
-
-    /* ─── FAQ CATEGORIES ────────────────────────────────── */
-    .faq-category { margin-bottom: 8px; }
-    .faq-cat-header {
-      width: 100%; display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 22px; background: var(--surface); border: 1px solid var(--border);
-      border-radius: 10px; cursor: pointer; font-family: inherit;
-      transition: background 0.2s, border-color 0.2s; gap: 12px; text-align: left;
-    }
-    .faq-cat-header:hover { border-color: #333; }
-    .faq-category.open > .faq-cat-header { border-color: var(--purple); border-radius: 10px 10px 0 0; }
-    .faq-cat-title { font-family: var(--font-head); font-size: 0.95rem; font-weight: 700; color: var(--text); flex: 1; }
-    .faq-cat-meta { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-    .faq-cat-count { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-    .faq-cat-icon {
-      width: 22px; height: 22px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
-      border: 1px solid var(--border); border-radius: 50%; color: var(--muted); font-size: 0.95rem;
-      transition: transform 0.3s, border-color 0.2s, color 0.2s;
-    }
-    .faq-category.open .faq-cat-icon { transform: rotate(45deg); border-color: var(--green); color: var(--green); }
-    .faq-cat-body {
-      max-height: 0; overflow: hidden; transition: max-height 0.5s ease;
-      border: 1px solid var(--purple); border-top: none;
-      border-radius: 0 0 10px 10px; padding: 0 22px;
-    }
-    .faq-category.open .faq-cat-body { max-height: 6000px; }
-    .faq-cat-body .faq-item:last-child { border-bottom: none; }
 
     /* ════════════════════════════════════════════════════════
        CONTACT
@@ -610,7 +636,55 @@
     .panel-block-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--purple); margin-bottom: 8px; display: block; }
     .panel-block p { font-size: 0.9rem; color: rgba(240,240,240,0.62); line-height: 1.85; }
 
-        /* ════════════════════════════════════════════════════════
+
+    .meth-divider { height: 1px; background: rgba(255,255,255,0.06); margin: 24px 0 16px; }
+    .meth-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; display: block; }
+    .meth-row { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .meth-trigger { width: 100%; display: flex; align-items: center; gap: 10px; background: none; border: none; cursor: pointer; padding: 10px 0; text-align: left; }
+    .meth-trigger:hover .meth-name { color: var(--green); }
+    .meth-arrow { font-size: 1rem; color: var(--muted); transition: transform 0.25s; line-height: 1; flex-shrink: 0; }
+    .meth-name { font-size: 0.85rem; font-weight: 600; color: rgba(240,240,240,0.65); transition: color 0.2s; }
+    .meth-drop { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .meth-drop p { font-size: 0.82rem; color: rgba(240,240,240,0.5); line-height: 1.75; padding: 0 0 12px 22px; }
+    .meth-row.open .meth-arrow { transform: rotate(90deg); color: var(--green); }
+    .meth-row.open .meth-name { color: var(--green); }
+    .meth-row.open .meth-drop { max-height: 300px; }
+
+
+    /* ── STICKY NAV BAR ──────────────────────────────────────── */
+    #sticky-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: rgba(10,10,10,0.82); backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 12px 0;
+      transform: translateY(-100%);
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+      pointer-events: none;
+    }
+    #sticky-bar.visible { transform: translateY(0); pointer-events: all; }
+    .sticky-inner { display: flex; align-items: center; justify-content: space-between; }
+    .sticky-logo { font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: var(--text); letter-spacing: 0; text-decoration: none; }
+    .sticky-logo .aw { color: var(--purple); }
+    .sticky-logo .dw { display:inline-block;width:0.42em;height:0.42em;border-radius:50%;background:var(--green);margin-left:0.05em;vertical-align:middle;position:relative;top:-0.05em; }
+    .sticky-cta { font-family: var(--font-body); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; color: var(--black); background: var(--green); border: none; border-radius: 6px; padding: 10px 20px; cursor: pointer; text-decoration: none; transition: opacity 0.2s; }
+    .sticky-cta:hover { opacity: 0.85; }
+
+
+    /* ── ABOUT (hidden — activate when photo ready) ──────── */
+    #about { display: none; background: var(--surface); }
+    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-photo { aspect-ratio: 4/5; background: var(--border); border-radius: 12px; overflow: hidden; }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .about-text .h2 { margin-bottom: 20px; }
+    .about-text p { color: rgba(240,240,240,0.72); font-size: 0.95rem; line-height: 1.85; margin-bottom: 16px; }
+    .about-text p:last-child { margin-bottom: 0; }
+    @media(max-width:720px){
+      .about-inner { grid-template-columns: 1fr; }
+      .about-photo { max-width: 280px; margin: 0 auto; }
+    }
+
+    /* ════════════════════════════════════════════════════════
        RESPONSIVE
     ════════════════════════════════════════════════════════ */
     @media (max-width: 900px) {
@@ -620,8 +694,6 @@
       .about-grid { grid-template-columns: 1fr; gap: 44px; }
       .about-visual { max-width: 100%; aspect-ratio: 16/9; }
       .phil-grid { grid-template-columns: 1fr; }
-      .faq-grid { grid-template-columns: 1fr; gap: 44px; }
-      .faq-left { position: static; }
       .contact-grid { grid-template-columns: 1fr; gap: 44px; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
       .trust-div { display: none; }
@@ -693,6 +765,23 @@
 </head>
 <body>
 
+<!-- ══════════════════════ STICKY NAV BAR ══════════════════════════ -->
+<div id="sticky-bar">
+  <div class="container">
+    <div class="sticky-inner">
+      <a href="#hero" class="sticky-logo">
+        [<span class="aw">A</span>]VOID<span class="dw"></span>
+      </a>
+      <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="sticky-cta">
+        <span class="lang-en">Own It →</span>
+        <span class="lang-pt">Toma o Teu Espaço →</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
 <!-- ══════════════════════════════ NAV ══════════════════════════════ -->
 <nav id="navbar">
   <div class="nav-inner">
@@ -757,6 +846,10 @@
           <span class="lang-en">Growth, Positioning and Authority systems that put your business in the path, in front of the right people.</span>
           <span class="lang-pt">Sistemas de Crescimento, Posicionamento e Autoridade que colocam o teu negócio no caminho certo, à frente das pessoas certas.</span>
         </p>
+        <p class="hero-value-prop fade-in">
+          <span class="lang-en">Most agencies sell you visibility. We sell you territory.</span>
+          <span class="lang-pt">A maioria das agências vende-te visibilidade. Nós vendemos-te território.</span>
+        </p>
         <div class="hero-cta-group">
           <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="btn-primary">
             <span class="lang-en">Own It</span>
@@ -817,13 +910,10 @@
       <div class="trust-stack fade-in">
         <div class="trust-stack-label lang-en">Tool Certified</div>
         <div class="trust-stack-label lang-pt">Tool Certified</div>
-        <div class="trust-stack-items">
-          <span class="trust-chip">Claude</span>
-          <span class="trust-chip">Notion</span>
-          <span class="trust-chip">Meta</span>
-          <span class="trust-chip">Google Analytics</span>
-          <span class="trust-chip">LinkedIn</span>
-          <span class="trust-chip">HubSpot</span>
+        <div class="marquee-wrap">
+          <div class="marquee-track">
+            <span class="trust-chip">Claude</span><span class="trust-chip">Notion</span><span class="trust-chip">Meta</span><span class="trust-chip">Google Analytics</span><span class="trust-chip">LinkedIn</span><span class="trust-chip">HubSpot</span><span class="trust-chip">Make.com</span><span class="trust-chip">Cal.com</span><span class="trust-chip">Claude</span><span class="trust-chip">Notion</span><span class="trust-chip">Meta</span><span class="trust-chip">Google Analytics</span><span class="trust-chip">LinkedIn</span><span class="trust-chip">HubSpot</span><span class="trust-chip">Make.com</span><span class="trust-chip">Cal.com</span>
+          </div>
         </div>
       </div>
       <div class="trust-div"></div>
@@ -859,22 +949,23 @@
 <section id="filter">
   <div class="filter-glow"></div>
   <div class="container">
-    <div class="filter-inner fade-in">
-      <p class="label lang-en">Who This Is For</p>
-      <p class="label lang-pt">Para Quem É Isto</p>
-      <h2 class="filter-headline">
-        <span class="lang-en">Not for <span class="accent">everyone.</span></span>
-        <span class="lang-pt">Não é para <span class="accent">toda a gente.</span></span>
-      </h2>
-      <p class="filter-body">
-        <span class="lang-en">This works if you're a founder, consultant, or coach who has been doing the real work for long enough. And knows that being outside of the digital world means you are out of the game. You're not comfortable with where you are. What you have is not enough. You don't seek quick wins. You seek solid building.</span>
-        <span class="lang-pt">Funciona se és fundador, consultor ou coach que já faz o trabalho real há tempo suficiente. E sabes que estar fora do mundo digital significa estar fora do jogo. Não te conformas com o que tens. Não procuras vitórias rápidas. Procuras construir algo sólido.</span>
-      </p>
-      <div class="filter-cta">
-        <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="btn-primary">
-          <span class="lang-en">Own It →</span>
-          <span class="lang-pt">Toma o Teu Espaço →</span>
-        </a>
+    <div class="for-who-inner fade-in">
+      <div class="for-who-col">
+        <p class="for-who-tag lang-en">For you if —</p>
+        <p class="for-who-tag lang-pt">Para ti se —</p>
+        <p class="for-who-body">
+          <span class="lang-en">You're a founder, consultant, coach, or creator. You want to grow your revenue and reach by building something solid — with positioning and personality. Tired of surviving. You want more and feel lost about which direction to run.</span>
+          <span class="lang-pt">És fundador, consultor, coach ou criador. Queres crescer a tua receita e alcance construindo algo sólido — com posicionamento e personalidade. Cansado de sobreviver. Queres mais e sentes-te perdido sobre qual direção seguir.</span>
+        </p>
+      </div>
+      <div class="for-who-divider"></div>
+      <div class="for-who-col">
+        <p class="for-who-tag not lang-en">Not for you if —</p>
+        <p class="for-who-tag not lang-pt">Não é para ti se —</p>
+        <p class="for-who-body">
+          <span class="lang-en">You want everything easy. You think more followers, numbers and metrics solve the problem. You're looking for short-term miracles. You think you already know everything.</span>
+          <span class="lang-pt">Queres tudo fácil. Achas que mais seguidores, números e métricas resolvem o problema. Procuras milagres de curto prazo. Achas que já sabes tudo.</span>
+        </p>
       </div>
     </div>
   </div>
@@ -930,6 +1021,19 @@
             </div>
           </div>
         </div>
+        <div class="meth-divider"></div>
+        <span class="meth-label lang-en">How We Approach It</span>
+        <span class="meth-label lang-pt">Como Abordamos</span>
+        <div class="meth-list">
+          <div class="meth-row">
+            <button class="meth-trigger"><span class="meth-arrow">›</span><span class="meth-name"><span class="lang-en">Organic Conversion</span><span class="lang-pt">Conversão Orgânica</span></span></button>
+            <div class="meth-drop"><p class="lang-en">Turn existing traffic and audience into clients — without spending more on ads. We identify what already works and build a conversion layer on top of it.</p><p class="lang-pt">Transforma tráfego e audiência existentes em clientes. Identificamos o que já funciona e construímos uma camada de conversão por cima.</p></div>
+          </div>
+          <div class="meth-row">
+            <button class="meth-trigger"><span class="meth-arrow">›</span><span class="meth-name"><span class="lang-en">Audience Growth</span><span class="lang-pt">Crescimento de Audiência</span></span></button>
+            <div class="meth-drop"><p class="lang-en">Build an owned audience that compounds. Email lists, newsletter subscribers, LinkedIn followers — assets you own, not rent from an algorithm.</p><p class="lang-pt">Constrói uma audiência própria que cresce. Listas de email, subscritores de newsletter — ativos que possuis, não alugados a um algoritmo.</p></div>
+          </div>
+        </div>
       </div>
 
       <!-- POSITIONING ─────────────────────────── -->
@@ -969,6 +1073,23 @@
             </div>
           </div>
         </div>
+        <div class="meth-divider"></div>
+        <span class="meth-label lang-en">How We Approach It</span>
+        <span class="meth-label lang-pt">Como Abordamos</span>
+        <div class="meth-list">
+          <div class="meth-row">
+            <button class="meth-trigger"><span class="meth-arrow">›</span><span class="meth-name"><span class="lang-en">Newsletter Strategy</span><span class="lang-pt">Estratégia de Newsletter</span></span></button>
+            <div class="meth-drop"><p class="lang-en">Define your content pillars, audience, cadence, and angle. The newsletter is the foundation your positioning is built on.</p><p class="lang-pt">Define os teus pilares de conteúdo, audiência, cadência e ângulo. A newsletter é a fundação do teu posicionamento.</p></div>
+          </div>
+          <div class="meth-row">
+            <button class="meth-trigger"><span class="meth-arrow">›</span><span class="meth-name"><span class="lang-en">Brand Voice & Messaging</span><span class="lang-pt">Voz de Marca & Mensagem</span></span></button>
+            <div class="meth-drop"><p class="lang-en">The words you use are your positioning. We extract your real voice and build messaging that makes you the obvious choice in your market.</p><p class="lang-pt">As palavras que usas são o teu posicionamento. Extraímos a tua voz real e construímos mensagens que te tornam a escolha óbvia.</p></div>
+          </div>
+          <div class="meth-row">
+            <button class="meth-trigger"><span class="meth-arrow">›</span><span class="meth-name"><span class="lang-en">Content Strategy</span><span class="lang-pt">Estratégia de Conteúdo</span></span></button>
+            <div class="meth-drop"><p class="lang-en">What to publish, where, how often, and why. A content strategy that serves your business goals — not just fills a calendar.</p><p class="lang-pt">O que publicar, onde, com que frequência e porquê. Uma estratégia de conteúdo que serve os teus objetivos de negócio.</p></div>
+          </div>
+        </div>
       </div>
 
       <!-- AUTHORITY ───────────────────────────── -->
@@ -996,6 +1117,23 @@
               <p class="lang-en">Organic visibility across search engines and AI platforms. We make sure you're found when people search for what you do.</p>
               <p class="lang-pt">Visibilidade orgânica em motores de busca e plataformas de IA. Garantimos que és encontrado quando pesquisam o que fazes.</p>
             </div>
+          </div>
+        </div>
+        <div class="meth-divider"></div>
+        <span class="meth-label lang-en">How We Approach It</span>
+        <span class="meth-label lang-pt">Como Abordamos</span>
+        <div class="meth-list">
+          <div class="meth-row">
+            <button class="meth-trigger"><span class="meth-arrow">›</span><span class="meth-name"><span class="lang-en">Thought Leadership</span><span class="lang-pt">Thought Leadership</span></span></button>
+            <div class="meth-drop"><p class="lang-en">Your expertise turned into content that builds trust before the first conversation. We capture your thinking and publish it at scale.</p><p class="lang-pt">A tua expertise transformada em conteúdo que constrói confiança antes da primeira conversa. Capturamos o teu pensamento e publicamo-lo à escala.</p></div>
+          </div>
+          <div class="meth-row">
+            <button class="meth-trigger"><span class="meth-arrow">›</span><span class="meth-name"><span class="lang-en">Case Studies & Social Proof</span><span class="lang-pt">Cases & Prova Social</span></span></button>
+            <div class="meth-drop"><p class="lang-en">Results documented as proof. We turn your client outcomes into case studies that remove doubt and accelerate decisions.</p><p class="lang-pt">Resultados documentados como prova. Transformamos os resultados dos teus clientes em cases que removem dúvidas e aceleram decisões.</p></div>
+          </div>
+          <div class="meth-row">
+            <button class="meth-trigger"><span class="meth-arrow">›</span><span class="meth-name"><span class="lang-en">Digital Presence Audit</span><span class="lang-pt">Auditoria de Presença Digital</span></span></button>
+            <div class="meth-drop"><p class="lang-en">Full audit of how you show up online — website, LinkedIn, search results, AI mentions. We find the gaps and close them.</p><p class="lang-pt">Auditoria completa de como apareces online — website, LinkedIn, resultados de pesquisa, menções em IA. Encontramos as lacunas e fechamo-las.</p></div>
           </div>
         </div>
       </div>
@@ -1374,24 +1512,42 @@
 </section>
 
 <!-- ════════════════════════════ FAQ ════════════════════════════════ -->
+
+<!-- ══════════════════════ ABOUT (hidden — activate when photo ready) ═══════ -->
+<!-- To activate: change display:none → display:block on #about in CSS -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-photo">
+        <!-- Replace with: <img src="assets/bruno.jpg" alt="Bruno — (A)Void"> -->
+      </div>
+      <div class="about-text fade-in">
+        <p class="label lang-en">Who's behind this</p>
+        <p class="label lang-pt">Quem está por trás disto</p>
+        <h2 class="h2">
+          <span class="lang-en">Bruno.</span>
+          <span class="lang-pt">Bruno.</span>
+        </h2>
+        <p class="lang-en"><!-- Your bio here --></p>
+        <p class="lang-pt"><!-- A tua bio aqui --></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="faq" class="section">
   <div class="container">
-    <div class="faq-grid">
-      <div class="faq-left fade-in">
-        <p class="label">FAQ</p>
-        <h2 class="h2">
-          <span class="lang-en">Questions.<br>Real answers.</span>
-          <span class="lang-pt">Perguntas.<br>Respostas reais.</span>
-        </h2>
-        <p style="color:var(--muted);font-size:0.875rem;margin-top:18px;line-height:1.75" class="lang-en">30 questions. Everything you need before we talk. Still have one? Ask directly.</p>
-        <p style="color:var(--muted);font-size:0.875rem;margin-top:18px;line-height:1.75" class="lang-pt">30 perguntas. Tudo o que precisa antes de falarmos. Ainda tem alguma? Pergunte-nos.</p>
-        <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="btn-primary" style="margin-top:28px;display:inline-block">
-          <span class="lang-en">Ask directly →</span>
-          <span class="lang-pt">Pergunte-nos →</span>
-        </a>
-      </div>
+    <div class="faq-header fade-in">
+      <p class="label">FAQ</p>
+      <h2 class="h2">
+        <span class="lang-en">Questions.<br>Real answers.</span>
+        <span class="lang-pt">Perguntas.<br>Respostas reais.</span>
+      </h2>
+      <p class="lang-en" style="margin-top:14px">30 questions. Everything you need before we talk.</p>
+      <p class="lang-pt" style="margin-top:14px">30 perguntas. Tudo o que precisa antes de falarmos.</p>
+    </div>
 
-      <div class="fade-in" style="transition-delay:.1s">
+    <div class="fade-in" style="transition-delay:.1s; max-width:780px; margin:0 auto">
 
         <!-- ── CATEGORY 1: About [A]Void ───────────────────── -->
         <div class="faq-category">
@@ -1837,7 +1993,6 @@
         </div>
 
 
-      </div>
     </div>
     <div class="section-cta fade-in">
       <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="cal-popup-btn">
@@ -2388,7 +2543,15 @@
   })();
 
   /* ══ SERVICE ROW EXPAND/COLLAPSE ══ */
-  document.querySelectorAll('.svc-trigger').forEach(function(btn) {
+  document.querySelectorAll('.meth-trigger').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var row = btn.closest('.meth-row');
+      var isOpen = row.classList.contains('open');
+      document.querySelectorAll('.meth-row.open').forEach(function(r){ r.classList.remove('open'); });
+      if (!isOpen) row.classList.add('open');
+    });
+  });
+    document.querySelectorAll('.svc-trigger').forEach(function(btn) {
     btn.addEventListener('click', function() {
       var row = btn.parentElement;
       var isOpen = row.classList.contains('open');
@@ -2418,6 +2581,24 @@ Cal.ns.heroPopup("ui", {
   styles: { branding: { brandColor: "#A020F0" } },
   hideEventTypeDetails: false,
   layout: "month_view"
+
+  // Sticky bar visibility
+  (function() {
+    var bar = document.getElementById('sticky-bar');
+    var hero = document.getElementById('hero');
+    if (!bar || !hero) return;
+    function checkScroll() {
+      var heroBottom = hero.getBoundingClientRect().bottom;
+      if (heroBottom < 0) {
+        bar.classList.add('visible');
+      } else {
+        bar.classList.remove('visible');
+      }
+    }
+    window.addEventListener('scroll', checkScroll, { passive: true });
+    checkScroll();
+  })();
+
 });
 </script>
 
