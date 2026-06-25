@@ -50,7 +50,7 @@
     .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
     .section { padding: 120px 0; }
     .section-cta { text-align: center; margin-top: 56px; }
-    .section-cta .cal-popup-btn { font-family: var(--font-head); font-size: 1rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; background: var(--green); color: var(--black); border: none; padding: 16px 36px; border-radius: 4px; cursor: pointer; transition: opacity .2s; width: auto !important; display: inline-block; text-decoration: none; line-height: 1; vertical-align: middle; }
+    .section-cta .cal-popup-btn { font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.04em; background: var(--green); color: var(--black); border: none; padding: 15px 30px; border-radius: 8px; cursor: pointer; transition: opacity .2s, transform .2s; width: auto !important; display: inline-block; text-decoration: none; line-height: 1; vertical-align: middle; }
     .section-cta .cal-popup-btn:hover { opacity: 0.85; }
     .label {
       font-size: 12.5px; font-weight: 600; letter-spacing: 0.2em;
@@ -280,7 +280,7 @@
     .trust-inner { display: flex; align-items: center; gap: 50px; justify-content: center; flex-wrap: wrap; }
     .trust-stat { text-align: center; }
     .trust-number { font-family: var(--font-head); font-size: 2rem; font-weight: 700; color: var(--text); line-height: 1; letter-spacing: 0.01em; }
-    .trust-number span { color: var(--green); }
+    .trust-number span { color: var(--green); font-size: inherit; vertical-align: baseline; line-height: 1; }
     .trust-label { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.06em; margin-top: 6px; }
     .trust-div { width: 1px; height: 36px; background: var(--border); }
     .trust-stack { display: flex; flex-direction: column; align-items: center; gap: 4px; }
@@ -572,7 +572,7 @@
     .cc-teaser { display: none; }
     .cc-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .cc-metric-val { font-family: var(--font-body); font-size: 1.5rem; font-weight: 600; color: var(--green); line-height: 1; display: block; letter-spacing: 0; }
-    .cc-metric-lbl { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255,255,255,0.55); display: block; margin-top: 8px; line-height: 1.4; }
+    .cc-metric-lbl { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255,255,255,0.72); display: block; margin-top: 8px; line-height: 1.4; }
     .carousel-arrows { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 28px; }
     .carousel-arrow {
       width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 50%;
@@ -815,14 +815,15 @@
       </div>
       <div class="trust-div"></div>
       <div class="trust-stack fade-in">
-        <div class="trust-stack-label lang-en">Built on</div>
-        <div class="trust-stack-label lang-pt">Construído em</div>
+        <div class="trust-stack-label lang-en">Tool Certified</div>
+        <div class="trust-stack-label lang-pt">Tool Certified</div>
         <div class="trust-stack-items">
-          <span class="trust-chip">Beehiiv</span>
-          <span class="trust-chip">ConvertKit</span>
-          <span class="trust-chip">LinkedIn</span>
+          <span class="trust-chip">Claude</span>
           <span class="trust-chip">Notion</span>
-          <span class="trust-chip">Claude AI</span>
+          <span class="trust-chip">Meta</span>
+          <span class="trust-chip">Google Analytics</span>
+          <span class="trust-chip">LinkedIn</span>
+          <span class="trust-chip">HubSpot</span>
         </div>
       </div>
       <div class="trust-div"></div>
@@ -2179,7 +2180,7 @@
             var c2 = document.createElement('span');
             c2.style.cssText = 'font-family:var(--font-head);font-size:2rem;font-weight:700;color:var(--text)';
             var s2 = document.createElement('span');
-            s2.style.cssText = 'font-family:var(--font-head);font-size:1.3rem;font-weight:700;color:var(--green);margin-left:1px;vertical-align:baseline;line-height:1.2';
+            s2.style.cssText = 'font-family:var(--font-head);font-size:2rem;font-weight:700;color:var(--green);margin-left:2px;vertical-align:baseline;line-height:1';
             s2.textContent = 'h';
             n.appendChild(c2); n.appendChild(s2);
             var v2=0;
