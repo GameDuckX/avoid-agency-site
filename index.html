@@ -50,7 +50,7 @@
     .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
     .section { padding: 120px 0; }
     .section-cta { text-align: center; margin-top: 56px; }
-    .section-cta .cal-popup-btn { font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.04em; background: var(--green); color: var(--black); border: none; padding: 15px 30px; border-radius: 8px; cursor: pointer; transition: opacity .2s, transform .2s; width: auto !important; display: inline-block; text-decoration: none; line-height: 1; vertical-align: middle; }
+    .section-cta .cal-popup-btn { font-family: var(--font-body); font-size: 1.1rem; font-weight: 700; letter-spacing: 0.04em; background: var(--green); color: var(--black); border: none; padding: 17px 36px; border-radius: 8px; cursor: pointer; transition: opacity .2s, transform .2s; width: auto !important; display: inline-block; text-decoration: none; line-height: 1; vertical-align: middle; }
     .section-cta .cal-popup-btn:hover { opacity: 0.85; }
     .label {
       font-size: 12.5px; font-weight: 600; letter-spacing: 0.2em;
@@ -294,11 +294,12 @@
     .marquee-track:hover { animation-play-state: paused; }
     @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     .trust-chip {
-      font-size: 0.76rem; font-weight: 700; letter-spacing: 0.06em;
-      border: 1px solid var(--border); border-radius: 4px;
-      padding: 4px 14px; color: rgba(240,240,240,0.72);
-      white-space: nowrap; flex-shrink: 0; margin: 0 6px;
+      display: inline-flex; flex-direction: column; align-items: center; gap: 6px;
+      color: var(--green); white-space: nowrap; flex-shrink: 0; margin: 0 28px;
     }
+    .tc-icon { display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; }
+    .tc-icon svg { width: 28px; height: 28px; }
+    .tc-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
 
     /* ════════════════════════════════════════════════════════
        SERVICES
@@ -401,13 +402,15 @@
       background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(160,32,240,0.07) 0%, transparent 70%);
     }
     .filter-inner { position: relative; z-index: 1; max-width: 820px; margin: 0 auto; text-align: center; }
+    .for-who-title { font-family: var(--font-head); font-size: 2rem; font-weight: 700; color: var(--text); margin-bottom: 48px; line-height: 1.2; letter-spacing: 0; }
     .for-who-inner { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 0; align-items: start; padding: 20px 0; }
-    .for-who-divider { background: rgba(255,255,255,0.08); align-self: stretch; margin: 0 48px; }
+    .for-who-divider { background: rgba(255,255,255,0.14); align-self: stretch; margin: 0 52px; }
     .for-who-col { padding: 8px 0; }
     .for-who-tag { font-family: var(--font-head); font-size: 1.35rem; font-weight: 700; color: var(--green); margin-bottom: 20px; letter-spacing: 0; line-height: 1.2; }
-    .for-who-tag.not { color: rgba(255,255,255,0.35); }
+    .for-who-tag.not { color: rgba(240,240,240,0.85); }
     .for-who-body { font-size: 1rem; color: rgba(240,240,240,0.75); line-height: 1.8; }
     @media(max-width:720px){
+      .for-who-title { font-size: 1.6rem; }
       .for-who-inner { grid-template-columns: 1fr; }
       .for-who-divider { height: 1px; width: 100%; margin: 32px 0; align-self: auto; }
     }
@@ -543,146 +546,45 @@
     /* ════════════════════════════════════════════════════════
        QUICK NAV STRIP
     ════════════════════════════════════════════════════════ */
-    #quicknav {
-      padding: 13px 0; border-bottom: 1px solid var(--border); background: var(--black);
-    }
-    .quicknav-inner {
-      display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
-    }
-    .quicknav-inner a {
-      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.13em;
-      text-transform: uppercase; color: var(--muted);
-      padding: 5px 18px; transition: color 0.2s; position: relative;
-    }
-    .quicknav-inner a:hover { color: var(--green); }
-    .quicknav-inner a + a::before {
-      content: '·'; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
-      color: #333; font-size: 0.9rem; line-height: 1;
-    }
-
     /* ════════════════════════════════════════════════════════
        CAROUSEL CASE STUDIES
     ════════════════════════════════════════════════════════ */
-    #cases { background: var(--surface); padding-bottom: 64px; }
-    .cases-header { max-width: 600px; margin-bottom: 56px; }
-    .carousel-wrap { position: relative; padding: 10px 0 36px; overflow: hidden; }
-    .carousel-track {
-      position: relative; height: 350px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .carousel-card {
-      position: absolute; left: 50%; width: 340px; min-height: 360px;
-      background: #111; border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 20px; padding: 32px;
-      cursor: pointer; will-change: transform, opacity; overflow: hidden;
-      transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.5s ease, border-color 0.3s;
-      user-select: none;
-    }
-    .carousel-card.active {
-      background: #141414;
-      border-top: 2px solid var(--green);
-      border-left: 1px solid rgba(255,255,255,0.07);
-      border-right: 1px solid rgba(255,255,255,0.07);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .cc-top { display: flex; align-items: center; justify-content: flex-start; margin-bottom: 20px; }
-    .cc-num { display: none; }
-    .cc-pillar {
-      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
-      color: rgba(255,255,255,0.45); white-space: nowrap;
-      border: none; background: none; padding: 0; border-radius: 0;
-    }
-    .cc-title { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.35; letter-spacing: 0; }
-    .cc-subtitle { font-size: 0.76rem; color: var(--muted); margin-bottom: 0; }
-    .cc-divider { height: 1px; background: rgba(255,255,255,0.07); margin: 20px 0; }
-    .cc-teaser { display: none; }
-    .cc-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .cc-metric-val { font-family: var(--font-body); font-size: 1.5rem; font-weight: 600; color: var(--green); line-height: 1; display: block; letter-spacing: 0; }
-    .cc-metric-lbl { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255,255,255,0.72); display: block; margin-top: 8px; line-height: 1.4; }
-    .carousel-arrows { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 28px; }
-    .carousel-arrow {
-      width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 50%;
-      background: transparent; color: var(--muted); cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.95rem; transition: border-color 0.2s, color 0.2s;
-    }
-    .carousel-arrow:hover { border-color: var(--purple); color: var(--text); }
-    .carousel-dots { display: flex; gap: 8px; align-items: center; }
-    .carousel-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--border); transition: background 0.3s, transform 0.3s; cursor: pointer;
-    }
-    .carousel-dot.active { background: var(--green); transform: scale(1.4); }
-    .carousel-panel {
-      margin-top: 44px; border: 1px solid var(--purple); border-radius: 14px;
-      overflow: hidden; position: relative; max-width: 860px; margin-left: auto; margin-right: auto;
-      max-height: 0; transition: max-height 0.55s cubic-bezier(0.4,0,0.2,1);
-    }
-    .carousel-panel.open { max-height: 1800px; }
-    .carousel-panel::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, var(--purple), var(--green));
-    }
-    .panel-case { display: none; padding: 36px 40px; background: var(--black); }
-    .panel-case.active { display: block; }
-    .panel-metrics {
-      display: flex; gap: 32px; flex-wrap: wrap;
-      padding-bottom: 28px; border-bottom: 1px solid var(--border); margin-bottom: 28px;
-    }
-    .panel-metric-val { font-family: var(--font-head); font-size: 1.45rem; font-weight: 700; color: var(--green); line-height: 1; display: block; letter-spacing: 0; }
-    .panel-metric-lbl { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: block; margin-top: 5px; }
-    .panel-block { margin-bottom: 22px; }
-    .panel-block:last-child { margin-bottom: 0; }
-    .panel-block-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--purple); margin-bottom: 8px; display: block; }
-    .panel-block p { font-size: 0.9rem; color: rgba(240,240,240,0.62); line-height: 1.85; }
-
-
+    /* ── METHODOLOGY ACCORDION (inside service cards) ──────── */
     .meth-divider { height: 1px; background: rgba(255,255,255,0.06); margin: 24px 0 16px; }
     .meth-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; display: block; }
     .meth-row { border-bottom: 1px solid rgba(255,255,255,0.05); }
     .meth-trigger { width: 100%; display: flex; align-items: center; gap: 10px; background: none; border: none; cursor: pointer; padding: 10px 0; text-align: left; }
     .meth-trigger:hover .meth-name { color: var(--green); }
     .meth-arrow { font-size: 1rem; color: var(--muted); transition: transform 0.25s; line-height: 1; flex-shrink: 0; }
-    .meth-name { font-size: 0.85rem; font-weight: 600; color: rgba(240,240,240,0.65); transition: color 0.2s; }
+    .meth-name { font-size: 1rem; font-weight: 600; color: rgba(240,240,240,0.65); transition: color 0.2s; }
     .meth-drop { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
     .meth-drop p { font-size: 0.82rem; color: rgba(240,240,240,0.5); line-height: 1.75; padding: 0 0 12px 22px; }
     .meth-row.open .meth-arrow { transform: rotate(90deg); color: var(--green); }
     .meth-row.open .meth-name { color: var(--green); }
     .meth-row.open .meth-drop { max-height: 300px; }
 
+    /* ── WORK / OWNED TERRITORY ────────────────────────────── */
+    #cases { background: var(--black); padding-bottom: 80px; }
+    .cases-header { max-width: 640px; margin-bottom: 64px; }
 
-    /* ── STICKY NAV BAR ──────────────────────────────────────── */
-    #sticky-bar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-      background: rgba(10,10,10,0.82); backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      padding: 12px 0;
-      transform: translateY(-100%);
-      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
-      pointer-events: none;
-    }
-    #sticky-bar.visible { transform: translateY(0); pointer-events: all; }
-    .sticky-inner { display: flex; align-items: center; justify-content: space-between; }
-    .sticky-logo { font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: var(--text); letter-spacing: 0; text-decoration: none; }
-    .sticky-logo .aw { color: var(--purple); }
-    .sticky-logo .dw { display:inline-block;width:0.42em;height:0.42em;border-radius:50%;background:var(--green);margin-left:0.05em;vertical-align:middle;position:relative;top:-0.05em; }
-    .sticky-cta { font-family: var(--font-body); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; color: var(--black); background: var(--green); border: none; border-radius: 6px; padding: 10px 20px; cursor: pointer; text-decoration: none; transition: opacity 0.2s; }
-    .sticky-cta:hover { opacity: 0.85; }
-
-
-    /* ── ABOUT (hidden — activate when photo ready) ──────── */
-    #about { display: none; background: var(--surface); }
-    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .about-photo { aspect-ratio: 4/5; background: var(--border); border-radius: 12px; overflow: hidden; }
-    .about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .about-text .h2 { margin-bottom: 20px; }
-    .about-text p { color: rgba(240,240,240,0.72); font-size: 0.95rem; line-height: 1.85; margin-bottom: 16px; }
-    .about-text p:last-child { margin-bottom: 0; }
-    @media(max-width:720px){
-      .about-inner { grid-template-columns: 1fr; }
-      .about-photo { max-width: 280px; margin: 0 auto; }
-    }
+    /* Service cards grid */
+    .service-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.04); border-radius: 16px; overflow: hidden; }
+    .sc-card { background: rgba(12,12,12,0.92); padding: 28px 24px; cursor: pointer; transition: background 0.2s; position: relative; }
+    .sc-card:hover { background: rgba(20,20,20,0.98); }
+    .sc-card.open { background: rgba(16,16,16,0.98); }
+    .sc-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; display: block; }
+    .sc-title { font-family: var(--font-head); font-size: 1.15rem; font-weight: 700; color: var(--text); line-height: 1.25; margin-bottom: 20px; }
+    .sc-metrics { display: flex; flex-direction: column; gap: 10px; }
+    .sc-metric { display: flex; flex-direction: column; gap: 2px; }
+    .sc-num { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; color: var(--green); line-height: 1; }
+    .sc-metric-lbl { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.38); }
+    .sc-expand { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .sc-card.open .sc-expand { max-height: 300px; }
+    .sc-body { font-size: 0.85rem; color: rgba(240,240,240,0.62); line-height: 1.8; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06); margin-top: 20px; }
+    .sc-indicator { position: absolute; top: 16px; right: 16px; width: 20px; height: 20px; border: 1px solid rgba(255,255,255,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 0.9rem; transition: transform 0.3s, border-color 0.2s, color 0.2s; }
+    .sc-card.open .sc-indicator { transform: rotate(45deg); border-color: var(--green); color: var(--green); }
+    @media(max-width:1100px){ .service-cards { grid-template-columns: repeat(2, 1fr); } }
+    @media(max-width:600px){ .service-cards { grid-template-columns: 1fr; } }
 
     /* ════════════════════════════════════════════════════════
        RESPONSIVE
@@ -701,8 +603,6 @@
       .hamburger { display: flex; }
     }
     @media (max-width: 900px) {
-      .carousel-card { width: min(280px, 74vw); }
-      .carousel-track { height: 350px; }
       .cc-pillar { display: none; }
     }
     @media (max-width: 600px) {
@@ -714,8 +614,6 @@
       .service-arrow { display: none; }
       .about-wordmark { font-size: 3.8rem; }
       .filter-line { padding: 16px 20px; }
-      .carousel-card { width: 72vw; padding: 20px 18px; }
-      .carousel-track { height: 310px; }
       .panel-case { padding: 28px 20px; }
       .panel-metrics { gap: 18px; }
       .panel-metric-val { font-size: 1.3rem; }
@@ -765,7 +663,7 @@
 </head>
 <body>
 
-<!-- ══════════════════════ STICKY NAV BAR ══════════════════════════ -->
+<!-- ══════════════════════ STICKY BAR ══════════════════════════════ -->
 <div id="sticky-bar">
   <div class="container">
     <div class="sticky-inner">
@@ -773,8 +671,8 @@
         [<span class="aw">A</span>]VOID<span class="dw"></span>
       </a>
       <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="sticky-cta">
-        <span class="lang-en">Own It →</span>
-        <span class="lang-pt">Toma o Teu Espaço →</span>
+        <span class="lang-en">Book Strategic Call</span>
+        <span class="lang-pt">Marcar Chamada Estratégica</span>
       </a>
     </div>
   </div>
@@ -912,7 +810,7 @@
         <div class="trust-stack-label lang-pt">Tool Certified</div>
         <div class="marquee-wrap">
           <div class="marquee-track">
-            <span class="trust-chip">Claude</span><span class="trust-chip">Notion</span><span class="trust-chip">Meta</span><span class="trust-chip">Google Analytics</span><span class="trust-chip">LinkedIn</span><span class="trust-chip">HubSpot</span><span class="trust-chip">Make.com</span><span class="trust-chip">Cal.com</span><span class="trust-chip">Claude</span><span class="trust-chip">Notion</span><span class="trust-chip">Meta</span><span class="trust-chip">Google Analytics</span><span class="trust-chip">LinkedIn</span><span class="trust-chip">HubSpot</span><span class="trust-chip">Make.com</span><span class="trust-chip">Cal.com</span>
+            <span class="trust-chip"><span class="tc-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 5C9.925 5 5 9.925 5 16s4.925 11 11 11 11-4.925 11-11S22.075 5 16 5zm0 2c4.963 0 9 4.037 9 9s-4.037 9-9 9-9-4.037-9-9 4.037-9 9-9zm-1.5 4.5v2.5H13v1.5h1.5V21h1.5v-5.5H18V14h-2v-2.5h-1.5zm4 0v2.5H17V14h1.5v-2.5h-1.5z" fill="currentColor"/></svg></span><span class="tc-label">Claude</span></span><span class="trust-chip"><span class="tc-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 6h11.2l6.8 6.8V26H8V6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M19 6v7h7" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 14h10M11 18h7M11 22h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span class="tc-label">Notion</span></span><span class="trust-chip"><span class="tc-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 18.5C4 21.538 5.79 24 8 24c1.857 0 3.067-1.1 4.5-3.5L16 14l3.5 6.5C21 22.9 22.143 24 24 24c2.21 0 4-2.462 4-5.5 0-1.933-.7-3.5-2-4.5-1.333.333-2.667.667-4 1.5.667 1 1 2 1 3 0 1.4-.45 2.5-1 2.5-.4 0-.8-.4-1.5-1.5L16 12l-4.5 7.5C10.8 20.6 10.4 21 10 21c-.55 0-1-1.1-1-2.5 0-1 .333-2 1-3-1.333-.833-2.667-1.167-4-1.5C4.7 15 4 16.567 4 18.5z" fill="currentColor"/></svg></span><span class="tc-label">Meta</span></span><span class="trust-chip"><span class="tc-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="19" width="5" height="7" rx="1.5" fill="currentColor" opacity="0.45"/><rect x="13.5" y="13" width="5" height="13" rx="1.5" fill="currentColor" opacity="0.7"/><rect x="22" y="6" width="5" height="20" rx="1.5" fill="currentColor"/></svg></span><span class="tc-label">Google Analytics</span></span><span class="trust-chip"><span class="tc-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="24" height="24" rx="4" stroke="currentColor" stroke-width="1.8"/><path d="M9.5 13.5v9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9.5" cy="10.5" r="1.5" fill="currentColor"/><path d="M15 22.5v-5.25C15 15.567 16.07 14.5 17.75 14.5S20.5 15.567 20.5 17.25v5.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 17v5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="tc-label">LinkedIn</span></span><span class="trust-chip"><span class="tc-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="10" r="3.5" fill="currentColor"/><circle cx="22" cy="10" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/><path d="M19 10h-8A3.5 3.5 0 0 0 7.5 13.5v0A3.5 3.5 0 0 0 11 17h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M15 14v7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12.5 19h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="tc-label">HubSpot</span></span><span class="trust-chip"><span class="tc-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="16" r="2.5" fill="currentColor"/><circle cx="16" cy="16" r="2.5" fill="currentColor"/><circle cx="25" cy="16" r="2.5" fill="currentColor"/><path d="M9.5 16h4M18.5 16h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M7 13.5V10A1.5 1.5 0 0 1 8.5 8.5H16M16 8.5l-2-2M16 8.5l-2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 18.5V22A1.5 1.5 0 0 1 23.5 23.5H16M16 23.5l2 2M16 23.5l2-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tc-label">Make.com</span></span><span class="trust-chip"><span class="tc-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="7" width="22" height="20" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M5 13h22" stroke="currentColor" stroke-width="1.8"/><path d="M11 5v4M21 5v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="9" y="17" width="4" height="4" rx="1" fill="currentColor"/><rect x="19" y="17" width="4" height="4" rx="1" fill="currentColor"/></svg></span><span class="tc-label">Cal.com</span></span><span class="trust-chip"><span class="tc-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 5C9.925 5 5 9.925 5 16s4.925 11 11 11 11-4.925 11-11S22.075 5 16 5zm0 2c4.963 0 9 4.037 9 9s-4.037 9-9 9-9-4.037-9-9 4.037-9 9-9zm-1.5 4.5v2.5H13v1.5h1.5V21h1.5v-5.5H18V14h-2v-2.5h-1.5zm4 0v2.5H17V14h1.5v-2.5h-1.5z" fill="currentColor"/></svg></span><span class="tc-label">Claude</span></span><span class="trust-chip"><span class="tc-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 6h11.2l6.8 6.8V26H8V6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M19 6v7h7" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 14h10M11 18h7M11 22h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span class="tc-label">Notion</span></span><span class="trust-chip"><span class="tc-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 18.5C4 21.538 5.79 24 8 24c1.857 0 3.067-1.1 4.5-3.5L16 14l3.5 6.5C21 22.9 22.143 24 24 24c2.21 0 4-2.462 4-5.5 0-1.933-.7-3.5-2-4.5-1.333.333-2.667.667-4 1.5.667 1 1 2 1 3 0 1.4-.45 2.5-1 2.5-.4 0-.8-.4-1.5-1.5L16 12l-4.5 7.5C10.8 20.6 10.4 21 10 21c-.55 0-1-1.1-1-2.5 0-1 .333-2 1-3-1.333-.833-2.667-1.167-4-1.5C4.7 15 4 16.567 4 18.5z" fill="currentColor"/></svg></span><span class="tc-label">Meta</span></span><span class="trust-chip"><span class="tc-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="19" width="5" height="7" rx="1.5" fill="currentColor" opacity="0.45"/><rect x="13.5" y="13" width="5" height="13" rx="1.5" fill="currentColor" opacity="0.7"/><rect x="22" y="6" width="5" height="20" rx="1.5" fill="currentColor"/></svg></span><span class="tc-label">Google Analytics</span></span><span class="trust-chip"><span class="tc-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="24" height="24" rx="4" stroke="currentColor" stroke-width="1.8"/><path d="M9.5 13.5v9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9.5" cy="10.5" r="1.5" fill="currentColor"/><path d="M15 22.5v-5.25C15 15.567 16.07 14.5 17.75 14.5S20.5 15.567 20.5 17.25v5.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 17v5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="tc-label">LinkedIn</span></span><span class="trust-chip"><span class="tc-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="10" r="3.5" fill="currentColor"/><circle cx="22" cy="10" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/><path d="M19 10h-8A3.5 3.5 0 0 0 7.5 13.5v0A3.5 3.5 0 0 0 11 17h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M15 14v7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12.5 19h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="tc-label">HubSpot</span></span><span class="trust-chip"><span class="tc-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="16" r="2.5" fill="currentColor"/><circle cx="16" cy="16" r="2.5" fill="currentColor"/><circle cx="25" cy="16" r="2.5" fill="currentColor"/><path d="M9.5 16h4M18.5 16h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M7 13.5V10A1.5 1.5 0 0 1 8.5 8.5H16M16 8.5l-2-2M16 8.5l-2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 18.5V22A1.5 1.5 0 0 1 23.5 23.5H16M16 23.5l2 2M16 23.5l2-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tc-label">Make.com</span></span><span class="trust-chip"><span class="tc-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="7" width="22" height="20" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M5 13h22" stroke="currentColor" stroke-width="1.8"/><path d="M11 5v4M21 5v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="9" y="17" width="4" height="4" rx="1" fill="currentColor"/><rect x="19" y="17" width="4" height="4" rx="1" fill="currentColor"/></svg></span><span class="tc-label">Cal.com</span></span>
           </div>
         </div>
       </div>
@@ -933,22 +831,14 @@
 </div>
 
 <!-- ════════════════════════ QUICK NAV STRIP ═══════════════════════ -->
-<div id="quicknav">
-  <div class="container">
-    <div class="quicknav-inner">
-      <a href="#services"><span class="lang-en">Services</span><span class="lang-pt">Serviços</span></a>
-      <a href="#cases"><span class="lang-en">Work</span><span class="lang-pt">Trabalho</span></a>
-      <a href="#about"><span class="lang-en">About</span><span class="lang-pt">Sobre</span></a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact"><span class="lang-en">Contact</span><span class="lang-pt">Contacto</span></a>
-    </div>
-  </div>
-</div>
-
 <!-- ══════════════════════ WHO THIS IS FOR ══════════════════════════ -->
-<section id="filter">
+<section id="filter" class="section">
   <div class="filter-glow"></div>
   <div class="container">
+    <h2 class="for-who-title fade-in">
+      <span class="lang-en">Who is it for?</span>
+      <span class="lang-pt">Para quem é?</span>
+    </h2>
     <div class="for-who-inner fade-in">
       <div class="for-who-col">
         <p class="for-who-tag lang-en">For you if —</p>
@@ -1155,189 +1045,117 @@
       <p class="label lang-en">Owned Territory.</p>
       <p class="label lang-pt">Território Conquistado.</p>
       <h2 class="h2">
-        <span class="lang-en">The territory<br><span class="purple">they own now.</span></span>
-        <span class="lang-pt">O território<br><span class="purple">que dominam agora.</span></span>
+        <span class="lang-en">The Owned<br><span class="purple">Territory.</span></span>
+        <span class="lang-pt">O Território<br><span class="purple">Conquistado.</span></span>
       </h2>
     </div>
-  </div>
-
-  <!-- Carousel — full width -->
-  <div class="carousel-wrap">
-    <div class="carousel-track" id="carouselTrack">
-
-      <div class="carousel-card" data-index="0">
-        <div class="cc-top"><span class="cc-num">00</span><span class="cc-pillar">Newsletter Management</span></div>
-        <div class="cc-title">The Expert No One Had Heard Of</div>
-        <div class="cc-subtitle">B2B Consultant — Newsletter Launch</div>
-        <div class="cc-divider"></div>
-        <div class="cc-metrics">
-          <div><span class="cc-metric-val">277</span><span class="cc-metric-lbl">Subscribers in 60 Days</span></div>
-          <div><span class="cc-metric-val">2</span><span class="cc-metric-lbl">Inbound Leads Month 2</span></div>
-          <div><span class="cc-metric-val">€0</span><span class="cc-metric-lbl">Ad Spend</span></div>
+    <div class="service-cards fade-in">
+      <div class="sc-card">
+        <span class="sc-indicator">+</span>
+        <span class="sc-label">EMAIL AUTOMATION</span>
+        <h3 class="sc-title">Email Automation</h3>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-num">47%</span><span class="sc-metric-lbl">AVG OPEN RATE</span></div>
+          <div class="sc-metric"><span class="sc-num">3.2×</span><span class="sc-metric-lbl">REVENUE LIFT</span></div>
+          <div class="sc-metric"><span class="sc-num">€0</span><span class="sc-metric-lbl">AD SPEND</span></div>
+        </div>
+        <div class="sc-expand">
+          <p class="sc-body">Sequences that sell while you sleep. Triggered by behaviour — not calendar — so every email lands when intent is highest. Use it when you have a list that isn't working for you. The money is already there.</p>
         </div>
       </div>
-
-      <div class="carousel-card" data-index="1">
-        <div class="cc-top"><span class="cc-num">01</span><span class="cc-pillar">Newsletter Reactivation</span></div>
-        <div class="cc-title">Email Reactivation</div>
-        <div class="cc-subtitle">Tech Startup — Email List Reactivation</div>
-        <div class="cc-divider"></div>
-        <div class="cc-metrics">
-          <div><span class="cc-metric-val">39%</span><span class="cc-metric-lbl">Open Rate</span></div>
-          <div><span class="cc-metric-val">3×</span><span class="cc-metric-lbl">Click Rate</span></div>
-          <div><span class="cc-metric-val">€0</span><span class="cc-metric-lbl">Ad Spend</span></div>
+      <div class="sc-card">
+        <span class="sc-indicator">+</span>
+        <span class="sc-label">EMAIL REACTIVATION</span>
+        <h3 class="sc-title">Email Reactivation</h3>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-num">39%</span><span class="sc-metric-lbl">OPEN RATE</span></div>
+          <div class="sc-metric"><span class="sc-num">3×</span><span class="sc-metric-lbl">CLICK RATE</span></div>
+          <div class="sc-metric"><span class="sc-num">€0</span><span class="sc-metric-lbl">AD SPEND</span></div>
+        </div>
+        <div class="sc-expand">
+          <p class="sc-body">Dead lists aren't dead — they're untouched. A reactivation sequence re-engages cold subscribers with targeted copy and a clear re-entry offer. Use it before you buy more traffic. Your best leads already know you.</p>
         </div>
       </div>
-
-      <div class="carousel-card" data-index="2">
-        <div class="cc-top"><span class="cc-num">02</span><span class="cc-pillar">Personal Brand Content</span></div>
-        <div class="cc-title">Follow the Founder</div>
-        <div class="cc-subtitle">SaaS Founder — LinkedIn Content & Personal Brand</div>
-        <div class="cc-divider"></div>
-        <div class="cc-metrics">
-          <div><span class="cc-metric-val">3.6×</span><span class="cc-metric-lbl">LinkedIn Growth</span></div>
-          <div><span class="cc-metric-val">12</span><span class="cc-metric-lbl">Inbound DMs / Month</span></div>
-          <div><span class="cc-metric-val">2</span><span class="cc-metric-lbl">Contracts from Content</span></div>
+      <div class="sc-card">
+        <span class="sc-indicator">+</span>
+        <span class="sc-label">GOOGLE ADS</span>
+        <h3 class="sc-title">Google Ads</h3>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-num">4.8×</span><span class="sc-metric-lbl">ROAS</span></div>
+          <div class="sc-metric"><span class="sc-num">-38%</span><span class="sc-metric-lbl">CPL DROP</span></div>
+          <div class="sc-metric"><span class="sc-num">12 days</span><span class="sc-metric-lbl">TO FIRST LEAD</span></div>
+        </div>
+        <div class="sc-expand">
+          <p class="sc-body">Bottom of funnel. High intent, lowest waste. People searching for what you sell — captured before they reach your competitor. Right for businesses with a proven offer ready to scale demand.</p>
         </div>
       </div>
-
-      <div class="carousel-card" data-index="3">
-        <div class="cc-top"><span class="cc-num">03</span><span class="cc-pillar">Owned Audience System</span></div>
-        <div class="cc-title">Becoming the Category</div>
-        <div class="cc-subtitle">Marketing Consultant — Newsletter + Personal Brand</div>
-        <div class="cc-divider"></div>
-        <div class="cc-metrics">
-          <div><span class="cc-metric-val">64%</span><span class="cc-metric-lbl">More Inbound in 7 Months</span></div>
-          <div><span class="cc-metric-val">3×</span><span class="cc-metric-lbl">Pipeline Value</span></div>
-          <div><span class="cc-metric-val">€0</span><span class="cc-metric-lbl">Paid Acquisition</span></div>
+      <div class="sc-card">
+        <span class="sc-indicator">+</span>
+        <span class="sc-label">META ADS</span>
+        <h3 class="sc-title">Meta Ads</h3>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-num">2.4×</span><span class="sc-metric-lbl">ROAS</span></div>
+          <div class="sc-metric"><span class="sc-num">+500</span><span class="sc-metric-lbl">LEADS / MO</span></div>
+          <div class="sc-metric"><span class="sc-num">€0.38</span><span class="sc-metric-lbl">CPL</span></div>
+        </div>
+        <div class="sc-expand">
+          <p class="sc-body">Top and mid funnel at scale. Meta creates demand — it puts your offer in front of the right person before they knew they needed it. Right when you need volume, brand exposure, or to build a retargeting pool fast.</p>
         </div>
       </div>
-
-      <div class="carousel-card" data-index="4">
-        <div class="cc-top"><span class="cc-num">04</span><span class="cc-pillar">Authority &amp; Positioning</span></div>
-        <div class="cc-title">The Name They Kept Hearing</div>
-        <div class="cc-subtitle">Consultant — Authority &amp; Positioning System</div>
-        <div class="cc-divider"></div>
-        <div class="cc-metrics">
-          <div><span class="cc-metric-val">32%</span><span class="cc-metric-lbl">Newsletter Open Rate</span></div>
-          <div><span class="cc-metric-val">5×</span><span class="cc-metric-lbl">Inbound vs Previous Year</span></div>
-          <div><span class="cc-metric-val">€0</span><span class="cc-metric-lbl">Paid Acquisition</span></div>
+      <div class="sc-card">
+        <span class="sc-indicator">+</span>
+        <span class="sc-label">NEWSLETTER MGT & CREATION</span>
+        <h3 class="sc-title">Newsletter</h3>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-num">277</span><span class="sc-metric-lbl">SUBS IN 60 DAYS</span></div>
+          <div class="sc-metric"><span class="sc-num">2</span><span class="sc-metric-lbl">INBOUND LEADS/MO</span></div>
+          <div class="sc-metric"><span class="sc-num">€0</span><span class="sc-metric-lbl">AD SPEND</span></div>
+        </div>
+        <div class="sc-expand">
+          <p class="sc-body">The only channel you fully own. A newsletter builds audience, authority, and pipeline — without renting attention from platforms. Use it when you want inbound leads that already trust you before the first call.</p>
         </div>
       </div>
-
-      <div class="carousel-card" data-index="5">
-        <div class="cc-top"><span class="cc-num">05</span><span class="cc-pillar">Personal Brand Content</span></div>
-        <div class="cc-title">The Founder Who Hated Writing</div>
-        <div class="cc-subtitle">Executive Coach — Personal Brand Content System</div>
-        <div class="cc-divider"></div>
-        <div class="cc-metrics">
-          <div><span class="cc-metric-val">6×</span><span class="cc-metric-lbl">Post Engagement</span></div>
-          <div><span class="cc-metric-val">+500</span><span class="cc-metric-lbl">LinkedIn Followers in 6 Months</span></div>
-          <div><span class="cc-metric-val">1</span><span class="cc-metric-lbl">Client Closed from Content</span></div>
+      <div class="sc-card">
+        <span class="sc-indicator">+</span>
+        <span class="sc-label">LANDING PAGE & WEBSITE</span>
+        <h3 class="sc-title">Landing Page &amp; Website</h3>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-num">4.1%</span><span class="sc-metric-lbl">CVR</span></div>
+          <div class="sc-metric"><span class="sc-num">+62%</span><span class="sc-metric-lbl">LEAD INCREASE</span></div>
+          <div class="sc-metric"><span class="sc-num">7 days</span><span class="sc-metric-lbl">LIVE</span></div>
+        </div>
+        <div class="sc-expand">
+          <p class="sc-body">Your traffic is only as good as the page it lands on. We build pages that convert with clear hierarchy, zero friction, and copy that sells the outcome. Right when your ads are running but leads aren't converting.</p>
         </div>
       </div>
-
-    </div><!-- end track -->
-
-    <div class="carousel-arrows">
-      <button class="carousel-arrow carousel-prev" aria-label="Previous">←</button>
-      <div class="carousel-dots">
-        <span class="carousel-dot active" data-i="0"></span>
-        <span class="carousel-dot" data-i="1"></span>
-        <span class="carousel-dot" data-i="2"></span>
-        <span class="carousel-dot" data-i="3"></span>
-        <span class="carousel-dot" data-i="4"></span>
-        <span class="carousel-dot" data-i="5"></span>
+      <div class="sc-card">
+        <span class="sc-indicator">+</span>
+        <span class="sc-label">AI — CLAUDE ONBOARDING</span>
+        <h3 class="sc-title">AI — Claude Onboarding</h3>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-num">10h+</span><span class="sc-metric-lbl">SAVED / WEEK</span></div>
+          <div class="sc-metric"><span class="sc-num">1 agent</span><span class="sc-metric-lbl">REPLACES 3 TOOLS</span></div>
+          <div class="sc-metric"><span class="sc-num">2 days</span><span class="sc-metric-lbl">SETUP</span></div>
+        </div>
+        <div class="sc-expand">
+          <p class="sc-body">AI that works inside your business, not beside it. We map your workflow, identify the highest-leverage tasks, and deploy a Claude-based system that handles them. Use it when repetitive work is eating your capacity.</p>
+        </div>
       </div>
-      <button class="carousel-arrow carousel-next" aria-label="Next">→</button>
+      <div class="sc-card">
+        <span class="sc-indicator">+</span>
+        <span class="sc-label">CONTENT CREATION</span>
+        <h3 class="sc-title">Content Creation</h3>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-num">6×</span><span class="sc-metric-lbl">POST ENGAGEMENT</span></div>
+          <div class="sc-metric"><span class="sc-num">+500</span><span class="sc-metric-lbl">LINKEDIN IN 6MO</span></div>
+          <div class="sc-metric"><span class="sc-num">1</span><span class="sc-metric-lbl">CLIENT / CONTENT</span></div>
+        </div>
+        <div class="sc-expand">
+          <p class="sc-body">Content in your voice — not a house style. Every post is built on your actual thinking and experience. One 30-min call per month produces a full content calendar. Use it when you want inbound without paid.</p>
+        </div>
+      </div>
     </div>
-  </div><!-- end carousel-wrap -->
-
-  <!-- Content panel — auto-reveals with active card -->
-  <div class="container">
-    <div class="carousel-panel fade-in">
-
-      <div class="panel-case" data-index="0">
-        <div class="panel-metrics">
-          <div><span class="panel-metric-val">340</span><span class="panel-metric-lbl">Subscribers in 60 Days</span></div>
-          <div><span class="panel-metric-val">2</span><span class="panel-metric-lbl">Inbound Leads in Month 2</span></div>
-          <div><span class="panel-metric-val">€0</span><span class="panel-metric-lbl">Ad Spend</span></div>
-        </div>
-        <div class="panel-block"><span class="panel-block-label">Situation</span><p>A B2B consultant closing deals entirely through referrals. Strong track record, deep expertise, zero content presence. Every new client required starting a relationship from scratch — explaining the same things, rebuilding credibility every time.</p></div>
-        <div class="panel-block"><span class="panel-block-label">Problem</span><p>Knowledge stuck in his head was knowledge that never compounded. Every conversation he had with a prospect required him to be there. The moment he wasn't in the room, so was his reputation. No newsletter meant no audience and no way to be known before the call.</p></div>
-        <div class="panel-block"><span class="panel-block-label">What We Built</span><p>A bi-weekly newsletter targeted at his exact ICP — senior decision-makers in his niche. We defined the content pillars in a 90-minute strategy session, then handled writing, formatting, and sending. He spent 30 minutes per issue on a voice note. We handled everything else. By issue 4, readers were forwarding it.</p></div>
-        <div class="panel-block"><span class="panel-block-label">Result</span><p>277 subscribers in the first 60 days from his existing LinkedIn network alone. Two inbound leads by month two — one of which became a client. The newsletter now does work he used to do on calls. And it does it at scale.</p></div>
-      </div>
-
-      <div class="panel-case active" data-index="1">
-        <div class="panel-metrics">
-          <div><span class="panel-metric-val">39%</span><span class="panel-metric-lbl">Open Rate</span></div>
-          <div><span class="panel-metric-val">3×</span><span class="panel-metric-lbl">Click Rate vs Industry Average</span></div>
-          <div><span class="panel-metric-val">€0</span><span class="panel-metric-lbl">Ad Spend</span></div>
-        </div>
-        <div class="panel-block"><span class="panel-block-label">Situation</span><p>A tech startup with 2,000+ email signups collected through a product waitlist over 18 months. They'd never sent a single newsletter. The list was there — sitting. Paying for a Mailchimp plan they weren't using.</p></div>
-        <div class="panel-block"><span class="panel-block-label">Problem</span><p>A list you don't write to isn't an asset. It's a promise you haven't kept. Every month without contact meant colder subscribers, higher unsubscribe rates on first send, and a wasted acquisition investment. They were about to launch a paid product into a cold room.</p></div>
-        <div class="panel-block"><span class="panel-block-label">What We Built</span><p>A 3-part reactivation sequence — designed to warm, not to sell. First email acknowledged the silence with honesty. Second delivered something genuinely valuable from the founders. Third introduced what was coming. Then we migrated to Beehiiv and launched a weekly newsletter cadence. The founders wrote nothing — we captured their thinking in a monthly 30-minute call and turned it into issues people actually read.</p></div>
-        <div class="panel-block"><span class="panel-block-label">Result</span><p>39% open rate on a list that had never received an email before. 3× the click rate of their industry benchmark. By launch week, the audience felt like they already knew the product. Sales went live into a warm room, not a cold one.</p></div>
-      </div>
-
-      <div class="panel-case" data-index="5">
-        <div class="panel-metrics">
-          <div><span class="panel-metric-val">3.6×</span><span class="panel-metric-lbl">LinkedIn Follower Growth</span></div>
-          <div><span class="panel-metric-val">12</span><span class="panel-metric-lbl">Inbound DMs / Month</span></div>
-          <div><span class="panel-metric-val">2</span><span class="panel-metric-lbl">Contracts Closed from Content</span></div>
-        </div>
-        <div class="panel-block"><span class="panel-block-label">Situation</span><p>A SaaS founder with a genuinely strong product and zero LinkedIn presence. She posted once in 8 months — a company update that 6 people liked. Meanwhile, her competitors were writing daily and getting inbound. She knew the gap. She didn't have time to close it.</p></div>
-        <div class="panel-block"><span class="panel-block-label">Problem</span><p>In B2B, the founder is the brand before the product is. If your ICP can't find you, can't read you, can't decide whether to trust you — they'll find your competitor who shows up. She was invisible on the channel where her buyers spent their time. Great product. Ghost founder.</p></div>
-        <div class="panel-block"><span class="panel-block-label">What We Built</span><p>A monthly 30-minute interview to extract her thinking. We then turned that into 8–10 LinkedIn posts per month — each written in her voice, positioned around insights only someone in her position could have. No AI slop. No generic tips. Specific, opinionated, grounded in real experience. Content that reads like a real person — because it is one, just with a writer behind the pen.</p></div>
-        <div class="panel-block"><span class="panel-block-label">Result</span><p>3.6× LinkedIn growth in 90 days. 12 inbound DMs per month from people citing specific posts. Two contracts closed from content — clients who said they felt like they already knew her before the first call. She spent 30 minutes a month on it. We spent the rest.</p></div>
-      </div>
-
-      <div class="panel-case" data-index="2">
-        <div class="panel-metrics">
-          <div><span class="panel-metric-val">64%</span><span class="panel-metric-lbl">More Inbound in 7 Months</span></div>
-          <div><span class="panel-metric-val">3×</span><span class="panel-metric-lbl">Average Pipeline Value</span></div>
-          <div><span class="panel-metric-val">€0</span><span class="panel-metric-lbl">Paid Acquisition</span></div>
-        </div>
-        <div class="panel-block"><span class="panel-block-label">Situation</span><p>A marketing consultant in a saturated market. Smart, credible, with real case studies — but closing every deal on a call that started with "someone referred me." No inbound. No content. The reputation was there. The audience wasn't.</p></div>
-        <div class="panel-block"><span class="panel-block-label">Problem</span><p>When you're invisible outside your referral network, you're always one dry month away from panic. There's no compounding. No asset that keeps working when you stop. Every new contract starts from zero. The expertise existed. It just wasn't being shared at scale.</p></div>
-        <div class="panel-block"><span class="panel-block-label">What We Built</span><p>A bi-weekly newsletter plus a LinkedIn content calendar — both running off one monthly interview. We defined the content pillars (what he knew that others didn't), built the voice, and started publishing. Not polished corporate content. Specific, opinionated takes on marketing that only someone with his experience could write. Within 3 months, prospects were referencing his newsletter on first calls.</p></div>
-        <div class="panel-block"><span class="panel-block-label">Result</span><p>Inbound enquiries up 64% in 7 months. Average contract value 3× higher — prospects arrived pre-sold on his expertise. Newsletter became the most cited reason new clients gave for reaching out. Referrals didn't stop. They just stopped being the only thing.</p></div>
-      </div>
-
-      <div class="panel-case" data-index="3">
-        <div class="panel-metrics">
-          <div><span class="panel-metric-val">32%</span><span class="panel-metric-lbl">Newsletter Open Rate</span></div>
-          <div><span class="panel-metric-val">5×</span><span class="panel-metric-lbl">Inbound vs Previous Year</span></div>
-          <div><span class="panel-metric-val">€0</span><span class="panel-metric-lbl">Paid Acquisition</span></div>
-        </div>
-        <div class="panel-block"><span class="panel-block-label">Situation</span><p>A consultant operating in a niche where everyone knows the same handful of names. Smart, credible, well-connected. But outside his existing network, he was unknown. Prospects who didn't have a referral had no reason to find him — or to trust him before the first call.</p></div>
-        <div class="panel-block"><span class="panel-block-label">Problem</span><p>Visibility without authority is noise. He needed to be the name people mentioned before he was in the room. That doesn't come from a LinkedIn profile. It comes from a consistent body of work that demonstrates thinking before anyone has to pay to experience it.</p></div>
-        <div class="panel-block"><span class="panel-block-label">What We Built</span><p>A positioning-first newsletter — published bi-weekly, targeted at his exact ICP. We defined the content pillars around his actual edge: the specific things he saw that his peers didn't. Every issue was a demonstration of authority, not a feature list. Supported by a LinkedIn content calendar built from the same monthly call.</p></div>
-        <div class="panel-block"><span class="panel-block-label">Result</span><p>32% newsletter open rate sustained over 6 months. 5× inbound contact vs the previous year. New leads arrived pre-sold — citing specific issues they'd read. He went from invisible outside referrals to the name people mentioned when asked who to call.</p></div>
-      </div>
-
-      <div class="panel-case" data-index="4">
-        <div class="panel-metrics">
-          <div><span class="panel-metric-val">6×</span><span class="panel-metric-lbl">Average Post Engagement</span></div>
-          <div><span class="panel-metric-val">+500</span><span class="panel-metric-lbl">LinkedIn Followers in 6 Months</span></div>
-          <div><span class="panel-metric-val">1</span><span class="panel-metric-lbl">Client Closed from Content</span></div>
-        </div>
-        <div class="panel-block"><span class="panel-block-label">Situation</span><p>An executive coach with 20 years of experience and a LinkedIn profile that hadn't been touched in 14 months. She hated writing. She hated the performative nature of LinkedIn content. She also hated the fact that her ideal clients couldn't find her unless someone made an introduction.</p></div>
-        <div class="panel-block"><span class="panel-block-label">Problem</span><p>She wasn't invisible because she had nothing to say. She had too much to say and no system to say it with. Every time she sat down to write a post, it felt fake or generic. The content that existed in her head — real, sharp, earned through decades of client work — never made it to the screen.</p></div>
-        <div class="panel-block"><span class="panel-block-label">What We Built</span><p>A monthly 30-minute interview. We recorded it, extracted the best thinking, built the content calendar, wrote the posts, and scheduled them. She read and approved — 15 minutes max. Nothing went live without her sign-off. But she never had to stare at a blank page again. Eight to ten posts per month, written in her voice, about ideas only she could have. Her followers started saving posts. Then sharing them.</p></div>
-        <div class="panel-block"><span class="panel-block-label">Result</span><p>6× increase in average post engagement in the first 60 days. +500 new LinkedIn followers in 6 months — from zero targeted strategy. One client closed in month 3 who opened the conversation by citing a specific post. She still does one call a month. We do the rest.</p></div>
-      </div>
-
-    </div><!-- end carousel-panel -->
   </div>
-  <div class="section-cta fade-in">
-    <a href="https://cal.com/avoidagency/30min" target="_blank" rel="noopener" class="cal-popup-btn">
-      <span class="lang-en">Own Yours →</span>
-      <span class="lang-pt">Toma o Que É Teu →</span>
-    </a>
-  </div>
-
 </section>
 
 <!-- ════════════════════════════ ABOUT ══════════════════════════════ -->
@@ -2134,66 +1952,14 @@
 
 
   // Carousel
-  (function() {
-    var cards = Array.from(document.querySelectorAll('.carousel-card'));
-    var panels = Array.from(document.querySelectorAll('.panel-case'));
-    var dots = Array.from(document.querySelectorAll('.carousel-dot'));
-    var total = cards.length;
-    var current = 0;
-
-    function update() {
-      var cardW = cards[0].offsetWidth;
-      var gap = cardW + 12;
-      cards.forEach(function(card, i) {
-        var pos = ((i - current) % total + total) % total;
-        if (pos > total / 2) pos -= total;
-        var x, scale, opacity, zIndex;
-        if (pos === 0)       { x = 0;           scale = 1;    opacity = 1;    zIndex = 5; }
-        else if (pos === 1)  { x = gap;          scale = 0.88; opacity = 0.5;  zIndex = 4; }
-        else if (pos === -1) { x = -gap;         scale = 0.88; opacity = 0.5;  zIndex = 4; }
-        else if (pos === 2)  { x = gap * 1.86;   scale = 0.76; opacity = 0.2;  zIndex = 3; }
-        else                 { x = -gap * 1.86;  scale = 0.76; opacity = 0.2;  zIndex = 3; }
-        card.style.transform = 'translateX(calc(-50% + ' + x + 'px)) scale(' + scale + ')';
-        card.style.opacity = opacity;
-        card.style.zIndex = zIndex;
-        card.classList.toggle('active', pos === 0);
-      });
-      panels.forEach(function(p, i) { p.classList.toggle('active', i === current); });
-      dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
-    }
-
-    var cPanel = document.querySelector('.carousel-panel');
-    function go(n) { current = ((current + n) % total + total) % total; update(); }
-
-    document.querySelector('.carousel-prev').addEventListener('click', function() { go(-1); });
-    document.querySelector('.carousel-next').addEventListener('click', function() { go(1); });
-    dots.forEach(function(dot, i) { dot.addEventListener('click', function() { current = i; update(); }); });
-    cards.forEach(function(card, i) {
-      card.addEventListener('click', function() {
-        if (i !== current) {
-          var diff = i - current;
-          if (diff > total / 2) diff -= total;
-          if (diff < -total / 2) diff += total;
-          go(diff);
-          cPanel.classList.add('open');
-        } else {
-          cPanel.classList.toggle('open');
-        }
-      });
+  // Service card expand/collapse
+  document.querySelectorAll('.sc-card').forEach(function(card) {
+    card.addEventListener('click', function() {
+      var isOpen = card.classList.contains('open');
+      document.querySelectorAll('.sc-card.open').forEach(function(c) { c.classList.remove('open'); });
+      if (!isOpen) card.classList.add('open');
     });
-
-    // Touch swipe
-    var tx = 0;
-    var track = document.getElementById('carouselTrack');
-    track.addEventListener('touchstart', function(e) { tx = e.touches[0].clientX; }, { passive: true });
-    track.addEventListener('touchend', function(e) {
-      var dx = tx - e.changedTouches[0].clientX;
-      if (Math.abs(dx) > 40) go(dx > 0 ? 1 : -1);
-    });
-
-    window.addEventListener('resize', update);
-    update();
-  })();
+  });
 
   // FAQ category accordion
   document.querySelectorAll('.faq-cat-header').forEach(btn => {
